@@ -149,12 +149,17 @@ Private Sub Form_Load()
     Me.Left = 0
     Me.Width = Screen.Width
     Me.Height = Screen.Height
+    Me.WindowState = 2
+    
     WindowsMediaPlayer1.Top = 0
     WindowsMediaPlayer1.Left = 0
-    WindowsMediaPlayer1.Width = Me.Width
-    WindowsMediaPlayer1.Height = Me.Height
+    WindowsMediaPlayer1.stretchToFit = True
+    'edited by Andi 22-01-2021
+    WindowsMediaPlayer1.Width = Screen.Width
+    WindowsMediaPlayer1.Height = Screen.Height
+    'edited by Andi 22-01-2021
     WindowsMediaPlayer1.network.bufferingTime = 16000
-
+    
     Form2.Show
 End Sub
 
@@ -240,7 +245,6 @@ Private Sub WindowsMediaPlayer1_PlayStateChange(ByVal newState As Long)
     End If
     
     LockRoom
-    
     
     If Err.Number <> 0 Then
       LogError Name, "WindowsMediaPlayer1_PlayStateChange"

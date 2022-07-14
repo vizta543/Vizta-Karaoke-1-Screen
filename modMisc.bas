@@ -10,11 +10,11 @@ End Type
 
 Public Type POINTAPI
     x As Long
-    Y As Long
+    y As Long
 End Type
     
 Public Declare Function SetCursorPos Lib "user32" _
-      (ByVal x As Long, ByVal Y As Long) As Long
+      (ByVal x As Long, ByVal y As Long) As Long
     
 Public Declare Function ClipCursor Lib "user32" _
       (lpRect As Any) As Long
@@ -26,7 +26,7 @@ Public Declare Function ClientToScreen Lib "user32" _
       (ByVal hWnd As Long, lpPoint As POINTAPI) As Long
 
 Public Declare Function OffsetRect Lib "user32" _
-      (lpRect As RECT, ByVal x As Long, ByVal Y As Long) As Long
+      (lpRect As RECT, ByVal x As Long, ByVal y As Long) As Long
 
 Public Declare Function SystemParametersInfo Lib "user32" Alias "SystemParametersInfoA" (ByVal uAction As Long, ByVal uParam As Long, ByRef lpvParam As Any, ByVal fuWinIni As Long) As Long
     
@@ -130,9 +130,9 @@ Public Sub LockClient()
   
   GetClientRect frmUser.hWnd, client
   upperleft.x = client.Left
-  upperleft.Y = client.Top
+  upperleft.y = client.Top
   ClientToScreen frmUser.hWnd, upperleft
-  OffsetRect client, upperleft.x, upperleft.Y
+  OffsetRect client, upperleft.x, upperleft.y
    
   iY = (client.Left)
   iX = (client.right)
@@ -163,10 +163,10 @@ Public Sub LockRoom()
   
   GetClientRect frmRoom.hWnd, client
   upperleft.x = client.Left
-  upperleft.Y = client.Top
+  upperleft.y = client.Top
   ClientToScreen frmRoom.hWnd, upperleft
   
-  OffsetRect client, upperleft.x, upperleft.Y
+  OffsetRect client, upperleft.x, upperleft.y
    
   iY = (0 - Screen.Width + client.bottom) / 2
   iX = (0 - Screen.Width + 1024) / 2

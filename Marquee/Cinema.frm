@@ -124,7 +124,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Dim db As connection
+Dim db As Connection
 Dim WithEvents rs As Recordset
 Attribute rs.VB_VarHelpID = -1
 Dim Kota As String
@@ -185,20 +185,20 @@ Sub LoadKatajalan()
     On Error Resume Next
     
     Dim Sql As String
-    Dim myRS As MYSQL_RS
+    Dim myrs As MYSQL_RS
     Dim i As Integer
     
     Cinema.Timer1.Enabled = False
     
     Sql = "select idtulisan, tulisan from osdtext where ROOM = '0' or ROOM = '" & txtCompName & "' order by ROOM desc;"
-    Set myRS = MyConn.Execute(Sql)
-    katajalantotal = myRS.recordCount
+    Set myrs = MyConn.Execute(Sql)
+    katajalantotal = myrs.recordCount
     ReDim katajalan(katajalantotal)
-    myRS.MoveFirst
+    myrs.MoveFirst
     i = 0
-    Do Until myRS.EOF
-        katajalan(i) = myRS.Fields(1).value
-        myRS.MoveNext
+    Do Until myrs.EOF
+        katajalan(i) = myrs.Fields(1).value
+        myrs.MoveNext
         i = i + 1
     Loop
     

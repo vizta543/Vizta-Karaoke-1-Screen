@@ -403,12 +403,33 @@ Public Sub prcTitleList()
     sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
     
     If vTitleArtisPlaylist = False Then
-        If frmRoom.vpointer = 1 Then
-            frmRoom.flsTitle.Movie = App.Path + "\picture\anim\abr-title"
-            frmRoom.vpointer = 7
-        Else
-            frmRoom.flsTitle.Movie = App.Path + "\picture\anim\title"
-            frmRoom.vpointer = 1
+        If frmUser.settingScreenResolution = "S-SD" Then
+            If frmRoom.vpointer = 1 Then
+                DoEvents
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\abr-title"
+                frmRoom.vpointer = 7
+            Else
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\title"
+                frmRoom.vpointer = 1
+            End If
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            If frmRoom.vpointer = 1 Then
+                DoEvents
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlesingkatan"
+                frmRoom.vpointer = 7
+            Else
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlev2"
+                frmRoom.vpointer = 1
+            End If
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            If frmRoom.vpointer = 1 Then
+                DoEvents
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlesingkatan"
+                frmRoom.vpointer = 7
+            Else
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlev2"
+                frmRoom.vpointer = 1
+            End If
         End If
         frmRoom.txtSearch_Change
     End If
@@ -440,12 +461,30 @@ Public Sub prcSingerList()
     frmRoom.txtSearch.SetFocus
     sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
     If vTitleArtisPlaylist = False Then
-        If frmRoom.vpointer = 2 Then
-            frmRoom.flsTitle.Movie = App.Path + "\picture\anim\abr-artist"
-            frmRoom.vpointer = 8
-        Else
-            frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artist"
-            frmRoom.vpointer = 2
+        If frmUser.settingScreenResolution = "S-SD" Then
+            If frmRoom.vpointer = 2 Then
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\abr-artist"
+                frmRoom.vpointer = 8
+            Else
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artist"
+                frmRoom.vpointer = 2
+            End If
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            If frmRoom.vpointer = 2 Then
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artistsingkatanv2"
+                frmRoom.vpointer = 8
+            Else
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artistv2"
+                frmRoom.vpointer = 2
+            End If
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            If frmRoom.vpointer = 2 Then
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artistsingkatanv2"
+                frmRoom.vpointer = 8
+            Else
+                frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artistv2"
+                frmRoom.vpointer = 2
+            End If
         End If
         frmRoom.txtSearch_Change
     End If

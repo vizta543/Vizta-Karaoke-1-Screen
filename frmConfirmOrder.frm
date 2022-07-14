@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "Flash8g.ocx"
+Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "flash.ocx"
 Begin VB.Form frmabout 
    BorderStyle     =   0  'None
    Caption         =   "frmabout"
@@ -26,23 +26,25 @@ Begin VB.Form frmabout
       Movie           =   "c:\new.swf"
       Src             =   "c:\new.swf"
       WMode           =   "Window"
-      Play            =   0   'False
-      Loop            =   -1  'True
+      Play            =   "0"
+      Loop            =   "-1"
       Quality         =   "High"
       SAlign          =   ""
-      Menu            =   -1  'True
+      Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
       Scale           =   "NoScale"
-      DeviceFont      =   0   'False
-      EmbedMovie      =   0   'False
+      DeviceFont      =   "0"
+      EmbedMovie      =   "0"
       BGColor         =   ""
       SWRemote        =   ""
       MovieData       =   ""
-      SeamlessTabbing =   -1  'True
-      Profile         =   0   'False
+      SeamlessTabbing =   "1"
+      Profile         =   "0"
       ProfileAddress  =   ""
-      ProfilePort     =   0
+      ProfilePort     =   "0"
+      AllowNetworking =   "all"
+      AllowFullScreen =   "false"
    End
    Begin ShockwaveFlashObjectsCtl.ShockwaveFlash flsTombol 
       Height          =   1020
@@ -57,23 +59,25 @@ Begin VB.Form frmabout
       Movie           =   "D:\Project\VOD\Source\Source\potongan\Help\exit.swf"
       Src             =   "D:\Project\VOD\Source\Source\potongan\Help\exit.swf"
       WMode           =   "Window"
-      Play            =   0   'False
-      Loop            =   -1  'True
+      Play            =   "0"
+      Loop            =   "-1"
       Quality         =   "High"
       SAlign          =   ""
-      Menu            =   -1  'True
+      Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
       Scale           =   "NoScale"
-      DeviceFont      =   0   'False
-      EmbedMovie      =   0   'False
+      DeviceFont      =   "0"
+      EmbedMovie      =   "0"
       BGColor         =   ""
       SWRemote        =   ""
       MovieData       =   ""
-      SeamlessTabbing =   -1  'True
-      Profile         =   0   'False
+      SeamlessTabbing =   "1"
+      Profile         =   "0"
       ProfileAddress  =   ""
-      ProfilePort     =   0
+      ProfilePort     =   "0"
+      AllowNetworking =   "all"
+      AllowFullScreen =   "false"
    End
 End
 Attribute VB_Name = "frmabout"
@@ -122,10 +126,34 @@ Private Sub Form_Load()
     SWP_NOMOVE + SWP_NOSIZE
     Me.Move (0 - Screen.Width)
     
-    flsLogo.Top = 0
-    flsLogo.Left = 0
-    flsLogo.Width = Me.Width
-    flsLogo.Height = Me.Height
+    If frmUser.settingScreenResolution = "S-SD" Then
+        flsLogo.Top = 0
+        flsLogo.Left = 0
+        flsLogo.Width = Screen.Width
+        flsLogo.Height = Screen.Height
+        flsTombol.ScaleMode = 1
+        flsTombol.Left = 7000
+        flsTombol.Top = 10600
+        flsTombol.ZOrder 0
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        flsLogo.ScaleMode = 2
+        flsLogo.Top = 0
+        flsLogo.Left = 0
+        flsLogo.Width = Screen.Width
+        flsLogo.Height = Screen.Height
+        flsTombol.Left = 9000
+        flsTombol.Top = 9999
+        flsTombol.ZOrder 0
+    Else
+        flsLogo.ScaleMode = 2
+        flsLogo.Top = 0
+        flsLogo.Left = 0
+        flsLogo.Width = Screen.Width
+        flsLogo.Height = Screen.Height
+        flsTombol.Left = 13500
+        flsTombol.Top = 15300
+        flsTombol.ZOrder 0
+    End If
 
     Dim lokasi As String
     lokasi = App.Path + "\Picture\about\"
@@ -140,14 +168,6 @@ Private Sub Form_Unload(Cancel As Integer)
     On Error Resume Next
     vpbfrmAbout = False
     frmRoom.vVideo = vvideotemp
-End Sub
-
-Private Sub Skin1_SkinEvent(ByVal Source As ACTIVESKINLibCtl.ISkinObject, ByVal EventName As String)
-
-End Sub
-
-Private Sub Text1_KeyPress(KeyAscii As Integer)
-
 End Sub
 
 Sub prcOK()

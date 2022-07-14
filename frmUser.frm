@@ -131,10 +131,6 @@ Const VK_TAB = &H9
 
 Public osVersion As String
 
-'added by Andi 22-01-2021
-Public settingScreenResolution As String
-'added by Andi 22-01-2021
-
 Private Const rcCOMCodeChannel1 As Long = &H1
 Private Const rcCOMCodeChannel2 As Long = &H2
 Private Const rcCOMCodeChannel3 As Long = &H4
@@ -151,6 +147,13 @@ Public rcCOMCode As Long
 Public rcHIDDI As Long
 Public rcHIDHandle As Long
 
+'added by Andi 22-01-2021
+Public settingScreenResolution As String
+'added by Andi 22-01-2021
+
+'added by Andi 21-04-2021
+Public settingMirrorBall As Long
+'added by Andi 21-04-2021
 
 Private Const usbAudioModelK3200D = "K-3200D"
 Private Const usbAudioModelK3200P = "K-3200P"
@@ -162,7 +165,6 @@ Private usbAudioModel As String
 
 
 Public settingStatusAutoAbbreviation As Long
-
 
 Private wsPasswordBytesTotal As Long
 Private wsPasswordDataLength As Long
@@ -182,7 +184,13 @@ Private Sub Form_Load()
       End
     End If
     
+    'added by Andi 22-01-2021
     settingScreenResolution = getIniSetting("Display", "Resolution", "0")
+    'added by Andi 22-01-2021
+    
+    'added by Andi 21-04-2021
+    settingMirrorBall = getIniSetting("MirrorBall", "LampByMusic", "0")
+    'added by Andi 21-04-2021
     
     osVersion = mdlWinVer.GetWindowsVersion()
     
@@ -190,8 +198,8 @@ Private Sub Form_Load()
     
 
     settingRCType = getIniSetting("RelayControl", "Type", "LPT")
-    settingRCCOMNumber = getIniSetting("RelayControl", "COMNumber", "3")
     settingRCLPTAddress = getIniSetting("RelayControl", "LPTAddress", "888")
+    settingRCCOMNumber = getIniSetting("RelayControl", "COMNumber", "3")
     
     Select Case settingRCType
     
@@ -232,7 +240,7 @@ Private Sub Form_Load()
 
     Me.Move (0 - Screen.Width)
     lokasi = App.Path
-    Skin1.LoadSkin lokasi + "\skin\Paper.skn"
+    Skin1.LoadSkin lokasi + "\skin\user.skn"
     Skin1.ApplySkinByName hWnd, "UserForm"
     
     LockClient
@@ -249,11 +257,8 @@ Private Sub Form_Load()
                         "NoDrives", "98304"
     
     'Read
-'    vpbServerUtama = getIniSetting("DataSource", "Host", "10.0.0.201")
-'    vpbServerBackup = getIniSetting("DataSource", "Backup", "10.0.0.202")
-      
-      vpbServerUtama = getIniSetting("DataSource", "Host", "192.168.4.164")
-      vpbServerBackup = getIniSetting("DataSource", "Backup", "192.168.4.164")
+    vpbServerUtama = getIniSetting("DataSource", "Host", "10.0.0.201")
+    vpbServerBackup = getIniSetting("DataSource", "Backup", "10.0.0.202")
     
     vpbAmpliAuto = getIniSetting("Ampli", "Auto", "0")
     vpbAmpliMinus = getIniSetting("Ampli", "Min", "0")
@@ -279,17 +284,17 @@ Private Sub Form_Load()
     End If
     
     vpbRemoteStatus = getIniSetting("Status", "Remote", "1")
-
-
+    
+    
     vpbServerKeyWindows = ""
     vpbServerKeyMySQL = ""
-
+    
     wsPasswordBytesTotal = 0
     wsPasswordDataLength = 0
     wsPasswordChallenge = False
-
+    
     wsPassword.RemotePort = modProject.outletServerPort
-
+    
     wsPassword.Connect vpbServerUtama
     
     

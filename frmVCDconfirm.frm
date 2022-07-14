@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{90F3D7B3-92E7-44BA-B444-6A8E2A3BC375}#1.0#0"; "actskin4.ocx"
-Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "Flash8g.ocx"
+Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "Flash.ocx"
 Begin VB.Form frmHelp 
    BorderStyle     =   0  'None
    Caption         =   "frmHelp"
@@ -29,23 +29,25 @@ Begin VB.Form frmHelp
       Movie           =   "D:\Project\VOD\Source\Source\potongan\Help\exit.swf"
       Src             =   "D:\Project\VOD\Source\Source\potongan\Help\exit.swf"
       WMode           =   "Window"
-      Play            =   0   'False
-      Loop            =   -1  'True
+      Play            =   "0"
+      Loop            =   "-1"
       Quality         =   "High"
       SAlign          =   ""
-      Menu            =   -1  'True
+      Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
       Scale           =   "NoScale"
-      DeviceFont      =   0   'False
-      EmbedMovie      =   0   'False
+      DeviceFont      =   "0"
+      EmbedMovie      =   "0"
       BGColor         =   ""
       SWRemote        =   ""
       MovieData       =   ""
-      SeamlessTabbing =   -1  'True
-      Profile         =   0   'False
+      SeamlessTabbing =   "1"
+      Profile         =   "0"
       ProfileAddress  =   ""
-      ProfilePort     =   0
+      ProfilePort     =   "0"
+      AllowNetworking =   "all"
+      AllowFullScreen =   "false"
    End
    Begin ACTIVESKINLibCtl.Skin Skin1 
       Left            =   0
@@ -64,23 +66,25 @@ Begin VB.Form frmHelp
       Movie           =   "c:\new.swf"
       Src             =   "c:\new.swf"
       WMode           =   "Window"
-      Play            =   0   'False
-      Loop            =   -1  'True
+      Play            =   "0"
+      Loop            =   "-1"
       Quality         =   "High"
       SAlign          =   ""
-      Menu            =   -1  'True
+      Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
       Scale           =   "NoScale"
-      DeviceFont      =   0   'False
-      EmbedMovie      =   0   'False
+      DeviceFont      =   "0"
+      EmbedMovie      =   "0"
       BGColor         =   ""
       SWRemote        =   ""
       MovieData       =   ""
-      SeamlessTabbing =   -1  'True
-      Profile         =   0   'False
+      SeamlessTabbing =   "1"
+      Profile         =   "0"
       ProfileAddress  =   ""
-      ProfilePort     =   0
+      ProfilePort     =   "0"
+      AllowNetworking =   "all"
+      AllowFullScreen =   "false"
    End
 End
 Attribute VB_Name = "frmHelp"
@@ -124,10 +128,28 @@ Private Sub Form_Load()
     SWP_NOMOVE + SWP_NOSIZE
     Me.Move (0 - Screen.Width)
     
-    flsLogo.Top = 0
-    flsLogo.Left = 0
-    flsLogo.Width = Me.Width
-    flsLogo.Height = Me.Height
+    If frmUser.settingScreenResolution = "S-SD" Then
+        flsLogo.Top = 0
+        flsLogo.Left = 0
+        flsLogo.Width = Screen.Width
+        flsLogo.Height = Screen.Height
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        flsLogo.ScaleMode = 2
+        flsLogo.Top = 0
+        flsLogo.Left = 0
+        flsLogo.Width = Screen.Width
+        flsLogo.Height = Screen.Height
+        flsTombol.Top = 215
+        flsTombol.Left = 13080
+    Else
+        flsLogo.ScaleMode = 2
+        flsLogo.Top = 0
+        flsLogo.Left = 0
+        flsLogo.Width = Screen.Width
+        flsLogo.Height = Screen.Height
+        flsTombol.Left = 24000
+        flsTombol.Top = 450
+    End If
     
     lokasi = App.Path + "\Picture\help\"
     flsLogo.Movie = lokasi + "help.swf"

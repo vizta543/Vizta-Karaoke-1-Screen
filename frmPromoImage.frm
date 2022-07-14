@@ -39,7 +39,6 @@ Private Sub Form_Load()
     
     Dim promoImagePath As String
     
-    
     promoImagePath = frmRoom.promoImageCollection(frmRoom.promoImageCollectionCurrent)
     
     If frmRoom.FileExists("\\" & vpbServerUtama & promoImagePath) Then
@@ -52,6 +51,10 @@ Private Sub Form_Load()
     
     If promoImagePath <> "" Then
       img.Picture = LoadPicture(promoImagePath)
+      'added by Andi 25-01-2021
+      img.Width = Screen.Width
+      img.Height = Screen.Height
+      'added by Andi 25-01-2021
     End If
     
     frmRoom.promoImageCollectionCurrent = frmRoom.promoImageCollectionCurrent + 1

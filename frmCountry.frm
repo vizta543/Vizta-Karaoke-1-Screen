@@ -130,27 +130,75 @@ Private Sub Form_Load()
     Dim lokasi As String
     lokasi = App.Path
     
-    If (frmRoom.vVideo = 0) Or (frmRoom.vVideo = 1) Then
-        lstCountry.Left = 1000
-        lstCountry.Height = 4995
-        lstCountry.Top = 1860
-        lstCountry.ForeColor = &HFFFFFF
-        SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
-        SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
-        tmrAktif.Enabled = True
-    ElseIf (frmRoom.vVideo = 5) Then
-        lstCountry.Left = 1000
-        lstCountry.Height = 4995
-        lstCountry.Top = 1860
-        lstCountry.ForeColor = &HFFFFFF
-        SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
-        SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
-        tmrAktif.Enabled = True
-    ElseIf frmRoom.vVideo = 3 Then
-        Skin1.LoadSkin lokasi + "\skin\sknchatuser.skn"
-        Skin1.ApplySkinByName hWnd, "sknchatuser"
-        lstCountry.Picture = LoadPicture(lokasi + "\Picture\chat\layar.jpg")
+    'edited by Andi 07/07/2022
+    If frmUser.settingScreenResolution = "S-SD" Then
+        If (frmRoom.vVideo = 0) Or (frmRoom.vVideo = 1) Then
+            lstCountry.Left = 1000
+            lstCountry.Height = 4995
+            lstCountry.Top = 1860
+            lstCountry.ForeColor = &HFFFFFF
+            SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
+            SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
+            tmrAktif.Enabled = True
+        ElseIf (frmRoom.vVideo = 5) Then
+            lstCountry.Left = 1000
+            lstCountry.Height = 4995
+            lstCountry.Top = 1860
+            lstCountry.ForeColor = &HFFFFFF
+            SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
+            SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
+            tmrAktif.Enabled = True
+        ElseIf frmRoom.vVideo = 3 Then
+            Skin1.LoadSkin lokasi + "\skin\sknchatuser.skn"
+            Skin1.ApplySkinByName hWnd, "sknchatuser"
+            lstCountry.Picture = LoadPicture(lokasi + "\Picture\chat\layar.jpg")
+        End If
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        If (frmRoom.vVideo = 0) Or (frmRoom.vVideo = 1) Then
+            lstCountry.Left = 1000
+            lstCountry.Height = 3650
+            lstCountry.Top = 1890
+            lstCountry.ForeColor = &HFFFFFF
+            SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
+            SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
+            tmrAktif.Enabled = True
+        ElseIf (frmRoom.vVideo = 5) Then
+            lstCountry.Left = 1000
+            lstCountry.Height = 4995
+            lstCountry.Top = 1860
+            lstCountry.ForeColor = &HFFFFFF
+            SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
+            SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
+            tmrAktif.Enabled = True
+        ElseIf frmRoom.vVideo = 3 Then
+            Skin1.LoadSkin lokasi + "\skin\sknchatuser.skn"
+            Skin1.ApplySkinByName hWnd, "sknchatuser"
+            lstCountry.Picture = LoadPicture(lokasi + "\Picture\chat\layar.jpg")
+        End If
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        If (frmRoom.vVideo = 0) Or (frmRoom.vVideo = 1) Then
+            lstCountry.Left = 1000
+            lstCountry.Height = 4995
+            lstCountry.Top = 1860
+            lstCountry.ForeColor = &HFFFFFF
+            SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
+            SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
+            tmrAktif.Enabled = True
+        ElseIf (frmRoom.vVideo = 5) Then
+            lstCountry.Left = 1000
+            lstCountry.Height = 4995
+            lstCountry.Top = 1860
+            lstCountry.ForeColor = &HFFFFFF
+            SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
+            SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
+            tmrAktif.Enabled = True
+        ElseIf frmRoom.vVideo = 3 Then
+            Skin1.LoadSkin lokasi + "\skin\sknchatuser.skn"
+            Skin1.ApplySkinByName hWnd, "sknchatuser"
+            lstCountry.Picture = LoadPicture(lokasi + "\Picture\chat\layar.jpg")
+        End If
     End If
+    'edited by Andi 07/07/2022
     
 '    SetWindowPos Me.hWnd, HWND_TOPMOST, 0, 0, 0, 0, _
 '    SWP_NOMOVE + SWP_NOSIZE
@@ -181,13 +229,29 @@ Private Sub isiListCountry()
         Set MyRst = MyConn.Execute(sqlt)
         lstCountry.ColumnHeaders.Clear
         lstCountry.ListItems.Clear
+        
+        If frmUser.settingScreenResolution = "S-SD" Then
+            '
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            If frmRoom.vVideo = 0 Then
+                lstCountry.Font.Size = 14
+                lstCountry.Top = 2600
+            ElseIf frmRoom.vVideo = 5 Then
+                lstCountry.Font.Size = 14
+                lstCountry.Top = 2900
+            End If
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            lstCountry.Font.Size = 24
+            lstCountry.Height = 5500
+        End If
+        
         Set chm = lstCountry.ColumnHeaders.add(, , , 10)
         Set chm = lstCountry.ColumnHeaders.add(, , , 3400)
         
         lstCountry.ColumnHeaders(2).Alignment = lvwColumnCenter
         
-            Set LV = lstCountry.ListItems.add(, , ("0"))
-            LV.SubItems(1) = "ALL"
+        Set LV = lstCountry.ListItems.add(, , ("0"))
+        LV.SubItems(1) = "ALL"
             
         Do Until MyRst.EOF
             'Isi list data
@@ -195,8 +259,6 @@ Private Sub isiListCountry()
             LV.SubItems(1) = MyRst.Fields(1).value
             MyRst.MoveNext
         Loop
-        
-
     ElseIf frmRoom.vVideo = 3 Then
         sqlt = "SELECT idroom, userroom FROM room where status = 'chekin' order by userroom"
         Set MyRst = MyConn.Execute(sqlt)

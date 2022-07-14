@@ -33,77 +33,163 @@ Public Sub LoadSkin(PilihSkin As Integer)
     lokasi = App.Path
     Select Case PilihSkin
     Case 0
-        Skin1.LoadSkin lokasi + "\skin\main.skn"
-        Skin1.ApplySkinByName hWnd, "MainForm"
+        If frmUser.settingScreenResolution = "S-SD" Then
+            Skin1.LoadSkin lokasi + "\skin\main.skn"
+            Skin1.ApplySkinByName hWnd, "MainForm"
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            Skin1.LoadSkin lokasi + "\skin\main_hd.skn"
+            Skin1.ApplySkinByName hWnd, "MainForm"
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            Skin1.LoadSkin lokasi + "\skin\main_fullhd.skn"
+            Skin1.ApplySkinByName hWnd, "MainForm"
+        End If
     Case 5
-        Skin1.LoadSkin lokasi + "\skin\movie.skn"
-        Skin1.ApplySkinByName hWnd, "MovieForm"
+        If frmUser.settingScreenResolution = "S-SD" Then
+            Skin1.LoadSkin lokasi + "\skin\movie.skn"
+            Skin1.ApplySkinByName hWnd, "MovieForm"
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            Skin1.LoadSkin lokasi + "\skin\movie_hd.skn"
+            Skin1.ApplySkinByName hWnd, "MovieForm"
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            Skin1.LoadSkin lokasi + "\skin\movie_fullhd.skn"
+            Skin1.ApplySkinByName hWnd, "MovieForm"
+        End If
     Case 7
-        Skin1.LoadSkin lokasi + "\skin\skntv.skn"
-        Skin1.ApplySkinByName hWnd, "skntv"
+        If frmUser.settingScreenResolution = "S-SD" Then
+            Skin1.LoadSkin lokasi + "\skin\skntv.skn"
+            Skin1.ApplySkinByName hWnd, "skntv"
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            Skin1.LoadSkin lokasi + "\skin\skntv_hd.skn"
+            Skin1.ApplySkinByName hWnd, "skntv"
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            Skin1.LoadSkin lokasi + "\skin\skntv_fullhd.skn"
+            Skin1.ApplySkinByName hWnd, "skntv"
+        End If
     End Select
 End Sub
 
 Public Sub GantiSkin(PilihSkin As Integer)
     On Error Resume Next
-    Select Case PilihSkin
-        Case 0
-            Skin1.ApplySkinByName hWnd, "MainForm"
-        Case 1
-            Skin1.ApplySkinByName hWnd, "MinimizePolos"
-        Case 2 'HIT
-            Skin1.ApplySkinByName hWnd, "MainHit"
-        Case 3 'NEW
-            Skin1.ApplySkinByName hWnd, "MainNew"
-        Case 4 'POPULAR
-            Skin1.ApplySkinByName hWnd, "MainPopuler"
-        Case 5 'PLAYLIST
-            Skin1.ApplySkinByName hWnd, "MainPlaylist"
-        Case 6
-            Skin1.ApplySkinByName hWnd, "volume"
-        Case 7
-            Skin1.ApplySkinByName hWnd, "MainFormKey"
-        Case 8
-            Skin1.ApplySkinByName hWnd, "MainFormTempo"
-        Case 9
-            Skin1.ApplySkinByName hWnd, "MinimizeKey"
-        Case 10
-            Skin1.ApplySkinByName hWnd, "MinimizeTempo"
-        Case 11
-            Skin1.ApplySkinByName hWnd, "MinimizeNation"
-        Case 12
-            Skin1.ApplySkinByName hWnd, "MinimizeNationMovie"
-    End Select
+    If frmUser.settingScreenResolution = "S-SD" Then
+        Select Case PilihSkin
+            Case 0
+                Skin1.ApplySkinByName hWnd, "MainForm"
+            Case 1
+'                Me.Top = 1500
+                Skin1.ApplySkinByName hWnd, "MinimizePolos"
+            Case 2 'HIT
+                Skin1.ApplySkinByName hWnd, "MainHit"
+            Case 3 'NEW
+                Skin1.ApplySkinByName hWnd, "MainNew"
+            Case 4 'POPULAR
+                Skin1.ApplySkinByName hWnd, "MainPopuler"
+            Case 5 'PLAYLIST
+                Skin1.ApplySkinByName hWnd, "MainPlaylist"
+            Case 6
+                Skin1.ApplySkinByName hWnd, "volume"
+            Case 7
+                Skin1.ApplySkinByName hWnd, "MainFormKey"
+            Case 8
+                Skin1.ApplySkinByName hWnd, "MainFormTempo"
+            Case 9
+                Skin1.ApplySkinByName hWnd, "MinimizeKey"
+            Case 10
+                Skin1.ApplySkinByName hWnd, "MinimizeTempo"
+            Case 11
+                Skin1.ApplySkinByName hWnd, "MinimizeNation"
+            Case 12
+                Skin1.ApplySkinByName hWnd, "MinimizeNationMovie"
+        End Select
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        Select Case PilihSkin
+            Case 0
+                Skin1.ApplySkinByName hWnd, "MainForm"
+            Case 1
+                Skin1.ApplySkinByName hWnd, "MinimizePolos"
+            Case 2 'HIT
+                Skin1.ApplySkinByName hWnd, "MainHit"
+            Case 3 'NEW
+                Skin1.ApplySkinByName hWnd, "MainNew"
+            Case 4 'POPULAR
+                Skin1.ApplySkinByName hWnd, "MainPopuler"
+            Case 5 'PLAYLIST
+                Skin1.ApplySkinByName hWnd, "MainPlaylist"
+            Case 6
+                Skin1.ApplySkinByName hWnd, "volume"
+            Case 7
+                Skin1.ApplySkinByName hWnd, "MainFormKey"
+            Case 8
+                Skin1.ApplySkinByName hWnd, "MainFormTempo"
+            Case 9
+                Skin1.ApplySkinByName hWnd, "MinimizeKey"
+            Case 10
+                Skin1.ApplySkinByName hWnd, "MinimizeTempo"
+            Case 11
+                Skin1.ApplySkinByName hWnd, "MinimizeNation"
+            Case 12
+                Skin1.ApplySkinByName hWnd, "MinimizeNationMovie"
+        End Select
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        Select Case PilihSkin
+            Case 0
+                Skin1.ApplySkinByName hWnd, "MainForm"
+            Case 1
+'                Me.Top = 2000
+                Skin1.ApplySkinByName hWnd, "MinimizePolos"
+            Case 2 'HIT
+                Skin1.ApplySkinByName hWnd, "MainHit"
+            Case 3 'NEW
+                Skin1.ApplySkinByName hWnd, "MainNew"
+            Case 4 'POPULAR
+                Skin1.ApplySkinByName hWnd, "MainPopuler"
+            Case 5 'PLAYLIST
+                Skin1.ApplySkinByName hWnd, "MainPlaylist"
+            Case 6
+                Skin1.ApplySkinByName hWnd, "volume"
+            Case 7
+                Skin1.ApplySkinByName hWnd, "MainFormKey"
+            Case 8
+                Skin1.ApplySkinByName hWnd, "MainFormTempo"
+            Case 9
+                Skin1.ApplySkinByName hWnd, "MinimizeKey"
+            Case 10
+                Skin1.ApplySkinByName hWnd, "MinimizeTempo"
+            Case 11
+                Skin1.ApplySkinByName hWnd, "MinimizeNation"
+            Case 12
+                Skin1.ApplySkinByName hWnd, "MinimizeNationMovie"
+        End Select
+    End If
 End Sub
 
 Public Sub GantiSkinMovie(PilihSkin As Integer)
     On Error Resume Next
-    Select Case PilihSkin
-        Case 0
-            Skin1.ApplySkinByName hWnd, "MovieForm"
-        Case 1
-            Skin1.ApplySkinByName hWnd, "MinimizePolos"
-        Case 2 'HIT
-            Skin1.ApplySkinByName hWnd, "MainHit"
-        Case 3 'NEW
-            Skin1.ApplySkinByName hWnd, "MainNew"
-        Case 4 'POPULAR
-            Skin1.ApplySkinByName hWnd, "MainPopuler"
-        Case 5 'PLAYLIST
-            Skin1.ApplySkinByName hWnd, "MainPlaylist"
-        Case 6
-            Skin1.ApplySkinByName hWnd, "volume"
-        Case 7
-            Skin1.ApplySkinByName hWnd, "MainFormKey"
-        Case 8
-            Skin1.ApplySkinByName hWnd, "MainFormTempo"
-        Case 9
-            Skin1.ApplySkinByName hWnd, "MinimizeKey"
-        Case 10
-            Skin1.ApplySkinByName hWnd, "MinimizeTempo"
-        Case 11
-            Skin1.ApplySkinByName hWnd, "MinimizeNation"
-    End Select
+        Select Case PilihSkin
+                Case 0
+                    Skin1.ApplySkinByName hWnd, "MovieForm"
+                Case 1
+                    Skin1.ApplySkinByName hWnd, "MinimizePolos"
+                Case 2 'HIT
+                    Skin1.ApplySkinByName hWnd, "MainHit"
+                Case 3 'NEW
+                    Skin1.ApplySkinByName hWnd, "MainNew"
+                Case 4 'POPULAR
+                    Skin1.ApplySkinByName hWnd, "MainPopuler"
+                Case 5 'PLAYLIST
+                    Skin1.ApplySkinByName hWnd, "MainPlaylist"
+                Case 6
+                    Skin1.ApplySkinByName hWnd, "volume"
+                Case 7
+                    Skin1.ApplySkinByName hWnd, "MainFormKey"
+                Case 8
+                    Skin1.ApplySkinByName hWnd, "MainFormTempo"
+                Case 9
+                    Skin1.ApplySkinByName hWnd, "MinimizeKey"
+                Case 10
+                    Skin1.ApplySkinByName hWnd, "MinimizeTempo"
+                Case 11
+                    Skin1.ApplySkinByName hWnd, "MinimizeNation"
+        End Select
 End Sub
 
 Public Sub GantiSkinTV(PilihSkin As Integer)
@@ -121,9 +207,19 @@ Private Sub Form_Load()
     On Error Resume Next
     Me.Top = 0
     Me.Left = 0
+    
     lokasi = App.Path
-    Skin1.LoadSkin lokasi + "\skin\main.skn"
-    Skin1.ApplySkinByName hWnd, "MainForm"
+    If frmUser.settingScreenResolution = "S-SD" Then
+        Skin1.LoadSkin lokasi + "\skin\main.skn"
+        Skin1.ApplySkinByName hWnd, "MainForm"
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        Skin1.LoadSkin lokasi + "\skin\main_hd.skn"
+        Skin1.ApplySkinByName hWnd, "MainForm"
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        Skin1.LoadSkin lokasi + "\skin\main_fullhd.skn"
+        Skin1.ApplySkinByName hWnd, "MainForm"
+    End If
 End Sub
+
 
 

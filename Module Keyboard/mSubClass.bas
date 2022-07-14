@@ -65,8 +65,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmRoom.ScreenSaverAktif = 0
                     frmRoom.PlayerTV
                 Case 5
-                    frmRoom.ScreenSaverAktif = 0
-                    frmRoom.chatbuka
+'                    frmRoom.ScreenSaverAktif = 0
+'                    frmRoom.chatbuka
                 Case 6
                     frmRoom.prcDVD
                 Case 7
@@ -188,6 +188,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmCall.vpengirim = 3
                     frmCall.Show
                     frmCall.Timer1.Enabled = True
+                Case 37
+                    End
                 Case 38
                     If frmRoom.txtSearch.text = "" Then
                         frmRoom.ScreenSaverAktif = 5
@@ -204,38 +206,98 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     End If
                     frmRoom.MinimalVolume
                     frmRoom.setvolumeturun
-                Case 40
+                Case 40 ' KeyUp
                     If frmRoom.txtSearch.text = "" Then
                         frmRoom.ScreenSaverAktif = 5
                     Else
                         frmRoom.ScreenSaverAktif = 5
                     End If
-                    frmRoom.MinimalKey
-                    frmRoom.prcKeyUp
-                Case 41
+                    'edited by Andi 09-02-2021
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.MinimalKey
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.MinimalKeyHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.MinimalKeyFULLHD
+                    End If
+                    'edited by Andi 09-02-2021
+                    
+                    'edited by Andi 10-02-2021
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.prcKeyUp
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.prcKeyUpHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.prcKeyUpFULLHD
+                    End If
+                    'edited by Andi 10-02-2021
+                Case 41 ' KeyDown
                      If frmRoom.txtSearch.text = "" Then
                         frmRoom.ScreenSaverAktif = 5
                     Else
                         frmRoom.ScreenSaverAktif = 5
                     End If
-                    frmRoom.MinimalKey
-                    frmRoom.prckeyDown
-                Case 42
-                     If frmRoom.txtSearch.text = "" Then
-                        frmRoom.ScreenSaverAktif = 5
-                    Else
-                        frmRoom.ScreenSaverAktif = 5
+                    'edited by Andi 09-02-2021
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.MinimalKey
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.MinimalKeyHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.MinimalKeyFULLHD
                     End If
-                    frmRoom.MinimalTempo
-                    frmRoom.prcTempoUp
-                Case 43
+                    'edited by Andi 09-02-2021
+                    
+                    'edited by Andi 10-02-2021
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.prckeyDown
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.prckeyDownHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.prckeyDownFULLHD
+                    End If
+                    'edited by Andi 10-02-2021
+                Case 42 ' KeyTempoUp
                     If frmRoom.txtSearch.text = "" Then
                         frmRoom.ScreenSaverAktif = 5
                     Else
                         frmRoom.ScreenSaverAktif = 5
                     End If
-                    frmRoom.MinimalTempo
-                    frmRoom.prcTempoDown
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.MinimalTempo
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.MinimalTempoHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.MinimalTempoFULLHD
+                    End If
+                    
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.prcTempoUp
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.prcTempoUpHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.prcTempoUpFULLHD
+                    End If
+                Case 43 ' KeyTempoDown
+                    If frmRoom.txtSearch.text = "" Then
+                        frmRoom.ScreenSaverAktif = 5
+                    Else
+                        frmRoom.ScreenSaverAktif = 5
+                    End If
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.MinimalTempo
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.MinimalTempoHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.MinimalTempoFULLHD
+                    End If
+                    
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.prcTempoDown
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.prcTempoDownHD
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.prcTempoDownFULLHD
+                    End If
                 Case 44
                     If vpbAmpliAuto = 1 Then
                         RemoteAmpli "ECHOUP", 0
@@ -270,7 +332,7 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                         DoEvents
                         frmConfirmasi.Show
                         frmConfirmasi.Text1.SetFocus
-                        frmConfirmasi.Top = 1000
+'                        frmConfirmasi.Top = 1000
                     End If
                 Case 45
                     If vpbAmpliAuto = 1 Then
@@ -479,8 +541,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmRoom.ScreenSaverAktif = 0
                     frmRoom.PlayerTV
                 Case 5
-                    frmRoom.ScreenSaverAktif = 0
-                    frmRoom.chatbuka
+'                    frmRoom.ScreenSaverAktif = 0
+'                    frmRoom.chatbuka
                 Case 23
                     frmRoom.prcSaran
                 Case 33
@@ -491,6 +553,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmCall.vpengirim = 3
                     frmCall.Show
                     frmCall.Timer1.Enabled = True
+                Case 37
+                    End
 '                Case 38
 '                    If frmRoom.txtSearch.text = "" Then
 '                        frmRoom.ScreenSaverAktif = 1
@@ -632,8 +696,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                         frmRoom.Maksimal
                     End If
                 Case 5
-                    frmRoom.ScreenSaverAktif = 0
-                    frmRoom.chatbuka
+'                    frmRoom.ScreenSaverAktif = 0
+'                    frmRoom.chatbuka
                 Case 10
                     If frmRoom.cmdPause(1).Visible = True Then
                         frmRoom.cmdPause_Click 1
@@ -673,6 +737,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmCall.vpengirim = 3
                     frmCall.Show
                     frmCall.Timer1.Enabled = True
+                Case 37
+                    End
                 Case 38
                     If frmRoom.txtSearch.text = "" Then
                         frmRoom.ScreenSaverAktif = 5
@@ -772,8 +838,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmRoom.ScreenSaverAktif = 0
                     frmRoom.PlayerTV
                 Case 5
-                    frmRoom.ScreenSaverAktif = 0
-                    frmRoom.chatbuka
+'                    frmRoom.ScreenSaverAktif = 0
+'                    frmRoom.chatbuka
                 Case 6
                     frmRoom.prcDVD
                 Case 7
@@ -817,7 +883,13 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmRoom.Maksimal
                     sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
                     frmRoom.vpointer = 1
-                    frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlemovie"
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlemovie"
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlemovies.swf"
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlemovies.swf"
+                    End If
                     frmRoom.txtSearch_Change
                     frmRoom.txtSearch.SelStart = 0
                     frmRoom.txtSearch.SelLength = Len(frmRoom.txtSearch.text)
@@ -827,7 +899,14 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmRoom.txtSearch.SetFocus
                     sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
                     frmRoom.vpointer = 2
-                    frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artistmovie"
+                    If frmUser.settingScreenResolution = "S-SD" Then
+                        frmRoom.flsTitle.Movie = App.Path + "\picture\anim\artistmovie"
+                    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                        '
+                    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                        '
+                    End If
+                    
                     frmRoom.txtSearch_Change
                     frmRoom.txtSearch.SelStart = 0
                     frmRoom.txtSearch.SelLength = Len(frmRoom.txtSearch.text)
@@ -839,6 +918,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmCall.vpengirim = 3
                     frmCall.Show
                     frmCall.Timer1.Enabled = True
+                Case 37
+                    End
                 Case 38
                     If frmRoom.txtSearch.text = "" Then
                         frmRoom.ScreenSaverAktif = 5
@@ -926,8 +1007,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmRoom.ScreenSaverAktif = 0
                     frmRoom.PlayerTV
                 Case 5
-                    frmRoom.ScreenSaverAktif = 0
-                    frmRoom.chatbuka
+'                    frmRoom.ScreenSaverAktif = 0
+'                    frmRoom.chatbuka
                 Case 10
                     SendKeys "{ENTER}"
                 Case 23
@@ -1031,6 +1112,8 @@ Public Function WndProc(ByVal hWnd As Long, ByVal uMsg As Long, _
                     frmWelcome.StartKaraoke
                 Case 26
                     frmWelcome.StartKaraoke
+                Case 37
+                    End
                 Case 55
                     frmWelcome.StartKaraoke
                 Case 64

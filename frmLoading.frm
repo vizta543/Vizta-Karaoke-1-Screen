@@ -45,7 +45,7 @@ Private Const SWP_NOSIZE = &H1
 Private Declare Function GetActiveWindow Lib "user32" () As Long
 Private Declare Function SetWindowPos Lib "user32" _
    (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, _
-    ByVal x As Long, ByVal Y As Long, ByVal cx As Long, _
+    ByVal x As Long, ByVal y As Long, ByVal cx As Long, _
     ByVal cy As Long, ByVal wFlags As Long) As Long
 
 Private Sub Form_Load()
@@ -54,12 +54,25 @@ Private Sub Form_Load()
     
     Dim lokasi As String
     lokasi = App.Path
+    
+    If frmUser.settingScreenResolution = "S-SD" Then
+        Skin1.LoadSkin lokasi + "\skin\sknloading.skn"
+        Skin1.ApplySkinByName hWnd, "sknloading"
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        Skin1.LoadSkin lokasi + "\skin\sknloading_hd.skn"
+        Skin1.ApplySkinByName hWnd, "sknloading"
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        Skin1.LoadSkin lokasi + "\skin\sknloading_fullhd.skn"
+        Skin1.ApplySkinByName hWnd, "sknloading"
+    End If
 
-    Skin1.LoadSkin lokasi + "\skin\sknloading.skn"
-    Skin1.ApplySkinByName hWnd, "sknloading"
+'    Skin1.LoadSkin lokasi + "\skin\sknloading.skn"
+'    Skin1.ApplySkinByName hWnd, "sknloading"
     SetWindowPos Me.hWnd, HWND_TOPMOST, 0, 0, 0, 0, _
     SWP_NOMOVE + SWP_NOSIZE
-    Me.Move (0 - Screen.Width)
+    
+'    Me.Move (0 - Screen.Width)
+    Me.Move 0, 0
     
     frmRoom.hotnon
     frmRoom.tmrAktif.Enabled = False

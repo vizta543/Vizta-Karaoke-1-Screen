@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "Flash8g.ocx"
+Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "Flash.ocx"
 Begin VB.Form frmPromo 
    BackColor       =   &H00FF0000&
    BorderStyle     =   0  'None
@@ -27,23 +27,25 @@ Begin VB.Form frmPromo
       Movie           =   "D:\Project\VOD\I-Sing\Source\potongan\main\logo.swf"
       Src             =   "D:\Project\VOD\I-Sing\Source\potongan\main\logo.swf"
       WMode           =   "Window"
-      Play            =   0   'False
-      Loop            =   -1  'True
+      Play            =   "0"
+      Loop            =   "-1"
       Quality         =   "High"
       SAlign          =   ""
-      Menu            =   -1  'True
+      Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
-      Scale           =   "NoScale"
-      DeviceFont      =   0   'False
-      EmbedMovie      =   0   'False
+      Scale           =   "ExactFit"
+      DeviceFont      =   "0"
+      EmbedMovie      =   "0"
       BGColor         =   ""
       SWRemote        =   ""
       MovieData       =   ""
-      SeamlessTabbing =   -1  'True
-      Profile         =   0   'False
+      SeamlessTabbing =   "1"
+      Profile         =   "0"
       ProfileAddress  =   ""
-      ProfilePort     =   0
+      ProfilePort     =   "0"
+      AllowNetworking =   "all"
+      AllowFullScreen =   "false"
    End
 End
 Attribute VB_Name = "frmPromo"
@@ -70,6 +72,13 @@ Private Sub Form_Load()
     
   On Error Resume Next
   
+      'added by Andi 22-01-2021
+    flsPromo.ScaleMode = 2
+    flsPromo.Width = Screen.Width
+    flsPromo.Height = Screen.Height
+    flsPromo.Visible = True
+    'added by Andi 22-01-2021
+  
   loadPromo
   
   Form2.Visible = False
@@ -89,7 +98,6 @@ Sub loadPromo()
   On Error Resume Next
   
   Dim promoAnimationPath As String
-  
   
   promoAnimationPath = frmRoom.promoAnimationCollection(frmRoom.promoAnimationCollectionCurrent)
   

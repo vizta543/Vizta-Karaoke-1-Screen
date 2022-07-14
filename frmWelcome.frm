@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "Flash8g.ocx"
+Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "flash.ocx"
 Begin VB.Form frmWelcome 
    Appearance      =   0  'Flat
    BackColor       =   &H80000005&
@@ -28,23 +28,25 @@ Begin VB.Form frmWelcome
       Movie           =   "D:\Project\VOD\Source\Source\potongan\Intro\tombol.swf"
       Src             =   "D:\Project\VOD\Source\Source\potongan\Intro\tombol.swf"
       WMode           =   "Window"
-      Play            =   0   'False
-      Loop            =   -1  'True
+      Play            =   "0"
+      Loop            =   "-1"
       Quality         =   "High"
       SAlign          =   ""
-      Menu            =   -1  'True
+      Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
       Scale           =   "NoScale"
-      DeviceFont      =   0   'False
-      EmbedMovie      =   0   'False
+      DeviceFont      =   "0"
+      EmbedMovie      =   "0"
       BGColor         =   ""
       SWRemote        =   ""
       MovieData       =   ""
-      SeamlessTabbing =   -1  'True
-      Profile         =   0   'False
+      SeamlessTabbing =   "1"
+      Profile         =   "0"
       ProfileAddress  =   ""
-      ProfilePort     =   0
+      ProfilePort     =   "0"
+      AllowNetworking =   "all"
+      AllowFullScreen =   "false"
    End
    Begin ShockwaveFlashObjectsCtl.ShockwaveFlash flsLogo 
       Height          =   3075
@@ -58,23 +60,25 @@ Begin VB.Form frmWelcome
       Movie           =   "c:\new.swf"
       Src             =   "c:\new.swf"
       WMode           =   "Window"
-      Play            =   0   'False
-      Loop            =   -1  'True
+      Play            =   "0"
+      Loop            =   "-1"
       Quality         =   "High"
       SAlign          =   ""
-      Menu            =   -1  'True
+      Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
       Scale           =   "NoScale"
-      DeviceFont      =   0   'False
-      EmbedMovie      =   0   'False
+      DeviceFont      =   "0"
+      EmbedMovie      =   "0"
       BGColor         =   ""
       SWRemote        =   ""
       MovieData       =   ""
-      SeamlessTabbing =   -1  'True
-      Profile         =   0   'False
+      SeamlessTabbing =   "1"
+      Profile         =   "0"
       ProfileAddress  =   ""
-      ProfilePort     =   0
+      ProfilePort     =   "0"
+      AllowNetworking =   "all"
+      AllowFullScreen =   "false"
    End
    Begin VB.TextBox Text1 
       Height          =   495
@@ -140,8 +144,9 @@ Private Sub Form_Load()
     
     flsLogo.Top = 0
     flsLogo.Left = 0
-    flsLogo.Width = Me.Width
-    flsLogo.Height = Me.Height
+    flsLogo.ScaleMode = 2
+    flsLogo.Width = Screen.Width
+    flsLogo.Height = Screen.Height
     
     frmRoom.Enabled = False
     
@@ -149,6 +154,16 @@ Private Sub Form_Load()
     lokasi = App.Path + "\Picture\intro\"
     flsLogo.Movie = lokasi + "intro.swf"
     flsTombol.Movie = lokasi + "tombol.swf"
+    
+    If frmUser.settingScreenResolution = "S-SD" Then
+        '
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        flsTombol.Top = 8500
+        flsTombol.Left = 13000
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        flsTombol.Left = 20000
+        flsTombol.Top = 13100
+    End If
     
     frmUser.Timer1.Enabled = False
     SetCursorPos Screen.Width, 0

@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{90F3D7B3-92E7-44BA-B444-6A8E2A3BC375}#1.0#0"; "actskin4.ocx"
-Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "Flash.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "Mscomctl.ocx"
+Object = "{D27CDB6B-AE6D-11CF-96B8-444553540000}#1.0#0"; "flash.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.ocx"
 Object = "{48B1464F-F357-11D7-B2E7-00001C56B9BE}#1.0#0"; "CoolButton.ocx"
 Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
 Object = "{35FD49A8-724D-430C-A6E4-7FE74EE95312}#4.21#0"; "UniBox210.ocx"
@@ -26,7 +26,6 @@ Begin VB.Form frmRoom
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
-   Icon            =   "frmRoom.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -36,38 +35,148 @@ Begin VB.Form frmRoom
    ScaleWidth      =   15360
    ShowInTaskbar   =   0   'False
    Visible         =   0   'False
-   Begin VB.Timer tmrNonVocalML1 
+   Begin ACTIVESKINLibCtl.Skin Skin1 
+      Left            =   8040
+      OleObjectBlob   =   "frmRoom.frx":0000
+      Top             =   240
+   End
+   Begin VB.PictureBox picKeyTempo 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   1100
+      Left            =   2640
+      Picture         =   "frmRoom.frx":0234
+      ScaleHeight     =   1095
+      ScaleWidth      =   9555
+      TabIndex        =   70
+      Top             =   7920
+      Visible         =   0   'False
+      Width           =   9555
+      Begin VB.Timer tmrPicKeyTempo 
+         Enabled         =   0   'False
+         Interval        =   3000
+         Left            =   5040
+         Top             =   120
+      End
+      Begin VB.Image KotakKurang 
+         Height          =   405
+         Index           =   4
+         Left            =   2670
+         Picture         =   "frmRoom.frx":D634
+         Top             =   480
+         Width           =   480
+      End
+      Begin VB.Image KotakKurang 
+         Height          =   405
+         Index           =   3
+         Left            =   3090
+         Picture         =   "frmRoom.frx":E096
+         Top             =   480
+         Width           =   480
+      End
+      Begin VB.Image KotakKurang 
+         Height          =   405
+         Index           =   2
+         Left            =   3510
+         Picture         =   "frmRoom.frx":EAF8
+         Top             =   480
+         Width           =   480
+      End
+      Begin VB.Image KotakKurang 
+         Height          =   405
+         Index           =   1
+         Left            =   3945
+         Picture         =   "frmRoom.frx":F55A
+         Top             =   480
+         Width           =   480
+      End
+      Begin VB.Image KotakKurang 
+         Height          =   405
+         Index           =   0
+         Left            =   4380
+         Picture         =   "frmRoom.frx":FFBC
+         Top             =   480
+         Width           =   480
+      End
+      Begin VB.Image KotakTambah 
+         Height          =   390
+         Index           =   4
+         Left            =   7635
+         Picture         =   "frmRoom.frx":12797
+         Top             =   480
+         Width           =   465
+      End
+      Begin VB.Image KotakTambah 
+         Height          =   390
+         Index           =   3
+         Left            =   7200
+         Picture         =   "frmRoom.frx":14F4C
+         Top             =   480
+         Width           =   465
+      End
+      Begin VB.Image KotakTambah 
+         Height          =   390
+         Index           =   2
+         Left            =   6795
+         Picture         =   "frmRoom.frx":1594E
+         Top             =   480
+         Width           =   465
+      End
+      Begin VB.Image KotakTambah 
+         Height          =   390
+         Index           =   1
+         Left            =   6360
+         Picture         =   "frmRoom.frx":16350
+         Top             =   480
+         Width           =   465
+      End
+      Begin VB.Image KotakTambah 
+         Height          =   390
+         Index           =   0
+         Left            =   5880
+         Picture         =   "frmRoom.frx":16D52
+         Top             =   480
+         Width           =   465
+      End
+   End
+   Begin VB.Timer tmrSong 
+      Left            =   2160
+      Top             =   4320
+   End
+   Begin VB.Timer tmrNonVocalMR2 
+      Enabled         =   0   'False
+      Left            =   1680
+      Top             =   4560
+   End
+   Begin VB.Timer tmrNonVocalML2 
+      Enabled         =   0   'False
+      Left            =   1320
+      Top             =   4560
+   End
+   Begin VB.Timer tmrVokal2 
+      Enabled         =   0   'False
+      Left            =   960
+      Top             =   4560
+   End
+   Begin VB.Timer tmrVokal1 
       Enabled         =   0   'False
       Interval        =   50
-      Left            =   1440
+      Left            =   1680
       Top             =   4200
    End
    Begin VB.Timer tmrNonVocalMR1 
       Enabled         =   0   'False
       Interval        =   50
-      Left            =   1800
+      Left            =   1320
       Top             =   4200
    End
-   Begin VB.Timer tmrVokal1 
+   Begin VB.Timer tmrNonVocalML1 
       Enabled         =   0   'False
       Interval        =   50
-      Left            =   2160
+      Left            =   960
       Top             =   4200
-   End
-   Begin VB.Timer tmrVokal2 
-      Enabled         =   0   'False
-      Left            =   1440
-      Top             =   4560
-   End
-   Begin VB.Timer tmrNonVocalML2 
-      Enabled         =   0   'False
-      Left            =   1800
-      Top             =   4560
-   End
-   Begin VB.Timer tmrNonVocalMR2 
-      Enabled         =   0   'False
-      Left            =   2160
-      Top             =   4560
    End
    Begin VB.TextBox txtRemoteCode 
       Alignment       =   2  'Center
@@ -87,7 +196,7 @@ Begin VB.Form frmRoom
       Height          =   285
       Left            =   13410
       Locked          =   -1  'True
-      TabIndex        =   67
+      TabIndex        =   66
       TabStop         =   0   'False
       Text            =   "123456"
       Top             =   720
@@ -111,7 +220,7 @@ Begin VB.Form frmRoom
       Height          =   330
       Left            =   4920
       Locked          =   -1  'True
-      TabIndex        =   66
+      TabIndex        =   65
       Top             =   11160
       Width           =   6975
    End
@@ -202,107 +311,6 @@ Begin VB.Form frmRoom
          Strikethrough   =   0   'False
       EndProperty
       NumItems        =   0
-   End
-   Begin VB.PictureBox picKeyTempo 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   1100
-      Left            =   3960
-      Picture         =   "frmRoom.frx":000C
-      ScaleHeight     =   1095
-      ScaleWidth      =   9555
-      TabIndex        =   65
-      Top             =   8040
-      Visible         =   0   'False
-      Width           =   9555
-      Begin VB.Timer tmrPicKeyTempo 
-         Enabled         =   0   'False
-         Interval        =   3000
-         Left            =   5040
-         Top             =   120
-      End
-      Begin VB.Image KotakTambah 
-         Height          =   390
-         Index           =   0
-         Left            =   5880
-         Picture         =   "frmRoom.frx":D40C
-         Top             =   480
-         Width           =   465
-      End
-      Begin VB.Image KotakTambah 
-         Height          =   390
-         Index           =   1
-         Left            =   6360
-         Picture         =   "frmRoom.frx":FBC1
-         Top             =   480
-         Width           =   465
-      End
-      Begin VB.Image KotakTambah 
-         Height          =   390
-         Index           =   2
-         Left            =   6795
-         Picture         =   "frmRoom.frx":105C3
-         Top             =   480
-         Width           =   465
-      End
-      Begin VB.Image KotakTambah 
-         Height          =   390
-         Index           =   3
-         Left            =   7200
-         Picture         =   "frmRoom.frx":10FC5
-         Top             =   480
-         Width           =   465
-      End
-      Begin VB.Image KotakTambah 
-         Height          =   390
-         Index           =   4
-         Left            =   7635
-         Picture         =   "frmRoom.frx":119C7
-         Top             =   480
-         Width           =   465
-      End
-      Begin VB.Image KotakKurang 
-         Height          =   405
-         Index           =   0
-         Left            =   4380
-         Picture         =   "frmRoom.frx":1417C
-         Top             =   480
-         Width           =   480
-      End
-      Begin VB.Image KotakKurang 
-         Height          =   405
-         Index           =   1
-         Left            =   3945
-         Picture         =   "frmRoom.frx":16957
-         Top             =   480
-         Width           =   480
-      End
-      Begin VB.Image KotakKurang 
-         Height          =   405
-         Index           =   2
-         Left            =   3510
-         Picture         =   "frmRoom.frx":173B9
-         Top             =   480
-         Width           =   480
-      End
-      Begin VB.Image KotakKurang 
-         Height          =   405
-         Index           =   3
-         Left            =   3090
-         Picture         =   "frmRoom.frx":17E1B
-         Top             =   480
-         Width           =   480
-      End
-      Begin VB.Image KotakKurang 
-         Height          =   405
-         Index           =   4
-         Left            =   2670
-         Picture         =   "frmRoom.frx":1887D
-         Top             =   480
-         Width           =   480
-      End
    End
    Begin VB.TextBox txtVol 
       Alignment       =   2  'Center
@@ -532,7 +540,7 @@ Begin VB.Form frmRoom
       Icons           =   "<None>"
       SmallIcons      =   "<None>"
       ColumnHeaderIcons=   "<None>"
-      ColumnHeaders   =   "frmRoom.frx":192DF
+      ColumnHeaders   =   "frmRoom.frx":19507
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   14.25
@@ -639,7 +647,6 @@ Begin VB.Form frmRoom
       EndProperty
       Height          =   585
       Left            =   12960
-      Picture         =   "frmRoom.frx":19337
       ScaleHeight     =   585
       ScaleWidth      =   2280
       TabIndex        =   41
@@ -792,7 +799,6 @@ Begin VB.Form frmRoom
       EndProperty
       Height          =   400
       Left            =   6360
-      Picture         =   "frmRoom.frx":1C98D
       ScaleHeight     =   405
       ScaleWidth      =   3255
       TabIndex        =   43
@@ -851,7 +857,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":2163C
+         MICON           =   "frmRoom.frx":1955F
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -929,7 +935,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":21658
+         MICON           =   "frmRoom.frx":1957B
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -967,7 +973,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":21674
+         MICON           =   "frmRoom.frx":19597
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1049,7 +1055,6 @@ Begin VB.Form frmRoom
       EndProperty
       Height          =   585
       Left            =   12960
-      Picture         =   "frmRoom.frx":21690
       ScaleHeight     =   585
       ScaleWidth      =   2400
       TabIndex        =   42
@@ -1269,11 +1274,6 @@ Begin VB.Form frmRoom
       Visible         =   0   'False
       Width           =   1335
    End
-   Begin ACTIVESKINLibCtl.Skin Skin1 
-      Left            =   5520
-      OleObjectBlob   =   "frmRoom.frx":26105
-      Top             =   0
-   End
    Begin VB.Timer Timer4 
       Enabled         =   0   'False
       Interval        =   4
@@ -1404,7 +1404,7 @@ Begin VB.Form frmRoom
       Menu            =   "-1"
       Base            =   ""
       AllowScriptAccess=   "always"
-      Scale           =   "NoScale"
+      Scale           =   "ExactFit"
       DeviceFont      =   "0"
       EmbedMovie      =   "0"
       BGColor         =   ""
@@ -1431,9 +1431,7 @@ Begin VB.Form frmRoom
       EndProperty
       ForeColor       =   &H00022993&
       Height          =   360
-      ItemData        =   "frmRoom.frx":26339
       Left            =   480
-      List            =   "frmRoom.frx":26340
       OLEDragMode     =   1  'Automatic
       Style           =   2  'Dropdown List
       TabIndex        =   3
@@ -1555,7 +1553,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":26349
+         MICON           =   "frmRoom.frx":195B3
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1594,7 +1592,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":26365
+         MICON           =   "frmRoom.frx":195CF
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1633,7 +1631,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":26381
+         MICON           =   "frmRoom.frx":195EB
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1645,7 +1643,7 @@ Begin VB.Form frmRoom
       End
       Begin CoolButton.Button cmdPause 
          Height          =   735
-         Index           =   0
+         Index           =   2
          Left            =   360
          TabIndex        =   11
          TabStop         =   0   'False
@@ -1673,7 +1671,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":2639D
+         MICON           =   "frmRoom.frx":19607
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1712,7 +1710,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":263B9
+         MICON           =   "frmRoom.frx":19623
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1751,7 +1749,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":263D5
+         MICON           =   "frmRoom.frx":1963F
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1790,7 +1788,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":263F1
+         MICON           =   "frmRoom.frx":1965B
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1802,7 +1800,7 @@ Begin VB.Form frmRoom
       End
       Begin CoolButton.Button cmdPause 
          Height          =   735
-         Index           =   1
+         Index           =   3
          Left            =   1320
          TabIndex        =   15
          TabStop         =   0   'False
@@ -1831,7 +1829,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":2640D
+         MICON           =   "frmRoom.frx":19677
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1893,7 +1891,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":26429
+         MICON           =   "frmRoom.frx":19693
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1932,7 +1930,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":26445
+         MICON           =   "frmRoom.frx":196AF
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1972,7 +1970,7 @@ Begin VB.Form frmRoom
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmRoom.frx":26461
+         MICON           =   "frmRoom.frx":196CB
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -2013,7 +2011,7 @@ Begin VB.Form frmRoom
       FCOLO           =   0
       MCOL            =   12632256
       MPTR            =   1
-      MICON           =   "frmRoom.frx":2647D
+      MICON           =   "frmRoom.frx":196E7
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -2046,6 +2044,204 @@ Begin VB.Form frmRoom
       _Version        =   393216
       Protocol        =   1
       LocalPort       =   65534
+   End
+   Begin CoolButton.Button cmdPause 
+      Height          =   255
+      Index           =   0
+      Left            =   5880
+      TabIndex        =   67
+      Top             =   4680
+      Width           =   1335
+      _ExtentX        =   2355
+      _ExtentY        =   450
+      BTYPE           =   2
+      TX              =   "Button1"
+      ENAB            =   -1  'True
+      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      COLTYPE         =   1
+      FOCUSR          =   -1  'True
+      BCOL            =   15790320
+      BCOLO           =   15790320
+      FCOL            =   0
+      FCOLO           =   0
+      MCOL            =   12632256
+      MPTR            =   1
+      MICON           =   "frmRoom.frx":19703
+      UMCOL           =   -1  'True
+      SOFT            =   0   'False
+      PICPOS          =   0
+      NGREY           =   0   'False
+      FX              =   0
+      HAND            =   0   'False
+      CHECK           =   0   'False
+      VALUE           =   0   'False
+   End
+   Begin CoolButton.Button cmdPause 
+      Height          =   255
+      Index           =   1
+      Left            =   7320
+      TabIndex        =   68
+      Top             =   4680
+      Visible         =   0   'False
+      Width           =   1455
+      _ExtentX        =   2566
+      _ExtentY        =   450
+      BTYPE           =   2
+      TX              =   "Button1"
+      ENAB            =   -1  'True
+      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      COLTYPE         =   1
+      FOCUSR          =   -1  'True
+      BCOL            =   15790320
+      BCOLO           =   15790320
+      FCOL            =   0
+      FCOLO           =   0
+      MCOL            =   12632256
+      MPTR            =   1
+      MICON           =   "frmRoom.frx":1971F
+      UMCOL           =   -1  'True
+      SOFT            =   0   'False
+      PICPOS          =   0
+      NGREY           =   0   'False
+      FX              =   0
+      HAND            =   0   'False
+      CHECK           =   0   'False
+      VALUE           =   0   'False
+   End
+   Begin VB.Image KotakKurang1 
+      Height          =   405
+      Index           =   4
+      Left            =   5280
+      Picture         =   "frmRoom.frx":1973B
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.Image KotakKurang1 
+      Height          =   405
+      Index           =   3
+      Left            =   5700
+      Picture         =   "frmRoom.frx":1A19D
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.Image KotakKurang1 
+      Height          =   405
+      Index           =   2
+      Left            =   6120
+      Picture         =   "frmRoom.frx":1ABFF
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.Image KotakKurang1 
+      Height          =   405
+      Index           =   1
+      Left            =   6555
+      Picture         =   "frmRoom.frx":1B661
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.Image KotakKurang1 
+      Height          =   405
+      Index           =   0
+      Left            =   6990
+      Picture         =   "frmRoom.frx":1C0C3
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.Image KotakTambah1 
+      Height          =   390
+      Index           =   4
+      Left            =   10245
+      Picture         =   "frmRoom.frx":1E89E
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   465
+   End
+   Begin VB.Image KotakTambah1 
+      Height          =   390
+      Index           =   3
+      Left            =   9810
+      Picture         =   "frmRoom.frx":21053
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   465
+   End
+   Begin VB.Image KotakTambah1 
+      Height          =   390
+      Index           =   2
+      Left            =   9405
+      Picture         =   "frmRoom.frx":21A55
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   465
+   End
+   Begin VB.Image KotakTambah1 
+      Height          =   390
+      Index           =   1
+      Left            =   9000
+      Picture         =   "frmRoom.frx":22457
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   465
+   End
+   Begin VB.Image KotakTambah1 
+      Height          =   390
+      Index           =   0
+      Left            =   8520
+      Picture         =   "frmRoom.frx":22E59
+      Top             =   9480
+      Visible         =   0   'False
+      Width           =   465
+   End
+   Begin VB.Image Image1 
+      Height          =   1095
+      Left            =   2640
+      Stretch         =   -1  'True
+      Top             =   9240
+      Visible         =   0   'False
+      Width           =   9555
+   End
+   Begin VB.Label lblTmrSong 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
+      Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   20.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF00FF&
+      Height          =   735
+      Left            =   2640
+      TabIndex        =   69
+      Top             =   4320
+      Visible         =   0   'False
+      Width           =   2415
    End
    Begin VB.Label Label4 
       BackColor       =   &H000000FF&
@@ -2110,7 +2306,15 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+
 Dim fso As New Scripting.FileSystemObject
+
+'added by Andi 21-06-2022
+Const RunningTimeSong As Integer = 120
+Public functionName As String
+Dim sqlnih, SQLP As String
+Dim myrsnih, MyRsP As MYSQL_RS
+'added by Andi 21-06-2022
 
 'TRANSPARAN FORM
     Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" ( _
@@ -2178,7 +2382,8 @@ Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 
     Private Declare Function FindClose Lib "kernel32" _
        (ByVal hFindFile As Long) As Long
-'--------------------------------
+       
+'----------------------------------------------------------------------------------
 
     Private Declare Function Inp Lib "inpout32.dll" _
     Alias "Inp32" (ByVal PortAddress As Integer) As Integer
@@ -2245,8 +2450,8 @@ Dim vVocal As Integer 'vokalnya 0,1=ML 2,3=MR 4=ST
 
 Public vExtensi As Boolean ' added by Andi 17-12-2020
 Public vMPG As Boolean 'added by Andi 09-01-2021
-
-'Dim vExtensi As Boolean ' added by Andi 17-12-2020
+Public IDMusic As Long 'added by Andi 08-06-2022
+Public buttonStopPressed As Boolean 'added by Andi 08-06-2022
 
 Public vVocalterus As Boolean
 Dim vVolvocal As Integer 'repeating timer sampe berapa detik
@@ -2283,6 +2488,8 @@ Public promoAnimationCollection As Collection
 Public promoAnimationCollectionCurrent As Long
 
 Private lastInputTick As Long
+
+Public selectedPlaylist As String
 
 Public Function FileExists(sSource As String) As Boolean
 
@@ -2502,7 +2709,7 @@ Public Sub cmdDown_Click()
 
 
         lstPlaylist.ListItems.Remove (lstPlaylist.selectedItem.index)
-
+        
         savePlayList
 
         ClientRemotePlaylist
@@ -2546,12 +2753,14 @@ Public Sub cmdPause_Click(index As Integer)
        frmVideo.WindowsMediaPlayer1.Controls.pause
        cmdPause(0).Visible = False
        cmdPause(1).Visible = True
+       tmrSong.Enabled = False
     End If
     'Play Again
     If index = 1 Then
        frmVideo.WindowsMediaPlayer1.Controls.play
        cmdPause(0).Visible = True
        cmdPause(1).Visible = False
+       tmrSong.Enabled = True
     End If
 End Sub
 
@@ -2560,11 +2769,11 @@ Public Sub cmdPlay_Click()
     On Error Resume Next
 
     Dim i As Integer
-
+    
     If vpbBlackBox = 2 Then
       frmUser.turnDiscoLampOn
     End If
-
+    
     If PlaySong = True Then
         waktuhabis
         tmrVokal.Enabled = False
@@ -2591,12 +2800,16 @@ Public Sub cmdPlay_Click()
                     If vrekamstate = True Then
                         btnRecStop_Click
                     End If
-
+                
                     PlayLstPlaylist
                     i = lstPlaylist.selectedItem.index
                         lErr = LockWindowUpdate(lstPlaylist.hWnd)
+                        deleteReorderPlayListDatabase (i)
                         lstPlaylist.ListItems.Remove (i)
-                        savePlayList
+'                        savePlayList
+'                    IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+'                    deleteReorderPlayListDatabase (IDMusic)
+'                    lstPlaylist.ListItems.Remove (1)
                     If i > 1 Or lstPlaylist.ListItems.Count > 0 Then
                         lstPlaylist.selectedItem.Selected = True
                     End If
@@ -2617,8 +2830,12 @@ Public Sub cmdPlay_Click()
                     PlayLstPlaylist
                     i = lstPlaylist.selectedItem.index
                     lErr = LockWindowUpdate(lstPlaylist.hWnd)
+                    deleteReorderPlayListDatabase (lstPlaylist.selectedItem.index)
                     lstPlaylist.ListItems.Remove (lstPlaylist.selectedItem.index)
-                    savePlayList
+'                    savePlayList
+'                    IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+'                    deleteReorderPlayListDatabase (IDMusic)
+'                    lstPlaylist.ListItems.Remove (1)
                     If i > 1 Or lstPlaylist.ListItems.Count > 0 Then
                         lstPlaylist.selectedItem.Selected = True
                     End If
@@ -2629,7 +2846,6 @@ Public Sub cmdPlay_Click()
     End If
 
     ClientRemotePlaylist
-
 
 lblEnd:
 
@@ -2679,16 +2895,18 @@ Public Sub cmdRequest_Click()
                 LV.SubItems(1) = lstAll.ListItems(selIndex).SubItems(2)
             End If
 
-            LV.SubItems(2) = lstAll.ListItems(selIndex).SubItems(3)
+            LV.SubItems(2) = lstAll.ListItems(selIndex).SubItems(3) ' IDMUSIC
             LV.SubItems(3) = lstAll.ListItems(selIndex).SubItems(4)
             LV.SubItems(4) = lstAll.ListItems(selIndex).SubItems(5)
             LV.SubItems(5) = lstAll.ListItems(selIndex).SubItems(6)
 
             DoEvents
+            
+            savePlayListDatabase (LV.SubItems(2))
 
-
-            savePlayList
+'            savePlayList
         End If
+        
         txtNextSong.text = lstPlaylist.ListItems.Item(1)
 
         ClientRemotePlaylist
@@ -2778,7 +2996,7 @@ Public Sub CariKategori()
     lstPlaylist.Visible = False
     lstAll.Visible = True
 
-        CariTitle
+    CariTitle
 
     txtCategory.text = cbokategori.text
 
@@ -2812,7 +3030,6 @@ Public Sub cmdStop_Click()
       End If
     End If
 
-
     If Not (vVideoAktif) Then
         Unload frmVideo
         Exit Sub
@@ -2820,15 +3037,44 @@ Public Sub cmdStop_Click()
 
     vKey = 0
     vTempo = 0
-
+    
+    buttonStopPressed = True
+    
     tmrVokal.Enabled = False
     If vpbBlackBox = 2 Then
         frmUser.turnDiscoLampOff
     End If
+    
+'    If frmUser.settingMirrorBall = 1 Then
+'        If vpbBlackBox = 2 Then
+'            frmUser.turnDiscoLampOn
+'        End If
+'    Else
+'            frmUser.turnDiscoLampOff
+'    End If
+    
+    'added by Andi 21-06-2022
+    tmrSong.Enabled = False
+    tmrSong.Interval = 0
+    lblTmrSong.Caption = ""
+    'added by Andi 21-06-2022
+
+        
     If lstPlaylist.ListItems.Count = 0 Then
         tmrVokal.Enabled = False
         tmrNonVocalML.Enabled = False
         tmrNonVocalMR.Enabled = False
+        
+        'added by Andi 21-4-2021
+        tmrVokal1.Enabled = False
+        tmrNonVocalML1.Enabled = False
+        tmrNonVocalMR1.Enabled = False
+        
+        tmrVokal2.Enabled = False
+        tmrNonVocalML2.Enabled = False
+        tmrNonVocalMR2.Enabled = False
+        'added by Andi 21-4-2021
+        
         frmVideo.WindowsMediaPlayer1.URL = ""
         frmVideo.WindowsMediaPlayer1.Controls.stop
         Unload frmVideo
@@ -2845,6 +3091,17 @@ Public Sub cmdStop_Click()
         tmrVokal.Enabled = False
         tmrNonVocalML.Enabled = False
         tmrNonVocalMR.Enabled = False
+        
+        'added by Andi 21-4-2021
+        tmrVokal1.Enabled = False
+        tmrNonVocalML1.Enabled = False
+        tmrNonVocalMR1.Enabled = False
+        
+        tmrVokal2.Enabled = False
+        tmrNonVocalML2.Enabled = False
+        tmrNonVocalMR2.Enabled = False
+        'added by Andi 21-4-2021
+        
         frmVideo.WindowsMediaPlayer1.URL = ""
         frmVideo.WindowsMediaPlayer1.Controls.stop
         Unload frmVideo
@@ -2855,86 +3112,98 @@ Public Sub cmdStop_Click()
         End If
         frmTransparent.Show
         frmRoom.Show
+        
+'        If frmUser.settingMirrorBall = 1 Then
+'            If vpbBlackBox = 2 Then frmUser.turnDiscoLampOn
+'        Else
+'            vpbBlackBox = 2
+'            frmUser.turnDiscoLampOff
+'        End If
+            
         If vpbBlackBox = 2 Then
             frmUser.turnDiscoLampOn
         End If
+        
         txtPlaying.text = lstPlaylist.ListItems.Item(1) + " - " + lstPlaylist.ListItems.Item(1).SubItems(1)
+        
         If lstPlaylist.ListItems.Count > 0 Then
             lErr = LockWindowUpdate(lstPlaylist.hWnd)
+            IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+            deleteReorderPlayListDatabase (IDMusic)
             lstPlaylist.ListItems.Remove (1)
-            savePlayList
+'            savePlayList
             ShowScrollBar lstPlaylist.hWnd, SB_VERT, False
             lErr = LockWindowUpdate(0)
         End If
     End If
+    
     If lstPlaylist.ListItems.Count = 0 Then
         txtNextSong.text = "NO SONG"
     Else
         txtNextSong.text = lstPlaylist.ListItems.Item(1)
     End If
 
-       If vrekamstate = True Then
-            btnRecStop_Click
-       End If
+    If vrekamstate = True Then
+         btnRecStop_Click
+    End If
 
     '===FOCUS POINTER
-       If vpbFrmCountry = True Then
-            frmCountry.lstCountry.SetFocus
-        ElseIf vpbFrmCategory = True Then
-            frmCategory.Text1.SetFocus
-        ElseIf vpbFrmConfirmasi = True Then
-            frmConfirmasi.Text2.SetFocus
-        ElseIf vpbFrmCall = True Then
-            frmCall.txtPesan.SetFocus
-        ElseIf vpbfrmTambahJam = True Then
-            frmTambahJam.Text1.SetFocus
-        ElseIf vpbfrmSaran = True Then
-            frmSaran.txtPesan.SetFocus
-        ElseIf vpbfrmNew = True Then
-            frmNew.lstTop.SetFocus
-        ElseIf vpbfrmPopuler = True Then
-            frmPopuler.lstTop.SetFocus
-        ElseIf vpbfrmAbout = True Then
-            frmabout.flsLogo.SetFocus
-        ElseIf vpbfrmHelp = True Then
-            frmHelp.flsLogo.SetFocus
-        ElseIf vpbfrmVocal = True Then
-            frmVocal.Text1.SetFocus
-        Else
-            If (frmRoom.vVideo = 0) Then
-                Form2.Show
-                frmTransparent.Show
-                If (frmRoom.vpointer = 1) Or (frmRoom.vpointer = 2) Or (frmRoom.vpointer = 6) Then
-                    sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
-                ElseIf frmRoom.vpointer = 3 Then
-                    frmRoom.lstPlaylist.Visible = True
-                    frmRoom.lstAll.Visible = False
-                    frmRoom.lstPlaylist.SetFocus
-                End If
-            ElseIf vVideo = 5 Then
-                Form2.Show
-                frmTransparent.Show
-                If (frmRoom.vpointer = 1) Or (frmRoom.vpointer = 2) Or (frmRoom.vpointer = 6) Then
-                    sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
-                ElseIf frmRoom.vpointer = 3 Then
-                    frmRoom.lstPlaylist.Visible = True
-                    frmRoom.lstAll.Visible = False
-                    frmRoom.lstPlaylist.SetFocus
-                End If
-            ElseIf vVideo = 3 Then
-                sMakeCaret frmRoom.txtChat, frmRoom.caretLebar, frmRoom.caretTinggi
-            ElseIf vVideo = 7 Then  'TV
-                lstTV.SetFocus
-            End If
-        End If
+    If vpbFrmCountry = True Then
+         frmCountry.lstCountry.SetFocus
+     ElseIf vpbFrmCategory = True Then
+         frmCategory.Text1.SetFocus
+     ElseIf vpbFrmConfirmasi = True Then
+         frmConfirmasi.Text2.SetFocus
+     ElseIf vpbFrmCall = True Then
+         frmCall.txtPesan.SetFocus
+     ElseIf vpbfrmTambahJam = True Then
+         frmTambahJam.Text1.SetFocus
+     ElseIf vpbfrmSaran = True Then
+         frmSaran.txtPesan.SetFocus
+     ElseIf vpbfrmNew = True Then
+         frmNew.lstTop.SetFocus
+     ElseIf vpbfrmPopuler = True Then
+         frmPopuler.lstTop.SetFocus
+     ElseIf vpbfrmAbout = True Then
+         frmabout.flsLogo.SetFocus
+     ElseIf vpbfrmHelp = True Then
+         frmHelp.flsLogo.SetFocus
+     ElseIf vpbfrmVocal = True Then
+         frmVocal.Text1.SetFocus
+     Else
+         If (frmRoom.vVideo = 0) Then
+             Form2.Show
+             frmTransparent.Show
+             If (frmRoom.vpointer = 1) Or (frmRoom.vpointer = 2) Or (frmRoom.vpointer = 6) Then
+                 sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
+             ElseIf frmRoom.vpointer = 3 Then
+                 frmRoom.lstPlaylist.Visible = True
+                 frmRoom.lstAll.Visible = False
+                 frmRoom.lstPlaylist.SetFocus
+             End If
+         ElseIf vVideo = 5 Then
+             Form2.Show
+             frmTransparent.Show
+             If (frmRoom.vpointer = 1) Or (frmRoom.vpointer = 2) Or (frmRoom.vpointer = 6) Then
+                 sMakeCaret frmRoom.txtSearch, frmRoom.caretLebar, frmRoom.caretTinggi
+             ElseIf frmRoom.vpointer = 3 Then
+                 frmRoom.lstPlaylist.Visible = True
+                 frmRoom.lstAll.Visible = False
+                 frmRoom.lstPlaylist.SetFocus
+             End If
+         ElseIf vVideo = 3 Then
+             sMakeCaret frmRoom.txtChat, frmRoom.caretLebar, frmRoom.caretTinggi
+         ElseIf vVideo = 7 Then  'TV
+             lstTV.SetFocus
+         End If
+     End If
 
-        LockRoom
-        vtetapfokus = 0
+    LockRoom
+    vtetapfokus = 0
 
     waktuhabis
 
     ClientRemotePlaylist
-
 
     If Err.Number <> 0 Then
       LogError Name, "cmdStop_Click"
@@ -2951,20 +3220,20 @@ Public Sub cmdUp_Click()
     Dim Path As String
     Dim analog As String
     Dim vol As String
-    Dim idMusic As String
+    Dim IDMusic As String
     Dim li As ListItem
 
     selectedIndex = lstPlaylist.selectedItem.index
 
 
-    If selectedIndex = 1 Then
+    If selectedIndex <> 1 Then
 
-        Set lstPlaylist.DropHighlight = lstPlaylist.selectedItem
-    Else
+'        Set lstPlaylist.DropHighlight = lstPlaylist.selectedItem
+'    Else
 
         title = lstPlaylist.ListItems(selectedIndex).text
         singer = lstPlaylist.ListItems(selectedIndex).ListSubItems(1).text
-        idMusic = lstPlaylist.ListItems(selectedIndex).ListSubItems(2).text
+        IDMusic = lstPlaylist.ListItems(selectedIndex).ListSubItems(2).text
         Path = lstPlaylist.ListItems(selectedIndex).ListSubItems(3).text
         analog = lstPlaylist.ListItems(selectedIndex).ListSubItems(4).text
         vol = lstPlaylist.ListItems(selectedIndex).ListSubItems(5).text
@@ -2973,7 +3242,7 @@ Public Sub cmdUp_Click()
 
         Set li = lstPlaylist.ListItems.add(selectedIndex - 1, , title)
         li.SubItems(1) = singer
-        li.SubItems(2) = idMusic
+        li.SubItems(2) = IDMusic
         li.SubItems(3) = Path
         li.SubItems(4) = analog
         li.SubItems(5) = vol
@@ -2984,7 +3253,9 @@ Public Sub cmdUp_Click()
         DoEvents
 
 
-        savePlayList
+'        savePlayList
+
+        priorityPlayListDatabase (IDMusic)
 
         ClientRemotePlaylist
     End If
@@ -3047,7 +3318,7 @@ Private Sub Form_Load()
     Dim a As Long
     Dim b As Long
     Dim c As Long
-    Dim idMusic As String
+    Dim IDMusic As String
     Dim promoDirectory As String
     Dim promoImagePath As String
     Dim promoAnimationPath As String
@@ -3056,7 +3327,14 @@ Private Sub Form_Load()
     
     vExtensi = False 'added by Andi 21-12-2020
     vMPG = False 'added by Andi 09-01-2021
-
+    Picture1.Visible = False 'added by Andi 22-01-2021
+    
+    'added by Andi 21-06-2022
+    tmrSong.Enabled = False
+    functionName = ""
+    lblTmrSong.Caption = 0
+    'added by Andi 21-06-2022
+    
     ScoreSetup = True
     x = GetComputerName(ComName, 255)
     VnamaKom = Trim(ComName)
@@ -3093,7 +3371,7 @@ Private Sub Form_Load()
 
     VcboOnclick = True
     Tstart = Time
-
+    
     'tampil
     lstAll.Visible = True
     txtDate.text = Date
@@ -3108,7 +3386,7 @@ Private Sub Form_Load()
     SetWindowLong Me.hWnd, GWL_EXSTYLE, GetWindowLong(Me.hWnd, GWL_EXSTYLE) Or WS_EX_LAYERED
     SetLayeredWindowAttributes Me.hWnd, &H244C&, 0&, LWA_COLORKEY
     
-     'edited by Andi 22-01-2021
+    'edited by Andi 22-01-2021
     If frmUser.settingScreenResolution = "S-FULLHD" Then
         Me.Width = 1920 * Screen.TwipsPerPixelX
         Me.Height = 1080 * Screen.TwipsPerPixelY
@@ -3132,24 +3410,32 @@ Private Sub Form_Load()
 
     lokasi = App.Path
 '    Skin1.LoadSkin lokasi + "\skin\main.skn"
-'    Skin1.ApplySkinByName hWnd, "MainFormMask"
-
+'    Skin1.ApplySkinByName hWnd, "MainFormM"
     flsLogo.Movie = lokasi + "\picture\normalscreen\mainmin"
+    flsLogo.ScaleMode = 1
     PlaySong = False
     login = False
     Me.Move (0 - Screen.Width), 0 'Move Form to Monitor
-    hot ' hotkey remote
+    hot
     '-------------------------------------------------------------------------
     lstAll.Enabled = True
     'lstAll.Picture = LoadPicture(lokasi + "\picture\normalscreen\songlist.jpg")
 
     lErr = LockWindowUpdate(0)
 
-    tampil 'structure ListView
+    tampil
     midilist
 
-    screennormal
-
+    'edited by Andi 07-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        screennormal
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        screennormalHD
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        screennormalFullHD
+    End If
+    'edited by Andi 07-01-2021
+    
     '----playlist midi
     'midilist
     lstMidi.Visible = False
@@ -3164,7 +3450,7 @@ Private Sub Form_Load()
 
     Dim sqlt As String
     Dim MyRst As MYSQL_RS
-    sqlt = "SELECT TYPE, TYPENAME FROM kategori ORDER BY TYPE" 'Get Kategori
+    sqlt = "SELECT TYPE, TYPENAME FROM kategori ORDER BY TYPE"
     Set MyRst = MyConn.Execute(sqlt)
 
     cbokategori.Clear
@@ -3212,7 +3498,7 @@ Private Sub Form_Load()
     DoEvents
 
 
-    Set promoSongCollection = New Collection 'create object
+    Set promoSongCollection = New Collection
 
     Set MyRst = MyConn.Execute("select IDMUSIC from promo order by playOrder")
 
@@ -3229,9 +3515,9 @@ Private Sub Form_Load()
         For b = 1 To promoSongCollection.Count
           Randomize
           c = Round((promoSongCollection.Count - 1) * Rnd) + 1
-          idMusic = promoSongCollection.Item(c)
+          IDMusic = promoSongCollection.Item(c)
           promoSongCollection.Remove c
-          promoSongCollection.add idMusic, , 1
+          promoSongCollection.add IDMusic, , 1
         Next
       Next
       DoEvents
@@ -3335,7 +3621,9 @@ Private Sub Form_Load()
     frmLoading.Text1.SetFocus
 
     SetCursorPos Screen.Width, 0
-
+            
+    kotaktambah_kotakkurangPosition
+    
     DoEvents
 
 
@@ -3399,6 +3687,7 @@ On Error Resume Next
             lstAll.selectedItem.Selected = False
     End If
 End Sub
+
 
 Private Sub lstChat_LostFocus()
     On Error Resume Next
@@ -3767,10 +4056,12 @@ Private Sub tmrAktif_Timer()
     ScreenSaverAktif = ScreenSaverAktif + 1
 
     If ScreenSaverAktif > 100 Then ScreenSaverAktif = 100
+    
     If (vpbFrmCountry Or vpbFrmCategory Or vpbFrmConfirmasi Or vpbfrmTambahJam Or _
         vpbfrmSaran Or vpbfrmAbout Or vpbfrmHelp Or vpbfrmVocal Or vpbfrmWelcome) Then
         ScreenSaverAktif = 0
     End If
+    
     If UkuranVideo <> 2 Then
         If ScreenSaverAktif = 10 Then
             If Not (vVideo = 3) Or (vVideo = 1) Then
@@ -3817,9 +4108,79 @@ Private Sub tmrAktif_Timer()
 
     txtCompName.Tag = myrs.Fields(1).value
 
-If Err.Number <> 0 Then
-  LogError Name, "tmrAktif_Timer 1"
-End If
+    If Err.Number <> 0 Then
+      LogError Name, "tmrAktif_Timer 1"
+    End If
+        
+    ' Pemindahan set waktu dari bawah 12042022
+    
+         '------WAKTU------'
+     Dim vJam As Integer
+     Dim vWaktuHabis As Date
+
+     If myrs.Fields(2).value = "chekin" Then
+         vWaktumulai = myrs.Fields(3).value
+         vpbDurasi = myrs.Fields(5).value
+
+         txtUser.text = myrs.Fields(4).value
+         txtTime.text = TimeSelisih(Now)
+
+         vWaktuHabis = vWaktumulai
+
+         vJam = hour(vWaktumulai) + myrs.Fields(5).value
+         If vJam > 23 Then
+             vWaktuHabis = CDate(vWaktuHabis) + Int(vJam / 24)
+             vJam = vJam - Int(vJam / 24) * 24
+         End If
+         vWaktuHabis = CDate(DateSerial(year(vWaktuHabis), month(vWaktuHabis), day(vWaktuHabis)) & " " & Str$(vJam) & ":" & minute(vWaktuHabis) & ":" & second(vWaktuHabis))
+        
+        If Err.Number <> 0 Then
+          LogError Name, "tmrAktif_Timer 3"
+        End If
+
+         If ((hour(vWaktuHabis - Now) * CLng(3600)) + (minute(vWaktuHabis - Now) * CLng(60)) + second(vWaktuHabis - Now) = 600) And (vTambahWaktu = True) And (vWaktuHabis > Now) Then
+             txtTime.ForeColor = &HFF&
+         Else
+             If ((hour(vWaktuHabis - Now) * CLng(60)) + minute(vWaktuHabis - Now) <= 9) And (vTambahWaktu = False) Then
+                 If (txtTime.ForeColor = &H22A6B) Then
+                     txtTime.ForeColor = &HFF&
+                     txtUser.ForeColor = &HFF&
+                 Else
+                     txtTime.ForeColor = &H22A6B
+                     txtUser.ForeColor = &H22A6B
+                 End If
+             Else
+                 txtTime.ForeColor = &H22A6B
+                 txtUser.ForeColor = &H22A6B
+             End If
+
+         End If
+
+         If myrs.Fields(6).value = 1 Then
+             UpdateChat
+         End If
+
+         'UPDATE PLAYLIST
+         If myrs.Fields(7).value = 1 Then
+             lstPlaylist.ListItems.Clear
+             loadplaylist
+         End If
+
+         'UPDATE KATAJALAN
+         If myrs.Fields(8).value = 1 Then
+             Cinema.LoadKatajalan
+         End If
+
+         'UPDATE TERIMA LAGU
+         If myrs.Fields(9).value = 1 Then
+             TerimaLagu
+         End If
+
+     Else
+         txtUser.text = modProject.brandName
+         txtTime.text = ""
+     End If
+    
     If ((myrs.Fields(0).value = "tutup") And ((vVideo = 5) Or (vVideo = 7) Or (vVideoAktif = False) Or (vHabisWaktu = True))) Or (myrs.Fields(0).value = "hajar") Then
         vpbRoomStatus = 0
         Set myrs = Nothing
@@ -3840,6 +4201,9 @@ End If
         frmRoom.vVideo = 8
 
         DoEvents
+        
+        MsgBox "TmrAktif"
+
         frmUser.turnDiscoLampOff
 
         GoTo lblEnd
@@ -3919,72 +4283,8 @@ If Err.Number <> 0 Then
   LogError Name, "tmrAktif_Timer 2"
 End If
 
-     '------WAKTU------'
-     Dim vJam As Integer
-     Dim vWaktuHabis As Date
-
-     If myrs.Fields(2).value = "chekin" Then
-         vWaktumulai = myrs.Fields(3).value
-         vpbDurasi = myrs.Fields(5).value
-
-         txtUser.text = myrs.Fields(4).value
-         txtTime.text = TimeSelisih(Now)
-
-         vWaktuHabis = vWaktumulai
-
-         vJam = hour(vWaktumulai) + myrs.Fields(5).value
-         If vJam > 23 Then
-             vWaktuHabis = CDate(vWaktuHabis) + Int(vJam / 24)
-             vJam = vJam - Int(vJam / 24) * 24
-         End If
-         vWaktuHabis = CDate(DateSerial(year(vWaktuHabis), month(vWaktuHabis), day(vWaktuHabis)) & " " & Str$(vJam) & ":" & minute(vWaktuHabis) & ":" & second(vWaktuHabis))
-If Err.Number <> 0 Then
-  LogError Name, "tmrAktif_Timer 3"
-End If
-
-         If ((hour(vWaktuHabis - Now) * CLng(3600)) + (minute(vWaktuHabis - Now) * CLng(60)) + second(vWaktuHabis - Now) = 600) And (vTambahWaktu = True) And (vWaktuHabis > Now) Then
-             txtTime.ForeColor = &HFF&
-         Else
-             If ((hour(vWaktuHabis - Now) * CLng(60)) + minute(vWaktuHabis - Now) <= 9) And (vTambahWaktu = False) Then
-                 If (txtTime.ForeColor = &H22A6B) Then
-                     txtTime.ForeColor = &HFF&
-                     txtUser.ForeColor = &HFF&
-                 Else
-                     txtTime.ForeColor = &H22A6B
-                     txtUser.ForeColor = &H22A6B
-                 End If
-             Else
-                 txtTime.ForeColor = &H22A6B
-                 txtUser.ForeColor = &H22A6B
-             End If
-
-         End If
-
-         If myrs.Fields(6).value = 1 Then
-             UpdateChat
-         End If
-
-         'UPDATE PLAYLIST
-         If myrs.Fields(7).value = 1 Then
-             lstPlaylist.ListItems.Clear
-             loadplaylist
-         End If
-
-         'UPDATE KATAJALAN
-         If myrs.Fields(8).value = 1 Then
-             Cinema.LoadKatajalan
-         End If
-
-         'UPDATE TERIMA LAGU
-         If myrs.Fields(9).value = 1 Then
-             TerimaLagu
-         End If
-
-     Else
-         txtUser.text = modProject.brandName
-         txtTime.text = ""
-     End If
-     Set myrs = Nothing
+'set waktu dipindahkan ke atas 11042022
+Set myrs = Nothing
 
 lblEnd:
 
@@ -4017,24 +4317,95 @@ End Sub
 
 Private Sub tmrNonVocalML_Timer()
   On Error Resume Next
+  ' Playstate 3 = Video Play
   If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
      tmrNonVocalML.Enabled = False
      If vVocalterus Then
         setvocal
      Else
-        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2 'Music Only
+        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+     End If
+  End If
+End Sub
+
+Private Sub tmrNonVocalML1_Timer()
+  On Error Resume Next
+  ' Playstate 3 = Video Play
+  If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
+     tmrNonVocalML1.Enabled = False
+     If vVocalterus Then
+        setvocal
+     Else
+        If frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 2 Then
+            'frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 1
+            
+            ' Untuk File MP4 -> Default 2(Vocal Off)
+'            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2 '1
+            vExtensi = True: vMPG = False
+            setvocal
+        ElseIf frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 3 Then
+            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2 'Audio Track 1 -> Sound Only
+        End If
+     End If
+  End If
+End Sub
+
+Private Sub tmrNonVocalML2_Timer()
+  On Error Resume Next
+  ' Playstate 3 = Video Play
+  If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
+     tmrNonVocalML2.Enabled = False
+     If vVocalterus Then
+        setvocal
+     Else
+        frmVideo.WindowsMediaPlayer1.settings.balance = -100
      End If
   End If
 End Sub
 
 Private Sub tmrNonVocalMR_Timer()
   On Error Resume Next
+  ' Playstate 3 = Video Play
   If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
      tmrNonVocalMR.Enabled = False
     If vVocalterus Then
         setvocal
     Else
-        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3 'Vocal Only
+        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
+    End If
+  End If
+End Sub
+
+Private Sub tmrNonVocalMR1_Timer()
+  On Error Resume Next
+  ' Playstate 3 = Video Play
+  If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
+     tmrNonVocalMR1.Enabled = False
+    If vVocalterus Then
+        setvocal
+    Else
+        If frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 2 Then
+            'frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 1
+            
+            ' Untuk File MP4 -> Default 2(Vocal Off)
+'            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2 '1
+            vExtensi = True: vMPG = False
+            setvocal
+        ElseIf frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 3 Then
+            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
+        End If
+    End If
+  End If
+End Sub
+
+Private Sub tmrNonVocalMR2_Timer()
+On Error Resume Next
+  If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
+     tmrNonVocalMR2.Enabled = False
+    If vVocalterus Then
+        setvocal
+    Else
+        frmVideo.WindowsMediaPlayer1.settings.balance = 100
     End If
   End If
 End Sub
@@ -4084,10 +4455,68 @@ Private Sub tmrRemote_Timer()
     tmrRemote.Enabled = False
 End Sub
 
+Private Sub tmrSong_Timer()
+If functionName = "PlayLstAll" Then
+    If lblTmrSong.Caption = 0 Then
+        tmrSong.Enabled = False
+        lblTmrSong.Visible = False
+        '===POPULER SONG===
+        Dim x As Double
+        sqlnih = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & lstAll.ListItems(selIndex).SubItems(3)
+        Set myrsnih = MyConn.Execute(sqlnih)
+        x = Val(myrsnih.Fields(1).value)
+        Set myrsnih = Nothing
+        sqlnih = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = " & lstAll.ListItems(selIndex).SubItems(3)
+        MyConn.Execute sqlnih
+    Else
+        lblTmrSong.Caption = lblTmrSong.Caption - 1
+    End If
+ElseIf functionName = "PlayLstPlaylist" Then
+    If lblTmrSong.Caption = 0 Then
+        tmrSong.Enabled = False
+        lblTmrSong.Visible = False
+        '===POPULER SONG===
+        Dim Y As Double
+        SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & selectedPlaylist
+        Set MyRsP = MyConn.Execute(SQLP)
+        Y = Val(MyRsP.Fields(1).value)
+        Set MyRsP = Nothing
+        SQLP = "UPDATE masters SET POPULER= " & Str(Y + 1) & " Where IDMUSIC = " & selectedPlaylist
+        MyConn.Execute SQLP
+    Else
+        lblTmrSong.Caption = lblTmrSong.Caption - 1
+    End If
+End If
+End Sub
+
 Private Sub tmrVokal_Timer()
   On Error Resume Next
   If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
      tmrVokal.Enabled = False
+     If vVocalterus Then
+        setvocal
+     Else
+        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 1
+     End If
+  End If
+End Sub
+
+Private Sub tmrVokal1_Timer()
+On Error Resume Next
+  If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
+     tmrVokal1.Enabled = False
+     If vVocalterus Then
+        setvocal
+     Else
+        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 1 'Stereo
+     End If
+  End If
+End Sub
+
+Private Sub tmrVokal2_Timer()
+On Error Resume Next
+  If (frmVideo.WindowsMediaPlayer1.playState = 3) Then
+     tmrVokal2.Enabled = False
      If vVocalterus Then
         setvocal
      Else
@@ -4640,40 +5069,124 @@ Private Sub tampil()
 
     lstAll.Visible = True
     lstPlaylist.Visible = False
-
-    lstAll.ColumnHeaders.Clear
-    lstAll.ListItems.Clear
-    Set chmU = lstAll.ColumnHeaders.add(, , , 0)
-    Set chmU = lstAll.ColumnHeaders.add(, , , 6100)
-    Set chmU = lstAll.ColumnHeaders.add(, , , 5000)
-    Set chmU = lstAll.ColumnHeaders.add(, , , 0)
-    Set chmU = lstAll.ColumnHeaders.add(, , , 0)
-    Set chmU = lstAll.ColumnHeaders.add(, , , 0)
-    Set chmU = lstAll.ColumnHeaders.add(, , , 0)
-    Set chmU = lstAll.ColumnHeaders.add(, , , 0)
-
-    lstPlaylist.ColumnHeaders.Clear
-    lstPlaylist.ListItems.Clear
-    Set chp = lstPlaylist.ColumnHeaders.add(, , , 5900)
-    Set chp = lstPlaylist.ColumnHeaders.add(, , , 5145)
-    Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
-    Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
-    Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
-    Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
-
-    lstMovie.ColumnHeaders.Clear
-    Set chm = lstMovie.ColumnHeaders.add(, , , 10)
-    Set chm = lstMovie.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
-    Set chm = lstMovie.ColumnHeaders.add(, , , 10)
-
-    lstTV.ColumnHeaders.Clear
-    Set chm = lstTV.ColumnHeaders.add(, , , 10)
-    Set chm = lstTV.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
-    Set chm = lstTV.ColumnHeaders.add(, , , 10)
-
-    lstChat.ColumnHeaders.Clear
-    Set chm = lstChat.ColumnHeaders.add(, , , 2000)
-    Set chm = lstChat.ColumnHeaders.add(, , , 9000)
+    
+    'edited by Andi 26-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        lstAll.ColumnHeaders.Clear
+        lstAll.ListItems.Clear
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 6100)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 5000)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+    
+        lstPlaylist.ColumnHeaders.Clear
+        lstPlaylist.ListItems.Clear
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 5900)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 5145)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+    
+        lstMovie.ColumnHeaders.Clear
+        Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+        Set chm = lstMovie.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
+        Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+    
+        lstTV.ColumnHeaders.Clear
+        Set chm = lstTV.ColumnHeaders.add(, , , 10)
+        Set chm = lstTV.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
+        Set chm = lstTV.ColumnHeaders.add(, , , 10)
+    
+        lstChat.ColumnHeaders.Clear
+        Set chm = lstChat.ColumnHeaders.add(, , , 2000)
+        Set chm = lstChat.ColumnHeaders.add(, , , 9000)
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        lstAll.ColumnHeaders.Clear
+        lstAll.ListItems.Clear
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 6100)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 5000)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+    
+        lstPlaylist.ColumnHeaders.Clear
+        lstPlaylist.ListItems.Clear
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 5900)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 5145)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+    
+        If frmUser.settingScreenResolution = "S-SD" Then
+            lstMovie.ColumnHeaders.Clear
+            Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+            Set chm = lstMovie.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
+            Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            lstMovie.ColumnHeaders.Clear
+            Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+            Set chm = lstMovie.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
+            Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            lstMovie.ColumnHeaders.Clear
+            Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+            Set chm = lstMovie.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
+            Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+        End If
+    
+        lstTV.ColumnHeaders.Clear
+        Set chm = lstTV.ColumnHeaders.add(, , , 10)
+        Set chm = lstTV.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
+        Set chm = lstTV.ColumnHeaders.add(, , , 10)
+    
+        lstChat.ColumnHeaders.Clear
+        Set chm = lstChat.ColumnHeaders.add(, , , 2000)
+        Set chm = lstChat.ColumnHeaders.add(, , , 9000)
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        lstAll.ColumnHeaders.Clear
+        lstAll.ListItems.Clear
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 8000)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 7000)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+        Set chmU = lstAll.ColumnHeaders.add(, , , 0)
+    
+        lstPlaylist.ColumnHeaders.Clear
+        lstPlaylist.ListItems.Clear
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 8000)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 7000)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+        Set chp = lstPlaylist.ColumnHeaders.add(, , , 0)
+    
+        lstMovie.ColumnHeaders.Clear
+        Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+        Set chm = lstMovie.ColumnHeaders.add(, , , 14000, lvwColumnCenter)
+        Set chm = lstMovie.ColumnHeaders.add(, , , 10)
+    
+        lstTV.ColumnHeaders.Clear
+        Set chm = lstTV.ColumnHeaders.add(, , , 10)
+        Set chm = lstTV.ColumnHeaders.add(, , , 11250, lvwColumnCenter)
+        Set chm = lstTV.ColumnHeaders.add(, , , 10)
+    
+        lstChat.ColumnHeaders.Clear
+        Set chm = lstChat.ColumnHeaders.add(, , , 2000)
+        Set chm = lstChat.ColumnHeaders.add(, , , 9000)
+    End If
+    'edited by Andi 26-01-2021
 End Sub
 
 Private Sub PlayLstAll()
@@ -4684,14 +5197,17 @@ Private Sub PlayLstAll()
     Dim PathLaguUtama As String
     Dim PathLaguBackup As String
     Dim ECHO As ICMP_ECHO_REPLY
-
+    
     vTempo = 0
     vKey = 0
-    Dim sqlnih As String
-    Dim myrsnih As MYSQL_RS
-
+'    Dim sqlnih As String
+'    Dim myrsnih As MYSQL_RS
     ScoreValid = True
-
+    
+    'added by Andi 21-06-2022
+    functionName = "PlayLstAll"
+    'added by Andi 21-06-2022
+    
     PathLagu = Replace$(lstAll.ListItems(selIndex).SubItems(4), "/", "\")
     If AktifServerStatus = 1 Then
         PathLaguUtama = "\\" & vpbServerUtama & "\Data\" & PathLagu
@@ -4720,21 +5236,43 @@ Private Sub PlayLstAll()
                         tmrVokal.Enabled = False
                         tmrNonVocalML.Enabled = False
                         tmrNonVocalMR.Enabled = False
+                        
+                        'added by Andi 10-01-2021
+                        tmrVokal1.Enabled = False
+                        tmrNonVocalML1.Enabled = False
+                        tmrNonVocalMR1.Enabled = False
+                        
+                        tmrVokal2.Enabled = False
+                        tmrNonVocalML2.Enabled = False
+                        tmrNonVocalMR2.Enabled = False
+                        'added by Andi 10-01-2021
+                        
                         frmVideo.WindowsMediaPlayer1.URL = ""
                         frmVideo.WindowsMediaPlayer1.Controls.stop
                         Unload frmVideo
                         Unload frmPromo
                         PlayLst
+                        
                         If vpbBlackBox = 2 Then
                             frmUser.turnDiscoLampOn
                         End If
+                        
                         If lstPlaylist.ListItems.Count > 0 Then
+                            IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+                            deleteReorderPlayListDatabase (IDMusic)
                             lstPlaylist.ListItems.Remove (1)
-                            savePlayList
+'                            savePlayList
                             ClientRemotePlaylist
                         End If
                 End If
-                GoTo Populer
+'                GoTo Populer
+                 'added by Andi 21-06-2022
+'                    lblTmrSong.Caption = RunningTimeSong
+'
+'                    tmrSong.Interval = 1000
+'                    tmrSong.Enabled = True
+'                    lblTmrSong.Visible = False
+                  'added by Andi 21-06-2022
             End If
         Else
             If lstPlaylist.ListItems.Count = 0 Then
@@ -4746,72 +5284,64 @@ Private Sub PlayLstAll()
                     tmrVokal.Enabled = False
                     tmrNonVocalML.Enabled = False
                     tmrNonVocalMR.Enabled = False
+                    
+                    'added by Andi 10-01-2021
+                    tmrVokal1.Enabled = False
+                    tmrNonVocalML1.Enabled = False
+                    tmrNonVocalMR1.Enabled = False
+                
+                    tmrVokal2.Enabled = False
+                    tmrNonVocalML2.Enabled = False
+                    tmrNonVocalMR2.Enabled = False
+                    'added by Andi 10-01-2021
+                    
                     frmVideo.WindowsMediaPlayer1.URL = ""
                     frmVideo.WindowsMediaPlayer1.Controls.stop
                     Unload frmVideo
                     Unload frmPromo
                     PlayLst
+                    
                     If vpbBlackBox = 2 Then
                         frmUser.turnDiscoLampOn
                     End If
+                    
                     If lstPlaylist.ListItems.Count > 0 Then
+                        IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+                        deleteReorderPlayListDatabase (IDMusic)
                         lstPlaylist.ListItems.Remove (1)
-                        savePlayList
+'                        savePlayList
                         ClientRemotePlaylist
                     End If
             End If
-            GoTo Populer
+'            GoTo Populer
+                'added by Andi 21-06-2022
+'                    lblTmrSong.Caption = RunningTimeSong
+'
+'                    tmrSong.Interval = 1000
+'                    tmrSong.Enabled = True
+'                    lblTmrSong.Visible = False
+                'added by Andi 21-06-2022
         End If
     End If
 
     frmVideo.WindowsMediaPlayer1.Controls.play
+    
+    'added by Andi 21-06-2022
+        lblTmrSong.Caption = RunningTimeSong
+        
+        tmrSong.Interval = 1000
+        tmrSong.Enabled = True
+        lblTmrSong.Visible = False
+    'added by Andi 21-06-2022
+    
     PlaySong = True
-
+    cmdPause(0).Visible = True: cmdPause(1).Visible = False
+    
     frmVideo.WindowsMediaPlayer1.settings.volume = 0
     'ANALOG---------------------------------------------------------------------------
     tmrVokal.Enabled = False
     
-'    'added by Andi 14-12-2020
-'    Dim extension As String
-'    extension = fso.GetExtensionName(PathLagu)
-'    If extension = "mp4" Or extension = "mpg" Then
-'      If lstAll.ListItems(selIndex).SubItems(5) = "ML" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = True
-'          tmrNonVocalMR.Enabled = False
-'          vVocal = 2
-'          vExtensi = True ' added by Andi 17-12-2020
-'      ElseIf lstAll.ListItems(selIndex).SubItems(5) = "MR" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = False
-'          tmrNonVocalMR.Enabled = True
-'          vVocal = 3
-'          vExtensi = True 'added by Andi 17-12-2020
-'      End If
-'    Else
-'      If lstAll.ListItems(selIndex).SubItems(5) = "ML" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = True
-'          tmrNonVocalMR.Enabled = False
-'          vVocal = 2
-'          vExtensi = False 'added by Andi 17-12-2020
-'      ElseIf lstAll.ListItems(selIndex).SubItems(5) = "MR" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = False
-'          tmrNonVocalMR.Enabled = True
-'          vVocal = 3
-'          vExtensi = False 'added by Andi 17-12-2020
-'      ElseIf lstAll.ListItems(selIndex).SubItems(5) = "ST" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = False
-'          tmrNonVocalMR.Enabled = False
-'          vVocal = 1
-'          vExtensi = False 'added by Andi 17-12-2020
-'      End If
-'    End If
-'    'added by Andi 14-12-2020
-    
-      'added by Andi 09-01-2021
+    'added by Andi 09-01-2021
     tmrVokal1.Enabled = False
     tmrVokal2.Enabled = False
     'added by Andi 09-01-2021
@@ -4827,12 +5357,20 @@ Private Sub PlayLstAll()
           vVocal = 2
           vExtensi = True ' added by Andi 17-12-2020
           vMPG = False 'added by Andi 09-01-2021
-      ElseIf lstAll.ListItems(selIndex).SubItems(5) = "MR" Then
+      ElseIf lstAll.ListItems(selIndex).SubItems(5) = "ST" Then
           tmrVokal1.Enabled = False
           tmrNonVocalML1.Enabled = False
           tmrNonVocalMR1.Enabled = True
-          vVocal = 3
+'          vVocal = 3
+          vVocal = 1
           vExtensi = True 'added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      Else
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = False
+          tmrNonVocalMR1.Enabled = True
+          vVocal = 2
+          vExtensi = True 'added by Andi 21-12-2020
           vMPG = False 'added by Andi 09-01-2021
       End If
     ElseIf extension = "mpg" Then
@@ -4886,16 +5424,18 @@ Private Sub PlayLstAll()
     txtPlaying.text = lstAll.ListItems(selIndex).SubItems(1) + " - " + lstAll.ListItems(selIndex).SubItems(2)
 
 '    Set myrsnih = Nothing
-
-Populer:
-    '===POPULER SONG===
-    Dim x As Double
-    sqlnih = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & lstAll.ListItems(selIndex).SubItems(3)
-    Set myrsnih = MyConn.Execute(sqlnih)
-    x = Val(myrsnih.Fields(1).value)
-    Set myrsnih = Nothing
-    sqlnih = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = " & lstAll.ListItems(selIndex).SubItems(3)
-    MyConn.Execute sqlnih
+    
+    
+    
+'Populer:
+'    '===POPULER SONG===
+'    Dim x As Double
+'    sqlnih = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & lstAll.ListItems(selIndex).SubItems(3)
+'    Set myrsnih = MyConn.Execute(sqlnih)
+'    x = Val(myrsnih.Fields(1).value)
+'    Set myrsnih = Nothing
+'    sqlnih = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = " & lstAll.ListItems(selIndex).SubItems(3)
+'    MyConn.Execute sqlnih
 
 
     If Err.Number <> 0 Then
@@ -4993,12 +5533,18 @@ Dim PathLaguUtama As String
 Dim PathLaguBackup As String
 Dim ECHO As ICMP_ECHO_REPLY
 
-Dim MyRsP As MYSQL_RS
-Dim SQLP As String
+'Dim MyRsP As MYSQL_RS
+'Dim SQLP As String
 
     vTempo = 0
     vKey = 0
-
+    
+    'added by Andi 21-06-2022
+    functionName = "PlayLstPlaylist"
+    'added by Andi 21-06-2022
+    
+    selectedPlaylist = lstPlaylist.selectedItem.SubItems(2) 'added by Andi 23-06-2022
+    
     cmdPlay.Enabled = False
     cmdStop.Enabled = True
     cmdFast.Enabled = True
@@ -5011,26 +5557,26 @@ Dim SQLP As String
     End If
 
     '----HAPUS PLAYLIST DARI DATABASE----'
-    Dim idMember As String
-    Dim Sqld As String
-    Dim myrsD As MYSQL_RS
-    If txtLogin = "" Then
-        idMember = "00000"
-        Sqld = "DELETE FROM playlist " & _
-              "WHERE USERID = '" & idMember & _
-              "' AND IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2) & _
-              "  AND ROOM = '" & txtCompName.text & "';"
-        Set myrsD = MyConn.Execute(Sqld)
-        MyConn.Execute Sqld
-    Else
-        idMember = txtLogin.text
-        Sqld = "DELETE FROM playlist " & _
-              "WHERE USERID = '" & idMember & _
-              "' AND IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2) & _
-              " ;"
-        Set myrsD = MyConn.Execute(Sqld)
-        MyConn.Execute Sqld
-    End If
+'    Dim idMember As String
+'    Dim Sqld As String
+'    Dim myrsD As MYSQL_RS
+'    If txtLogin = "" Then
+'        idMember = "00000"
+'        Sqld = "DELETE FROM playlist " & _
+'              "WHERE USERID = '" & idMember & _
+'              "' AND IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2) & _
+'              "  AND ROOM = '" & txtCompName.text & "';"
+'        Set myrsD = MyConn.Execute(Sqld)
+'        MyConn.Execute Sqld
+'    Else
+'        idMember = txtLogin.text
+'        Sqld = "DELETE FROM playlist " & _
+'              "WHERE USERID = '" & idMember & _
+'              "' AND IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2) & _
+'              " ;"
+'        Set myrsD = MyConn.Execute(Sqld)
+'        MyConn.Execute Sqld
+'    End If
 
     ScoreValid = True
 
@@ -5067,16 +5613,28 @@ Dim SQLP As String
                         Unload frmVideo
                         Unload frmPromo
                         PlayLst
+                        
                         If vpbBlackBox = 2 Then
                             frmUser.turnDiscoLampOn
                         End If
+                        
                         If lstPlaylist.ListItems.Count > 0 Then
+                            IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+'                            MsgBox IDMusic & " 1"
+                            deleteReorderPlayListDatabase (IDMusic)
                             lstPlaylist.ListItems.Remove (1)
-                            savePlayList
+'                            savePlayList
                             ClientRemotePlaylist
                         End If
                 End If
-                GoTo Populer
+'                GoTo Populer
+                'added by Andi 21-06-2022
+'                    lblTmrSong.Caption = RunningTimeSong
+'
+'                    tmrSong.Interval = 1000
+'                    tmrSong.Enabled = True
+'                    lblTmrSong.Visible = False
+                'added by Andi 21-06-2022
                 Exit Sub
             End If
         Else
@@ -5094,70 +5652,52 @@ Dim SQLP As String
                     Unload frmVideo
                     Unload frmPromo
                     PlayLst
+                    
                     If vpbBlackBox = 2 Then
                         frmUser.turnDiscoLampOn
                     End If
+                    
                     If lstPlaylist.ListItems.Count > 0 Then
                         lErr = LockWindowUpdate(lstPlaylist.hWnd)
+                        IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+'                        MsgBox IDMusic & " 2"
+                        deleteReorderPlayListDatabase (IDMusic)
                         lstPlaylist.ListItems.Remove (1)
-                        savePlayList
+'                        savePlayList
                         ClientRemotePlaylist
                         ShowScrollBar lstPlaylist.hWnd, SB_VERT, False
                         lErr = LockWindowUpdate(0)
                     End If
             End If
-            GoTo Populer
+'            GoTo Populer
+            'added by Andi 21-06-2022
+'                lblTmrSong.Caption = RunningTimeSong
+'
+'                tmrSong.Interval = 1000
+'                tmrSong.Enabled = True
+'                lblTmrSong.Visible = False
+            'added by Andi 21-06-2022
             Exit Sub
         End If
     End If
 
     frmVideo.WindowsMediaPlayer1.Controls.play
+    
+    'added by Andi 21-06-2022
+        lblTmrSong.Caption = RunningTimeSong
+        
+        tmrSong.Interval = 1000
+        tmrSong.Enabled = True
+        lblTmrSong.Visible = False
+    'added by Andi 21-06-2022
+    
     PlaySong = True
 
     frmVideo.WindowsMediaPlayer1.settings.volume = 0
 
     'Analog ------------------------------------------------------------
-'    'added by Andi 14-12-2020
-'    Dim extension As String
-'    extension = fso.GetExtensionName(PathLagu)
-'    If extension = "mp4" Or extension = "mpg" Then
-'      If lstPlaylist.selectedItem.SubItems(4) = "ML" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = True
-'          tmrNonVocalMR.Enabled = False
-'          vVocal = 2
-'          vExtensi = True ' added by Andi 17-12-2020
-'      ElseIf lstPlaylist.selectedItem.SubItems(4) = "MR" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = False
-'          tmrNonVocalMR.Enabled = True
-'          vVocal = 3
-'          vExtensi = True ' added by Andi 17-12-2020
-'      End If
-'    Else
-'      If lstPlaylist.selectedItem.SubItems(4) = "ML" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = True
-'          tmrNonVocalMR.Enabled = False
-'          vVocal = 2
-'          vExtensi = False 'added by Andi 17-12-2020
-'      ElseIf lstPlaylist.selectedItem.SubItems(4) = "MR" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = False
-'          tmrNonVocalMR.Enabled = True
-'          vVocal = 3
-'          vExtensi = False 'added by Andi 17-12-2020
-'      ElseIf lstPlaylist.selectedItem.SubItems(4) = "ST" Then
-'          tmrVokal.Enabled = False
-'          tmrNonVocalML.Enabled = False
-'          tmrNonVocalMR.Enabled = False
-'          vVocal = 1
-'          vExtensi = False 'added by Andi 17-12-2020
-'        End If
-'      End If
-'     'added by Andi 14-12-2020
-
-        'added by Andi 14-12-2020
+    
+    'added by Andi 14-12-2020
     Dim extension As String
     extension = fso.GetExtensionName(PathLagu)
     If extension = "mp4" Then
@@ -5168,11 +5708,19 @@ Dim SQLP As String
           vVocal = 2
           vExtensi = True ' added by Andi 17-12-2020
           vMPG = False 'added by Andi 09-01-2021
-      ElseIf lstPlaylist.selectedItem.SubItems(4) = "MR" Then
+      ElseIf lstPlaylist.selectedItem.SubItems(4) = "ST" Then
           tmrVokal1.Enabled = False
           tmrNonVocalML1.Enabled = False
           tmrNonVocalMR1.Enabled = True
-          vVocal = 3
+'          vVocal = 3
+          vVocal = 1
+          vExtensi = True ' added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      Else
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = True
+          tmrNonVocalMR1.Enabled = False
+          vVocal = 2
           vExtensi = True ' added by Andi 17-12-2020
           vMPG = False 'added by Andi 09-01-2021
       End If
@@ -5228,15 +5776,15 @@ Dim SQLP As String
 
 '    Set MyRsP = Nothing
 
-Populer:
-    '===POPULER SONG===
-    Dim x As Double
-    SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2)
-    Set MyRsP = MyConn.Execute(SQLP)
-    x = Val(MyRsP.Fields(1).value)
-    Set MyRsP = Nothing
-    SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2)
-    MyConn.Execute SQLP
+'Populer:
+'    '===POPULER SONG===
+'    Dim x As Double
+'    SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2)
+'    Set MyRsP = MyConn.Execute(SQLP)
+'    x = Val(MyRsP.Fields(1).value)
+'    Set MyRsP = Nothing
+'    SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = " & lstPlaylist.selectedItem.SubItems(2)
+'    MyConn.Execute SQLP
 End Sub
 
 Private Sub PlayLst()
@@ -5249,14 +5797,14 @@ Private Sub PlayLst()
     Dim ECHO As ICMP_ECHO_REPLY
     Dim x As Double
 
-    Dim MyRsP As MYSQL_RS
-    Dim SQLP As String
+'    Dim MyRsP As MYSQL_RS
+'    Dim SQLP As String
 
     vTempo = 0
     vKey = 0
 
 PlayUlang:
-
+    
     If lstPlaylist.ListItems.Count = 0 Then
         GoTo lblEnd
     End If
@@ -5284,25 +5832,31 @@ PlayUlang:
                frmVideo.WindowsMediaPlayer1.URL = PathLaguBackup
             Else
                 '===POPULER SONG===
-                SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
-                Set MyRsP = MyConn.Execute(SQLP)
-                x = Val(MyRsP.Fields(1).value)
-                Set MyRsP = Nothing
-                SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
-                MyConn.Execute SQLP
+'                SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
+'                Set MyRsP = MyConn.Execute(SQLP)
+'                x = Val(MyRsP.Fields(1).value)
+'                Set MyRsP = Nothing
+'                SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
+'                MyConn.Execute SQLP
+                
                 If lstPlaylist.ListItems.Count > 0 Then
-                        lErr = LockWindowUpdate(lstPlaylist.hWnd)
-                        lstPlaylist.ListItems.Remove (1)
-                        savePlayList
-                        ClientRemotePlaylist
-                        ShowScrollBar lstPlaylist.hWnd, SB_VERT, False
-                        lErr = LockWindowUpdate(0)
+                    lErr = LockWindowUpdate(lstPlaylist.hWnd)
+                    IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+'                        MsgBox IDMusic & " 3"
+                    deleteReorderPlayListDatabase (IDMusic)
+                    lstPlaylist.ListItems.Remove (1)
+'                        savePlayList
+                    ClientRemotePlaylist
+                    ShowScrollBar lstPlaylist.hWnd, SB_VERT, False
+                    lErr = LockWindowUpdate(0)
                 End If
+                
                 If lstPlaylist.ListItems.Count = 0 Then
                     txtNextSong.text = "NO SONG"
                 Else
                     txtNextSong.text = lstPlaylist.ListItems.Item(1)
                 End If
+                
                 If lstPlaylist.ListItems.Count = 0 Then
                     Unload frmVideo
                     frmPromo.Show
@@ -5318,16 +5872,20 @@ PlayUlang:
             End If
         Else
             '===POPULER SONG===
-            SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
-            Set MyRsP = MyConn.Execute(SQLP)
-            x = Val(MyRsP.Fields(1).value)
-            Set MyRsP = Nothing
-            SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
-            MyConn.Execute SQLP
+'            SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
+'            Set MyRsP = MyConn.Execute(SQLP)
+'            x = Val(MyRsP.Fields(1).value)
+'            Set MyRsP = Nothing
+'            SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = '" & lstPlaylist.ListItems.Item(1).SubItems(2) & "';"
+'            MyConn.Execute SQLP
+            
             If lstPlaylist.ListItems.Count > 0 Then
                 lErr = LockWindowUpdate(lstPlaylist.hWnd)
+                IDMusic = lstPlaylist.ListItems(1).ListSubItems(2).text
+'                MsgBox IDMusic & " 4"
+                deleteReorderPlayListDatabase (IDMusic)
                 lstPlaylist.ListItems.Remove (1)
-                savePlayList
+'                savePlayList
                 ClientRemotePlaylist
                 ShowScrollBar lstPlaylist.hWnd, SB_VERT, False
                 lErr = LockWindowUpdate(0)
@@ -5355,48 +5913,87 @@ PlayUlang:
         Form2.Show
     End If
     frmVideo.WindowsMediaPlayer1.Controls.play
+    
+    'added by Andi 01-07-2022
+    lblTmrSong.Caption = RunningTimeSong
+
+    tmrSong.Interval = 1000
+    tmrSong.Enabled = True
+    lblTmrSong.Visible = False
+    'added by Andi 01-07-2022
+    
     PlaySong = True
 
     frmVideo.WindowsMediaPlayer1.settings.volume = 0
     'Analog ------------------------------------------------------------
-    
     'added by Andi 14-12-2020
     Dim extension As String
     extension = fso.GetExtensionName(PathLagu)
-    If extension = "mp4" Or extension = "mpg" Then
+    If extension = "mp4" Then
       If lstPlaylist.ListItems.Item(1).SubItems(4) = "ML" Then
-          tmrVokal.Enabled = False
-          tmrNonVocalML.Enabled = True
-          tmrNonVocalMR.Enabled = False
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = True
+          tmrNonVocalMR1.Enabled = False
           vVocal = 2
           vExtensi = True ' added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      ElseIf lstPlaylist.ListItems.Item(1).SubItems(4) = "ST" Then
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = False
+          tmrNonVocalMR1.Enabled = True
+'          vVocal = 3
+          vVocal = 1
+          vExtensi = True ' added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      Else
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = True
+          tmrNonVocalMR1.Enabled = False
+          vVocal = 2
+          vExtensi = True ' added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      End If
+    ElseIf extension = "mpg" Then
+      If lstPlaylist.ListItems.Item(1).SubItems(4) = "ML" Then
+          tmrVokal2.Enabled = False
+          tmrNonVocalML2.Enabled = True
+          tmrNonVocalMR2.Enabled = False
+          vVocal = 2
+          vExtensi = True ' added by Andi 17-12-2020
+          vMPG = True  'added by Andi 09-01-2021
       ElseIf lstPlaylist.ListItems.Item(1).SubItems(4) = "MR" Then
-          tmrVokal.Enabled = False
-          tmrNonVocalML.Enabled = False
-          tmrNonVocalMR.Enabled = True
+          tmrVokal2.Enabled = False
+          tmrNonVocalML2.Enabled = False
+          tmrNonVocalMR2.Enabled = True
           vVocal = 3
           vExtensi = True ' added by Andi 17-12-2020
+          vMPG = True 'added by Andi 09-01-2021
       End If
     Else
+      ' Original Code
       If lstPlaylist.ListItems.Item(1).SubItems(4) = "ML" Then
           tmrVokal.Enabled = False
           tmrNonVocalML.Enabled = True
           tmrNonVocalMR.Enabled = False
           vVocal = 2
           vExtensi = False 'added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
       ElseIf lstPlaylist.ListItems.Item(1).SubItems(4) = "MR" Then
           tmrVokal.Enabled = False
           tmrNonVocalML.Enabled = False
           tmrNonVocalMR.Enabled = True
           vVocal = 3
           vExtensi = False 'added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
       ElseIf lstPlaylist.ListItems.Item(1).SubItems(4) = "ST" Then
           tmrVokal.Enabled = False
           tmrNonVocalML.Enabled = False
           tmrNonVocalMR.Enabled = False
           vVocal = 1
           vExtensi = False 'added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
       End If
+      ' Original Code
     End If
     'added by Andi 14-12-2020
     
@@ -5407,12 +6004,12 @@ PlayUlang:
 
     '===POPULER SONG===
 
-    SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & lstPlaylist.ListItems.Item(1).SubItems(2)
-    Set MyRsP = MyConn.Execute(SQLP)
-    x = Val(MyRsP.Fields(1).value)
-    Set MyRsP = Nothing
-    SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = " & lstPlaylist.ListItems.Item(1).SubItems(2)
-    MyConn.Execute SQLP
+'    SQLP = "SELECT IDMUSIC, POPULER FROM masters WHERE IDMUSIC = " & lstPlaylist.ListItems.Item(1).SubItems(2)
+'    Set MyRsP = MyConn.Execute(SQLP)
+'    x = Val(MyRsP.Fields(1).value)
+'    Set MyRsP = Nothing
+'    SQLP = "UPDATE masters SET POPULER= " & Str(x + 1) & " Where IDMUSIC = " & lstPlaylist.ListItems.Item(1).SubItems(2)
+'    MyConn.Execute SQLP
 
 
 lblEnd:
@@ -5463,40 +6060,71 @@ On Error Resume Next
     Dim extension, PathLagu As String
     PathLagu = MyRsP.Fields(0).value
     extension = fso.GetExtensionName(PathLagu)
-    If extension = "mp4" Or "mpg" Then
+    If extension = "mp4" Then
       If MyRsP.Fields(1).value = "ML" Then
-          tmrVokal.Enabled = False
-          tmrNonVocalML.Enabled = True
-          tmrNonVocalMR.Enabled = False
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = True
+          tmrNonVocalMR1.Enabled = False
           vVocal = 2
           vExtensi = True ' added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      ElseIf MyRsP.Fields(1).value = "ST" Then
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = False
+          tmrNonVocalMR1.Enabled = True
+'          vVocal = 3
+          vVocal = 1
+          vExtensi = True ' added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      Else
+          tmrVokal1.Enabled = False
+          tmrNonVocalML1.Enabled = True
+          tmrNonVocalMR1.Enabled = False
+          vVocal = 2
+          vExtensi = True ' added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
+      End If
+    ElseIf extension = "mpg" Then
+      If MyRsP.Fields(1).value = "ML" Then
+          tmrVokal2.Enabled = False
+          tmrNonVocalML2.Enabled = True
+          tmrNonVocalMR2.Enabled = False
+          vVocal = 2
+          vExtensi = True ' added by Andi 17-12-2020
+          vMPG = True 'added by Andi 09-01-2021
       ElseIf MyRsP.Fields(1).value = "MR" Then
-          tmrVokal.Enabled = False
-          tmrNonVocalML.Enabled = False
-          tmrNonVocalMR.Enabled = True
+          tmrVokal2.Enabled = False
+          tmrNonVocalML2.Enabled = False
+          tmrNonVocalMR2.Enabled = True
           vVocal = 3
           vExtensi = True ' added by Andi 17-12-2020
+          vMPG = True 'added by Andi 09-01-2021
       End If
     Else
+      'Original Code
       If MyRsP.Fields(1).value = "ML" Then
           tmrVokal.Enabled = False
           tmrNonVocalML.Enabled = True
           tmrNonVocalMR.Enabled = False
           vVocal = 2
           vExtensi = False 'added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
       ElseIf MyRsP.Fields(1).value = "MR" Then
           tmrVokal.Enabled = False
           tmrNonVocalML.Enabled = False
           tmrNonVocalMR.Enabled = True
           vVocal = 3
           vExtensi = False 'added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
       ElseIf MyRsP.Fields(1).value = "ST" Then
           tmrVokal.Enabled = False
           tmrNonVocalML.Enabled = False
           tmrNonVocalMR.Enabled = False
           vVocal = 1
           vExtensi = False 'added by Andi 17-12-2020
+          vMPG = False 'added by Andi 09-01-2021
       End If
+      'Original Code
     End If
     'added by Andi 14-12-2020
     
@@ -6322,13 +6950,13 @@ Sub loadplaylist()
     Dim myrs As MYSQL_RS
 
     If txtLogin = "" Then
-        Sql = "select mcd.title, mcd.singer, pl.idmusic, mcd.PATH, mcd.ANALOG, mcd.VOL from playlist pl inner join masters mcd " & _
+        Sql = "select mcd.title, mcd.singer, pl.idmusic, mcd.PATH, mcd.ANALOG, mcd.VOL, pl.playOrder from playlist pl inner join masters mcd " & _
               "on pl.idmusic = mcd.idmusic " & _
-              "WHERE ROOM = '" & txtCompName.text & "';"
+              "WHERE ROOM = '" & txtCompName.text & "'ORDER BY pl.playOrder ASC;"
     Else
-        Sql = "select mcd.title, mcd.singer, pl.idmusic, mcd.PATH, mcd.ANALOG, mcd.VOL from playlist pl inner join masters mcd " & _
+        Sql = "select mcd.title, mcd.singer, pl.idmusic, mcd.PATH, mcd.ANALOG, mcd.VOL, pl.playOrder from playlist pl inner join masters mcd " & _
               "on pl.idmusic = mcd.idmusic " & _
-              "WHERE pl.userid = '" & txtLogin & "';"
+              "WHERE pl.userid = '" & txtLogin & "'ORDER BY pl.playOrder ASC;"
     End If
 
     Set myrs = MyConn.Execute(Sql)
@@ -6376,48 +7004,170 @@ End Function
 
 Public Sub setvocal()
   'tentukan vocal/nonvocal 1=st 2=ml 3=mr
-  'current audio language index 1=stereo<music+vocal>,2=karaoke<music only>,3=mono<vocal only>
-  On Error Resume Next
-  If (vExtensi) Then
-    If (vVocal = 2) Then
-      If vVideoAktif Then
-        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+  'edited by Andi 21-12-2020
+    If (vExtensi) And (vMPG = False) Then 'MP4
+        If frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 2 Then
+            If (vVocal = 2) Then
+                If PlaySong Then
+                    frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+                End If
+                vVocal = 21
+                ScoreValid = False
+                frmRoom.vVocalterus = True
+            ElseIf (vVocal = 21) Then
+                If PlaySong Then
+'                    frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+                    frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 1
+                End If
+                vVocal = 2
+                frmRoom.vVocalterus = False
+            ElseIf (vVocal = 1) Then
+                If PlaySong Then
+'                  frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+                  frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 1
+                End If
+                vVocal = 11
+                ScoreValid = False
+                frmRoom.vVocalterus = False
+            ElseIf (vVocal = 11) Then
+                If PlaySong Then
+                  frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+                End If
+                vVocal = 1
+                frmRoom.vVocalterus = True
+            End If
+        ElseIf frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 3 Then
+            If (vVocal = 2) Then
+                If PlaySong Then
+                    frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
+                End If
+                vVocal = 21
+                ScoreValid = False
+            ElseIf (vVocal = 21) Then
+                If PlaySong Then
+                    frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+                End If
+                vVocal = 2
+            ElseIf (vVocal = 3) Then
+                If PlaySong Then
+                  frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+                End If
+                vVocal = 31
+                ScoreValid = False
+            ElseIf (vVocal = 31) Then
+                If PlaySong Then
+                  frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
+                End If
+                vVocal = 3
+            End If
+        End If
+    ElseIf (vExtensi) And (vMPG = True) Then 'MPG
+      If (vVocal = 2) Then
+          If PlaySong Then
+              frmVideo.WindowsMediaPlayer1.settings.balance = 100
+          End If
+          vVocal = 21
+          ScoreValid = False
+      ElseIf (vVocal = 21) Then
+          If PlaySong Then
+              frmVideo.WindowsMediaPlayer1.settings.balance = -100
+          End If
+          vVocal = 2
+      ElseIf (vVocal = 3) Then
+          If PlaySong Then
+            frmVideo.WindowsMediaPlayer1.settings.balance = -100
+          End If
+          vVocal = 31
+          ScoreValid = False
+      ElseIf (vVocal = 31) Then
+          If PlaySong Then
+            frmVideo.WindowsMediaPlayer1.settings.balance = 100
+          End If
+          vVocal = 3
       End If
-        vVocal = 21
-        ScoreValid = False
-    ElseIf (vVocal = 21) Then
-      If vVideoAktif Then
-        frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 1
-      End If
-      vVocal = 2
-    End If
-  Else
+    ElseIf (vExtensi = False) And (vMPG = False) Then 'DAT , WMV
+      If frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 3 Then
         If (vVocal = 2) Then
-        If vVideoAktif Then
+            If PlaySong Then
                 frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
-        End If
-        vVocal = 21
-        ScoreValid = False
-    ElseIf (vVocal = 21) Then
-        If vVideoAktif Then
+            End If
+            vVocal = 21
+            ScoreValid = False
+        ElseIf (vVocal = 21) Then
+            If PlaySong Then
                 frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+            End If
+            vVocal = 2
+        ElseIf (vVocal = 3) Then
+            If PlaySong Then
+                frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+            End If
+            vVocal = 31
+            ScoreValid = False
+            frmRoom.vVocalterus = False
+        ElseIf (vVocal = 31) Then
+            If PlaySong Then
+                frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
+            End If
+            vVocal = 3
+            frmRoom.vVocalterus = True
         End If
-        vVocal = 2
-    ElseIf (vVocal = 3) Then
-        If vVideoAktif Then
-            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+      ElseIf frmVideo.WindowsMediaPlayer1.Controls.audioLanguageCount = 1 Then
+        If (vVocal = 2) Then
+          If PlaySong Then
+'              MsgBox frmVideo.WindowsMediaPlayer1.settings.balance
+              frmVideo.WindowsMediaPlayer1.settings.balance = 100
+          End If
+          vVocal = 21
+          ScoreValid = False
+        ElseIf (vVocal = 21) Then
+          If PlaySong Then
+'              MsgBox frmVideo.WindowsMediaPlayer1.settings.balance
+              frmVideo.WindowsMediaPlayer1.settings.balance = -100
+          End If
+          vVocal = 2
+        ElseIf (vVocal = 3) Then
+          If PlaySong Then
+'            MsgBox frmVideo.WindowsMediaPlayer1.settings.balance
+            frmVideo.WindowsMediaPlayer1.settings.balance = -100
+          End If
+          vVocal = 31
+          ScoreValid = False
+        ElseIf (vVocal = 31) Then
+          If PlaySong Then
+'            MsgBox frmVideo.WindowsMediaPlayer1.settings.balance
+            frmVideo.WindowsMediaPlayer1.settings.balance = 100
+          End If
+          vVocal = 3
         End If
-        vVocal = 31
-        ScoreValid = False
-    ElseIf (vVocal = 31) Then
-        If vVideoAktif Then
-            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
-        End If
-        vVocal = 3
     End If
-  End If
-
-
+End If
+    'Original Code
+'    If (vVocal = 2) Then
+'        If vVideoAktif Then
+'                frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
+'        End If
+'        vVocal = 21
+'        ScoreValid = False
+'    ElseIf (vVocal = 21) Then
+'        If vVideoAktif Then
+'                frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+'        End If
+'        vVocal = 2
+'    ElseIf (vVocal = 3) Then
+'        If vVideoAktif Then
+'            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 2
+'        End If
+'        vVocal = 31
+'        ScoreValid = False
+'    ElseIf (vVocal = 31) Then
+'        If vVideoAktif Then
+'            frmVideo.WindowsMediaPlayer1.Controls.currentAudioLanguageIndex = 3
+'        End If
+'        vVocal = 3
+'    End If
+    'Original Code
+'End If
 'Err1:
 End Sub
 
@@ -6538,8 +7288,275 @@ Public Sub screennormal()
         txtSearch.ForeColor = &H955001
 
         lstAll.Visible = True
+        cmdPause(0).Top = 12000
+        cmdPause(1).Top = 12000
 End Sub
 
+Public Sub screennormalHD()
+On Error Resume Next
+        caretLebar = 7
+        caretTinggi = 50
+'        frmTransparent.Show
+'        frmRoom.Show
+        frmRoom.Height = 10800
+'        flsLogo.Visible = False
+
+        lokasi = App.Path + "\picture\normalscreen\"
+'        picKategori.Picture = LoadPicture(lokasi + "kategori.jpg")
+        
+'        flsLogo.Movie = App.Path + "\picture\normalscreen\logo"
+        flsLogo.Movie = App.Path + "\picture\anim\mainmin"
+        flsLogo.ScaleMode = 1
+        flsLogo.Top = 100
+        flsLogo.Width = 1400
+        flsLogo.Height = 800
+        flsLogo.Left = 200
+        
+        flsMovieCategory.Visible = False
+
+        Picture3.Visible = False
+        cbokategori.Visible = True
+        picKategori.Visible = False
+        txtCategory.Visible = True
+        
+        flsTitle.ScaleMode = 1
+        flsTitle.Movie = App.Path + "\picture\anim\titlev2"
+        flsTitle.Visible = True
+        flsTitle.Top = 250
+'        flsTitle.Width = 3550
+        flsTitle.Width = 3800
+        flsTitle.Height = 800
+        flsTitle.Left = 2600
+
+        txtRemoteCode.Visible = modProject.frmRoomRemoteCode
+        txtRemoteCode.Left = 17200
+        
+        Picture3.Top = 980
+        Picture3.Left = 4920
+        Picture3.Height = 1000
+        Picture3.Width = 12000
+
+        picKategori.Top = 410
+        picKategori.Left = 5880
+        picKategori.Height = 400
+        picKategori.Width = 3255
+
+        cbokategori.Left = 4680
+        cbokategori.Width = 3855
+        cbokategori.Top = Screen.Height + 8160
+        cbokategori.Font.Size = 17
+        cbokategori.BackColor = &HFFFFFF
+        cbokategori.ForeColor = &H22A6B
+
+        txtCategory.Top = 1260
+        txtCategory.Left = 8000
+        txtCategory.Width = 2895
+        txtCategory.Font.Size = 16
+        txtCategory.BackColor = &H244C&
+        txtCategory.ForeColor = &HFFFFFF
+
+        lstAll.Font.Size = 20
+        lstAll.Top = 1600
+        lstAll.Left = 4000
+        lstAll.Height = 4695
+        lstAll.Width = 11625
+
+        lstPlaylist.Top = lstAll.Top
+        lstPlaylist.Left = lstAll.Left
+        lstPlaylist.Height = lstAll.Height
+        lstPlaylist.Width = lstAll.Width - 255
+        lstPlaylist.Font.Bold = lstAll.Font.Bold
+        lstPlaylist.Font.Name = lstAll.Font.Name
+        lstPlaylist.Font.Size = lstAll.Font.Size
+
+        txtVol.Top = 5800
+        txtVol.Left = 17950
+        txtVol.Height = 645
+        txtVol.Width = 1100
+        txtVol.Font.Size = 27
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H955001
+
+        txtUser.Top = 520
+        txtUser.Left = 6960
+        txtUser.Height = 0
+        txtUser.Width = 0
+        txtUser.BackColor = &HFFFFFF
+        txtUser.ForeColor = &H22A6B
+
+        txtTime.Top = 520
+        txtTime.Left = 6960
+        txtTime.Height = 0
+        txtTime.Width = 0
+        txtTime.BackColor = &HFFFFFF
+        txtTime.ForeColor = &H22A6B
+
+        txtUser.Visible = True
+        txtTime.Visible = True
+
+        lblRecording.Top = 360
+        lblRecording.Left = 12960
+        lblRecording.Height = 585
+        lblRecording.Width = 2280
+
+        btnRecStop.Top = lblRecording.Top
+        btnRecStop.Left = lblRecording.Left
+        btnRecStop.Height = lblRecording.Height
+        btnRecStop.Width = lblRecording.Width
+
+        txtSearch.Font.Size = 18
+        txtSearch.Top = 460
+        txtSearch.Left = 6800
+        txtSearch.Height = 400
+        txtSearch.Width = 6800
+        txtSearch.BackColor = &HFFFFFF
+        txtSearch.ForeColor = &H955001
+
+        lstAll.Visible = True
+        Unload frmCamera
+        cmdPause(0).Top = 11000
+        cmdPause(1).Top = 11000
+End Sub
+
+Public Sub screennormalFullHD()
+On Error Resume Next
+        caretLebar = 7
+        caretTinggi = 50
+'        flsTitle.Visible = False
+'        frmTransparent.Show
+'        frmRoom.Show
+'        frmRoom.Height = 11520
+        frmRoom.Height = 16200
+        flsLogo.Visible = True
+
+        lokasi = App.Path + "\picture\normalscreen\"
+'        picKategori.Picture = LoadPicture(lokasi + "kategori.jpg")
+
+        flsTitle.Movie = App.Path + "\picture\anim\titlev2"
+        flsTitle.ScaleMode = 2
+'        flsLogo.Movie = App.Path + "\picture\anim\logo"
+        flsLogo.Movie = App.Path + "\picture\anim\mainmin"
+        
+        flsLogo.ScaleMode = 1
+        flsLogo.Top = 70
+        flsLogo.Width = 2400
+        flsLogo.Height = 1300
+        flsLogo.Left = 70
+        
+        flsMovieCategory.Visible = False
+
+        Picture3.Visible = False
+        cbokategori.Visible = True
+        picKategori.Visible = False
+        txtCategory.Visible = True
+        
+        flsTitle.Top = 390
+        flsTitle.Width = 5500
+        flsTitle.Height = 1200
+        flsTitle.Left = 3900
+        flsTitle.Visible = True
+        
+        txtRemoteCode.Visible = modProject.frmRoomRemoteCode
+        txtRemoteCode.Left = 26000
+        txtRemoteCode.Height = 500
+        txtRemoteCode.Font.Size = 18
+        txtRemoteCode.Top = 1100
+
+        Picture3.Top = 980
+        Picture3.Left = 4920
+        Picture3.Height = 1500
+        Picture3.Width = 15000
+        
+        Form2.Picture5.Height = 1500
+        Form2.Label17.Top = 450
+
+        picKategori.Top = 410
+        picKategori.Left = 5880
+        picKategori.Height = 400
+        picKategori.Width = 3255
+
+        cbokategori.Left = 4680
+        cbokategori.Width = 3855
+        cbokategori.Top = Screen.Height + 8160
+        cbokategori.Font.Size = 17
+        cbokategori.BackColor = &HFFFFFF
+        cbokategori.ForeColor = &H22A6B
+
+        txtCategory.Top = 1800
+        txtCategory.Left = 13000
+        txtCategory.Width = 2895
+        txtCategory.Height = 500
+        txtCategory.Font.Size = 25
+        txtCategory.BackColor = &H244C&
+        txtCategory.ForeColor = &HFFFFFF
+
+        lstAll.Font.Size = 25
+        lstAll.Top = 2500
+        lstAll.Left = 7200
+        lstAll.Height = 6800
+        lstAll.Width = 15000
+        lstAll.ColumnHeaders(2).Width = 8000
+        
+        lstPlaylist.Top = lstAll.Top
+        lstPlaylist.Left = lstAll.Left
+        lstPlaylist.Height = lstAll.Height
+        lstPlaylist.Width = lstAll.Width - 255
+        lstPlaylist.Font.Bold = lstAll.Font.Bold
+        lstPlaylist.Font.Name = lstAll.Font.Name
+        lstPlaylist.Font.Size = lstAll.Font.Size
+        lstPlaylist.ColumnHeaders(2).Width = lstAll.ColumnHeaders(2).Width
+        
+
+        txtVol.Top = 8750
+        txtVol.Left = 27000
+        txtVol.Height = 800
+        txtVol.Width = 1400
+        txtVol.Font.Size = 35
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H955001
+        
+'        txtUser.Top = 520
+'        txtUser.Left = 6960
+'        txtUser.Height = 0
+'        txtUser.Width = 0
+'        txtUser.BackColor = &HFFFFFF
+'        txtUser.ForeColor = &H22A6B
+'
+'
+'        txtTime.Top = 520
+'        txtTime.Left = 6960
+'        txtTime.Height = 0
+'        txtTime.Width = 0
+'        txtTime.BackColor = &HFFFFFF
+'        txtTime.ForeColor = &H22A6B
+'        txtTime.Move 29000
+
+        txtUser.Visible = False
+        txtTime.Visible = False
+
+        lblRecording.Top = 360
+        lblRecording.Left = 12960
+        lblRecording.Height = 585
+        lblRecording.Width = 2280
+ 
+        btnRecStop.Top = lblRecording.Top
+        btnRecStop.Left = lblRecording.Left
+        btnRecStop.Height = lblRecording.Height
+        btnRecStop.Width = lblRecording.Width
+
+        txtSearch.Font.Size = 25
+        txtSearch.Top = 650
+        txtSearch.Left = 11500
+        txtSearch.Height = 700
+        txtSearch.Width = 10000
+        txtSearch.BackColor = &HFFFFFF
+        txtSearch.ForeColor = &H955001
+        
+        lstAll.Visible = True
+        Unload frmCamera
+        cmdPause(0).Top = 17000
+        cmdPause(1).Top = 17000
+End Sub
 Sub konekServer1()
 
     On Error Resume Next
@@ -6644,7 +7661,6 @@ Sub konekServer2()
     End If
 End Sub
 
-
 Sub waktuhabis()
     On Error Resume Next
         Dim Sql As String
@@ -6692,7 +7708,7 @@ Public Sub moviestart()
     If lstMovie.ListItems.Count = 0 Then
         movielist
     End If
-    flsLogo.Visible = False
+    flsLogo.Visible = True
 
     txtChatAktif.Visible = False
     flsChatNewMessage.Visible = False
@@ -6710,9 +7726,8 @@ Public Sub moviestart()
     frmTransparent.LoadSkin (5)
     frmTransparent.Show
 
-    flsTitle.Movie = App.Path + "\picture\anim\titlemovie"
     flsMovieCategory.Movie = App.Path + "\picture\anim\all"
-    flsLogo.Movie = App.Path + "\picture\movie\logo.swf"
+    flsLogo.Movie = App.Path + "\picture\anim\mainmin"
 
     Form2.Height = 0
 
@@ -6722,25 +7737,75 @@ Public Sub moviestart()
     txtCategory.Visible = True
     cbokategori.Visible = False
 
-    flsLogo.Top = 0
-    flsLogo.Width = 1875
-    flsLogo.Height = 1240
-    flsLogo.Left = 0
+'    flsLogo.Top = 100
+'    flsLogo.Width = 1400
+'    flsLogo.Height = 800
+'    flsLogo.Left = 200
     flsLogo.Visible = True
-
-    flsTitle.Top = 90
-    flsTitle.Width = 3015
-    flsTitle.Height = 1050
-    flsTitle.Left = 1920
-    flsTitle.Visible = True
-
-    txtRemoteCode.Visible = False
-
-    flsMovieCategory.Top = 210
-    flsMovieCategory.Width = 2460
-    flsMovieCategory.Height = 780
-    flsMovieCategory.Left = 12600
-    flsMovieCategory.Visible = True
+    flsTitle.Visible = False
+    flsTitle.ScaleMode = 2
+    
+    If frmUser.settingScreenResolution = "S-SD" Then
+        flsTitle.Movie = App.Path + "\picture\anim\titlemovie"
+        flsTitle.Top = 90
+        flsTitle.Width = 3080
+        flsTitle.Height = 1050
+        flsTitle.Left = 1880
+        flsTitle.Visible = True
+    
+        txtRemoteCode.Visible = False
+        
+        flsLogo.Top = 100
+        flsLogo.Width = 1400
+        flsLogo.Height = 800
+        flsLogo.Left = 200
+    
+        flsMovieCategory.Top = 210
+        flsMovieCategory.Width = 2460
+        flsMovieCategory.Height = 780
+        flsMovieCategory.Left = 12600
+        flsMovieCategory.Visible = True
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        flsTitle.Movie = App.Path + "\picture\anim\titlemovies.swf"
+        flsTitle.Top = 250
+        flsTitle.Width = 3200
+        flsTitle.Height = 800
+        flsTitle.Left = 2700
+        flsTitle.Visible = True
+    
+        txtRemoteCode.Visible = False
+        
+        flsLogo.Top = 100
+        flsLogo.Width = 1400
+        flsLogo.Height = 800
+        flsLogo.Left = 200
+    
+        flsMovieCategory.Top = 210
+        flsMovieCategory.Width = 2460
+        flsMovieCategory.Height = 780
+        flsMovieCategory.Left = 16000
+        flsMovieCategory.Visible = True
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        flsTitle.Movie = App.Path + "\picture\anim\titlemovies.swf"
+        flsTitle.Top = 390
+        flsTitle.Width = 5500
+        flsTitle.Height = 1200
+        flsTitle.Left = 3900
+        flsTitle.Visible = True
+    
+        txtRemoteCode.Visible = False
+        
+        flsLogo.Top = 70
+        flsLogo.Width = 2400
+        flsLogo.Height = 1300
+        flsLogo.Left = 70
+    
+        flsMovieCategory.Top = 450
+        flsMovieCategory.Width = 2460
+        flsMovieCategory.Height = 780
+        flsMovieCategory.Left = 26000
+        flsMovieCategory.Visible = True
+    End If
 
     txtArtis.Left = 11760
     txtArtis.Top = 1320
@@ -6763,23 +7828,63 @@ Public Sub moviestart()
     cbokategori.Top = Screen.Height + 8160
     cbokategori.BackColor = &HFFFFFF
     cbokategori.ForeColor = &H0&
-
-    txtCategory.Top = 1260
-    txtCategory.Left = 6240
-    txtCategory.Width = 2895
-    txtCategory.Font.Size = 16
-    txtCategory.BackColor = &H244C&
-    txtCategory.ForeColor = &HFFFFFF
-
-    txtSearch.BackColor = &HFFFFFF
-    txtSearch.ForeColor = &H0&
-    txtSearch.Font.Size = 28
-    txtSearch.Top = 380
-    txtSearch.Left = 5040
-    txtSearch.Height = 680
-    txtSearch.Width = 6615
-    txtSearch.BackColor = &HFFFFFF
-
+    
+    'edited by Andi 27-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        txtCategory.Top = 1260
+        txtCategory.Left = 6240
+        txtCategory.Width = 2895
+        txtCategory.Font.Size = 16
+        txtCategory.BackColor = &H244C&
+        txtCategory.ForeColor = &HFFFFFF
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        txtCategory.Top = 1260
+        txtCategory.Left = 8000
+        txtCategory.Width = 2895
+        txtCategory.Font.Size = 16
+        txtCategory.BackColor = &H244C&
+        txtCategory.ForeColor = &HFFFFFF
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        txtCategory.Top = 1800
+        txtCategory.Left = 13000
+        txtCategory.Width = 2895
+        txtCategory.Font.Size = 25
+        txtCategory.BackColor = &H244C&
+        txtCategory.ForeColor = &HFFFFFF
+    End If
+    'edited by Andi 27-01-2021
+    
+    'edited by Andi 27-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        txtSearch.BackColor = &HFFFFFF
+        txtSearch.ForeColor = &H0&
+        txtSearch.Font.Size = 28
+        txtSearch.Top = 380
+        txtSearch.Left = 5040
+        txtSearch.Height = 680
+        txtSearch.Width = 6615
+        txtSearch.BackColor = &HFFFFFF
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        txtSearch.BackColor = &HFFFFFF
+        txtSearch.ForeColor = &H0&
+        txtSearch.Font.Size = 18
+        txtSearch.Top = 470
+        txtSearch.Left = 7000
+        txtSearch.Height = 400
+        txtSearch.Width = 7500
+        txtSearch.BackColor = &HFFFFFF
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        txtSearch.BackColor = &HFFFFFF
+        txtSearch.ForeColor = &H0&
+        txtSearch.Font.Size = 28
+        txtSearch.Top = 650
+        txtSearch.Left = 13000
+        txtSearch.Height = 680
+        txtSearch.Width = 6615
+        txtSearch.BackColor = &HFFFFFF
+    End If
+    'edited by Andi 27-01-2021
+    
     PictureLogin.Height = 0
 
     txtUser.Top = 3240
@@ -6832,24 +7937,67 @@ Public Sub moviestart()
         VolTemp = 0
         tmrVolume.Enabled = True
     End If
-
-    lstMovie.Font.Size = 20
-    lstMovie.Top = 1920
-    lstMovie.Left = 2280
-    lstMovie.Height = 4695
-    lstMovie.Width = 11625
-
-    txtVol.Top = 6120
-    txtVol.Left = 14160
-    txtVol.Height = 645
-    txtVol.Width = 900
-    txtVol.Font.Size = 27
-    txtVol.BackColor = &HFFFFFF
-    txtVol.ForeColor = &H6F1628
-    txtVol.Visible = True
-
-    frmRoom.Height = 11520
-
+    
+'    frmRoom.Height = 11520
+    
+    If frmUser.settingScreenResolution = "S-SD" Then
+        lstMovie.Font.Size = 20
+        lstMovie.Top = 1920
+        lstMovie.Left = 2280
+        lstMovie.Height = 4695
+        lstMovie.Width = 11625
+        frmRoom.Height = 11520
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        lstMovie.Font.Size = 18
+        lstMovie.Top = 1920
+        lstMovie.Left = 4000
+        lstMovie.Height = 4695
+        lstMovie.Width = 11625
+        frmRoom.Height = 10800
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        lstMovie.Font.Size = 22
+        lstMovie.Top = 2800
+        lstMovie.Left = 7000
+        lstMovie.Height = 9000
+        lstMovie.Width = 15000
+        frmRoom.Height = 16200
+    End If
+    'edited by Andi 27-01-2021
+    
+    'edited by Andi 27-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        txtVol.Top = 6120
+        txtVol.Left = 14160
+        txtVol.Height = 645
+        txtVol.Width = 900
+        txtVol.Font.Size = 27
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H6F1628
+        txtVol.Visible = True
+        frmRoom.Height = 11520
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        txtVol.Top = 5800
+        txtVol.Left = 18030
+        txtVol.Height = 645
+        txtVol.Width = 1100
+        txtVol.Font.Size = 27
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H6F1628
+        txtVol.Visible = True
+        frmRoom.Height = 10800
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        txtVol.Top = 8800
+        txtVol.Left = 27200
+        txtVol.Height = 660
+        txtVol.Width = 1380
+        txtVol.Font.Size = 35
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H6F1628
+        txtVol.Visible = True
+        frmRoom.Height = 16200
+    End If
+    'edited by Andi 27-01-2021
+    
     lstMovie.SetFocus
     txtSearch.SetFocus
     vpointer = 1
@@ -6916,8 +8064,18 @@ Public Sub PlayerKomputer()
     frmRoom.Height = 11520
     txtChatAktif.Visible = False
     txtPlaying.Visible = True
-    frmRoom.flsTitle.Movie = App.Path + "\picture\anim\title"
-    screennormal
+    frmRoom.flsTitle.Movie = App.Path + "\picture\anim\titlev"
+    
+'    screennormal
+    'edited by Andi 26-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        screennormal
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        screennormalHD
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        screennormalFullHD
+    End If
+    'edited by Andi 26-01-2021
 
     If (lstAll.ListItems.Count > 0) And (Not lstAll.selectedItem Is Nothing) Then
         selIndex = 1
@@ -7029,37 +8187,88 @@ On Error Resume Next
     txtRemoteCode.Visible = False
 
     flsLogo.Movie = App.Path + "\picture\anim\" + "mainmin"
-    flsLogo.Top = 120
-    flsLogo.Width = 1560
-    flsLogo.Height = 840
-    flsLogo.Left = 360
-    flsLogo.Visible = True
-
-    txtUser.Top = 220
-    txtUser.Left = 13800
-    txtUser.Height = 270
-    txtUser.Width = 1575
-    txtUser.BackColor = &HFFFFFF
-    txtUser.ForeColor = &H22993
-
-    txtTime.Top = 600
-    txtTime.Left = 13800
-    txtTime.Height = 270
-    txtTime.Width = 1575
-    txtTime.BackColor = &HFFFFFF
-    txtTime.ForeColor = &H22993
-
+    'edited by Andi 29-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        flsLogo.Top = 120
+        flsLogo.Width = 1560
+        flsLogo.Height = 840
+        flsLogo.Left = 360
+        flsLogo.Visible = False
+    
+        txtUser.Top = 220
+        txtUser.Left = 13800
+        txtUser.Height = 270
+        txtUser.Width = 1575
+        txtUser.BackColor = &HFFFFFF
+        txtUser.ForeColor = &H22993
+    
+        txtTime.Top = 600
+        txtTime.Left = 13800
+        txtTime.Height = 270
+        txtTime.Width = 1575
+        txtTime.BackColor = &HFFFFFF
+        txtTime.ForeColor = &H22993
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        flsLogo.Top = 200
+        flsLogo.Width = 1560
+        flsLogo.Height = 840
+        flsLogo.Left = 360
+        flsLogo.Visible = True
+        txtVol.Visible = False
+        txtUser.Visible = True
+        txtUser.Top = 220
+        txtUser.Left = 17100
+        txtUser.Height = 270
+        txtUser.Width = 1575
+        txtUser.BackColor = &HFFFFFF
+        txtUser.ForeColor = &H22993
+        
+        txtTime.Visible = True
+        txtTime.Top = 800
+        txtTime.Left = 17150
+        txtTime.Height = 270
+        txtTime.Width = 1575
+        txtTime.BackColor = &HFFFFFF
+        txtTime.ForeColor = &H22993
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        flsLogo.ScaleMode = 1
+        flsLogo.Top = 180
+        flsLogo.Width = 3600
+        flsLogo.Height = 1650
+        flsLogo.Left = 200
+        flsLogo.Visible = True
+                
+        txtUser.Visible = True
+        txtUser.Font.Size = 16
+        txtUser.Top = 480
+        txtUser.Left = 26000
+        txtUser.Height = 300
+        txtUser.Width = 1575
+        txtUser.BackColor = &HFFFFFF
+        txtUser.ForeColor = &H22993
+        
+        txtTime.Visible = True
+        txtTime.Font.Size = txtUser.Font.Size
+        txtTime.Top = 1300
+        txtTime.Left = 26000
+        txtTime.Height = 250
+        txtTime.Width = 1575
+        txtTime.BackColor = &HFFFFFF
+        txtTime.ForeColor = &H22993
+        
+        txtVol.Visible = False
+    End If
+    'edited by Andi 29-01-2021
+    
     frmRoom.Height = 10
     DoEvents
 
     setAudioEndPointVolumeMasterVolumeLevelPercent 0
 
-
     vpointer = 1
 
     txtSinopsis.Visible = False
     txtArtis.Visible = False
-
 
     flsMovieCategory.Visible = False
     txtChatAktif.Visible = False
@@ -7075,8 +8284,18 @@ On Error Resume Next
 
     '--------SKIN COY----------
     lokasi = App.Path
-    Skin1.LoadSkin lokasi + "\skin\sknmidi.skn"
-    Skin1.ApplySkinByName hWnd, "sknmidi"
+    'edited by Andi 29-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        Skin1.LoadSkin lokasi + "\skin\sknmidi.skn"
+        Skin1.ApplySkinByName hWnd, "sknmidi"
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        Skin1.LoadSkin lokasi + "\skin\sknmidi_hd.skn"
+        Skin1.ApplySkinByName hWnd, "sknmidi"
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        Skin1.LoadSkin lokasi + "\skin\sknmidi_fullhd.skn"
+        Skin1.ApplySkinByName hWnd, "sknmidi"
+    End If
+    'edited by Andi 29-01-2021
 
     vVideo = 1
 
@@ -7120,10 +8339,18 @@ On Error Resume Next
     lstMidiMusic.Width = lstMidi.Width
     lstMidiMusic.Visible = False
     lstTV.Visible = False
-    frmRoom.Height = 1450
+    
+    'edited by Andi 29-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        frmRoom.Height = 1450
+    Else
+        frmRoom.Height = 2000
+    End If
+    'edited by Andi 29-01-2021
+    
     Form2.Height = 1095
 
-    MidiAktif
+'    MidiAktif
     frmCamera.VideoCap1.TVMute = True
 
     txtVol.Visible = True
@@ -7171,41 +8398,121 @@ Public Sub PlayerTV()
     picKeyTempo.Visible = False
     tmrPicKeyTempo.Enabled = False
     txtPlaying.Visible = False
-
-    txtUser.Top = 3240
-    txtUser.Left = 7560
-    txtUser.Height = 0
-    txtUser.Width = 0
-    txtUser.BackColor = &HFFFFFF
-    txtUser.ForeColor = &H4000&
-
-    txtTime.Top = 3240
-    txtTime.Left = 7560
-    txtTime.Height = 0
-    txtTime.Width = 0
-    txtTime.BackColor = &HFFFFFF
-    txtTime.ForeColor = &H4000&
-
-    txtVol.Top = 6120
-    txtVol.Left = 14160
-    txtVol.Height = 645
-    txtVol.Width = 900
-    txtVol.Font.Size = 27
-    txtVol.BackColor = &HFFFFFF
-    txtVol.ForeColor = &H6F1628
-    txtVol.Visible = True
-
-    lstTV.Font.Size = 20
-    lstTV.Top = 1920
-    lstTV.Left = 2280
-    lstTV.Height = 4695
-    lstTV.Width = 11625
-
-    flsLogo.Top = 0
-    flsLogo.Width = 1875
-    flsLogo.Height = 1240
-    flsLogo.Left = 0
-    flsLogo.Visible = True
+    flsLogo.Movie = App.Path + "\picture\anim\mainmin"
+    
+    'edited by Andi 28-01-2021
+    If frmUser.settingScreenResolution = "S-SD" Then
+        txtUser.Top = 3240
+        txtUser.Left = 7560
+        txtUser.Height = 0
+        txtUser.Width = 0
+        txtUser.BackColor = &HFFFFFF
+        txtUser.ForeColor = &H4000&
+    
+        txtTime.Top = 3240
+        txtTime.Left = 7560
+        txtTime.Height = 0
+        txtTime.Width = 0
+        txtTime.BackColor = &HFFFFFF
+        txtTime.ForeColor = &H4000&
+    
+        txtVol.Top = 6120
+        txtVol.Left = 14160
+        txtVol.Height = 645
+        txtVol.Width = 900
+        txtVol.Font.Size = 27
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H6F1628
+        txtVol.Visible = True
+    
+        lstTV.Font.Size = 20
+        lstTV.Top = 1920
+        lstTV.Left = 2280
+        lstTV.Height = 4695
+        lstTV.Width = 11625
+    
+        flsLogo.Top = 0
+        flsLogo.Width = 1875
+        flsLogo.Height = 1240
+        flsLogo.Left = 0
+        flsLogo.Visible = False
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        txtVol.Visible = False
+        txtUser.Top = 3240
+        txtUser.Left = 7560
+        txtUser.Height = 0
+        txtUser.Width = 0
+        txtUser.BackColor = &HFFFFFF
+        txtUser.ForeColor = &H4000&
+    
+        txtTime.Top = 3240
+        txtTime.Left = 7560
+        txtTime.Height = 0
+        txtTime.Width = 0
+        txtTime.BackColor = &HFFFFFF
+        txtTime.ForeColor = &H4000&
+    
+        txtVol.Top = 5800
+        txtVol.Left = 18030
+        txtVol.Height = 645
+        txtVol.Width = 1100
+        txtVol.Font.Size = 27
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H6F1628
+        txtVol.Visible = True
+    
+        lstTV.Font.Size = 20
+        lstTV.Top = 1500
+        lstTV.Left = 4500
+        lstTV.Height = 4695
+        lstTV.Width = 11625
+    
+        flsLogo.Top = 100
+        flsLogo.Width = 1400
+        flsLogo.Height = 800
+        flsLogo.Left = 200
+        flsLogo.Visible = True
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        txtUser.Top = 3240
+        txtUser.Left = 7560
+        txtUser.Height = 0
+        txtUser.Width = 0
+        txtUser.BackColor = &HFFFFFF
+        txtUser.ForeColor = &H4000&
+        
+        txtTime.Top = 3240
+        txtTime.Left = 7560
+        txtTime.Height = 0
+        txtTime.Width = 0
+        txtTime.BackColor = &HFFFFFF
+        txtTime.ForeColor = &H4000&
+    
+        txtVol.Top = 8800
+        txtVol.Left = 27200
+        txtVol.Height = 645
+        txtVol.Width = 1200
+        txtVol.Font.Size = 30
+        txtVol.BackColor = &HFFFFFF
+        txtVol.ForeColor = &H6F1628
+        txtVol.Visible = True
+    
+        lstTV.Font.Size = 22
+        lstTV.ColumnHeaders(2).Width = 11250
+        lstTV.Top = 2800
+'        lstTV.Left = 9000
+        lstTV.Left = 7500
+        lstTV.Height = 5500
+        lstTV.Width = 11625
+        
+        flsLogo.Visible = True
+        flsLogo.ScaleMode = 1
+        flsLogo.Top = 70
+        flsLogo.Width = 2400
+        flsLogo.Height = 1300
+        flsLogo.Left = 70
+        txtVol.Visible = False
+    End If
+    'edited by Andi 28-01-2021
 
     flsTitle.Visible = False
     flsMovieCategory.Visible = False
@@ -7252,7 +8559,15 @@ Public Sub PlayerTV()
     frmBackground.Show
     frmTransparent.Show
     frmRoom.Show
-    frmRoom.Height = 11520
+    
+    If frmUser.settingScreenResolution = "S-SD" Then
+        frmRoom.Height = 11520
+    ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        frmRoom.Height = 10800
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        frmRoom.Height = 16200
+    End If
+    
     DoEvents
 
     '--------SKIN COY----------
@@ -7265,11 +8580,11 @@ Public Sub PlayerTV()
 
     frmTransparent.LoadSkin (7)
 
-    flsLogo.Movie = App.Path + "\picture\tv\logo.swf"
+    flsLogo.Movie = App.Path + "\picture\anim\mainmin"
 
     setAudioEndPointVolumeMasterVolumeLevelPercent 0
 
-'    frmCamera.Show
+    frmCamera.Show
     frmCamera.VideoCap1.Visible = True
     frmCamera.VideoCap1.Start
     frmCamera.VideoCap1.TVMute = True
@@ -7547,6 +8862,168 @@ Sub prcKeyUp()
     Next i
     picKeyTempo.Visible = True
 End Sub
+Sub prcKeyUpHD()
+    On Error Resume Next
+
+    Dim i As Integer
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    Image1.Enabled = False
+    Image1.Enabled = True
+
+'    If vKey < 5 Then
+'        incPitch 100
+'        vKey = vKey + 1
+'    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vKey < 4 Then
+            tempPitch 0
+            incPitch 100
+            vKey = vKey + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+                If vKey < 4 Then
+            tempPitch 0
+            incPitch 100
+            vKey = vKey + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+
+    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
+End Sub
+Sub prcKeyUpFULLHD()
+    On Error Resume Next
+
+    Dim i As Integer
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    Image1.Enabled = False
+    Image1.Enabled = True
+'    If vKey < 5 Then
+'        incPitch 100
+'        vKey = vKey + 1
+'    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vKey < 4 Then
+            tempPitch 0
+            incPitch 100
+            vKey = vKey + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+        If vKey < 4 Then
+            tempPitch 0
+            incPitch 100
+            vKey = vKey + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
+End Sub
 
 Sub prckeyDown()
     On Error Resume Next
@@ -7584,6 +9061,157 @@ Sub prckeyDown()
         End If
     Next i
     picKeyTempo.Visible = True
+End Sub
+Sub prckeyDownHD()
+    On Error Resume Next
+
+    Dim i As Integer
+
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    Image1.Enabled = False
+    Image1.Enabled = True
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vKey > -4 Then
+            tempPitch 0
+            incPitch -100
+            vKey = vKey - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+        If vKey > -4 Then
+            tempPitch 0
+            incPitch -100
+            vKey = vKey - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
+End Sub
+Sub prckeyDownFULLHD()
+    On Error Resume Next
+
+    Dim i As Integer
+
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vKey > -4 Then
+            tempPitch 0
+            incPitch -100
+            vKey = vKey - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+                If vKey > -4 Then
+            tempPitch 0
+            incPitch -100
+            vKey = vKey - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vKey > 0 Then
+                If i <= vKey Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vKey < 0 Then
+                If i <= Abs(vKey) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
 End Sub
 
 Sub prcKeyReset()
@@ -7639,6 +9267,156 @@ Sub prcTempoUp()
     Next i
     picKeyTempo.Visible = True
 End Sub
+Sub prcTempoUpHD()
+    On Error Resume Next
+
+    Dim i As Integer
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    Image1.Enabled = False
+    Image1.Enabled = True
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vTempo < 5 Then
+            IncTempo 0.05
+            vTempo = vTempo + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+        If vTempo < 5 Then
+            IncTempo 0.05
+            vTempo = vTempo + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
+    
+End Sub
+Sub prcTempoUpFULLHD()
+    On Error Resume Next
+
+    Dim i As Integer
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    Image1.Enabled = False
+    Image1.Enabled = True
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vTempo < 5 Then
+            IncTempo 0.05
+            vTempo = vTempo + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+            If vTempo < 5 Then
+            IncTempo 0.05
+            vTempo = vTempo + 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    End If
+
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
+End Sub
 
 Sub prcTempoDown()
     On Error Resume Next
@@ -7675,6 +9453,156 @@ Sub prcTempoDown()
         End If
     Next i
     picKeyTempo.Visible = True
+End Sub
+Sub prcTempoDownHD()
+    On Error Resume Next
+
+    Dim i As Integer
+
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    Image1.Enabled = False
+    Image1.Enabled = False
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vTempo > -5 Then
+            IncTempo -0.05
+            vTempo = vTempo - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+                If vTempo > -5 Then
+            IncTempo -0.05
+            vTempo = vTempo - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
+End Sub
+Sub prcTempoDownFULLHD()
+    On Error Resume Next
+
+    Dim i As Integer
+
+    tmrPicKeyTempo.Enabled = False
+    tmrPicKeyTempo.Enabled = True
+    
+    Image1.Enabled = False
+    Image1.Enabled = True
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vTempo > -5 Then
+            IncTempo -0.05
+            vTempo = vTempo - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah(i - 1).Visible = False
+            KotakKurang(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah(i - 1).Visible = True
+                Else
+                    KotakTambah(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang(i - 1).Visible = True
+                Else
+                    KotakKurang(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    ElseIf UkuranVideo = 1 Then
+        If vTempo > -5 Then
+            IncTempo -0.05
+            vTempo = vTempo - 1
+        End If
+    
+        For i = 1 To 5
+            KotakTambah1(i - 1).Visible = False
+            KotakKurang1(i - 1).Visible = False
+        Next i
+    
+        For i = 1 To 5
+            If vTempo > 0 Then
+                If i <= vTempo Then
+                    KotakTambah1(i - 1).Visible = True
+                Else
+                    KotakTambah1(i - 1).Visible = False
+                End If
+            End If
+            If vTempo < 0 Then
+                If i <= Abs(vTempo) Then
+                    KotakKurang1(i - 1).Visible = True
+                Else
+                    KotakKurang1(i - 1).Visible = False
+                End If
+            End If
+        Next i
+    End If
+    
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        picKeyTempo.Visible = True
+        Image1.Visible = False
+    ElseIf UkuranVideo = 1 Then
+        Image1.Visible = True
+        picKeyTempo.Visible = False
+    End If
 End Sub
 
 Sub prcTempoReset()
@@ -7810,10 +9738,15 @@ Private Sub TambahLstAll()
                 flsTitle.Movie = Path
               End If
             Else
-              Path = App.Path + "\picture\anim\title"
-              If flsTitle.Movie <> Path Then
-                flsTitle.Movie = Path
-              End If
+'              Path = App.Path + "\picture\anim\title"
+                If frmUser.settingScreenResolution = "S-SD" Then
+                  Path = App.Path + "\picture\anim\title"
+                ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                  Path = App.Path + "\picture\anim\titlev2"
+                End If
+                    If flsTitle.Movie <> Path Then
+                      flsTitle.Movie = Path
+                    End If
             End If
             vpointer = 1
             Exit Sub
@@ -7821,15 +9754,25 @@ Private Sub TambahLstAll()
             vpointer = 8
             TambahLstAll
             If lstAll.ListItems.Count <> 0 Then
-              Path = App.Path + "\picture\anim\abr-artist"
-              If flsTitle.Movie <> Path Then
-                flsTitle.Movie = Path
+'              Path = App.Path + "\picture\anim\abr-artist"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\abr-artist"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\artistsingkatan"
               End If
+                If flsTitle.Movie <> Path Then
+                  flsTitle.Movie = Path
+                End If
             Else
-              Path = App.Path + "\picture\anim\artist"
-              If flsTitle.Movie <> Path Then
-                flsTitle.Movie = Path
+'              Path = App.Path + "\picture\anim\artist"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\artist"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\artistv2"
               End If
+                If flsTitle.Movie <> Path Then
+                  flsTitle.Movie = Path
+                End If
             End If
             vpointer = 2
             Exit Sub
@@ -7936,17 +9879,27 @@ Private Sub TambahLstAll()
     Select Case vpointer
       Case 1
         If lstAll.ListItems.Count > 0 Then
-          Path = App.Path + "\picture\anim\title"
-          If flsTitle.Movie <> Path Then
-            flsTitle.Movie = Path
+'          Path = App.Path + "\picture\anim\title"
+          If frmUser.settingScreenResolution = "S-SD" Then
+            Path = App.Path + "\picture\anim\title"
+          ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+            Path = App.Path + "\picture\anim\titlev2"
           End If
+            If flsTitle.Movie <> Path Then
+              flsTitle.Movie = Path
+            End If
         End If
       Case 2
         If lstAll.ListItems.Count > 0 Then
-          Path = App.Path + "\picture\anim\artist"
-          If flsTitle.Movie <> Path Then
-            flsTitle.Movie = Path
-          End If
+'          Path = App.Path + "\picture\anim\artist"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\artist"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\artistv2"
+              End If
+                If flsTitle.Movie <> Path Then
+                  flsTitle.Movie = Path
+                End If
         End If
     End Select
 
@@ -8068,12 +10021,22 @@ Public Sub CariTitle()
             vpointer = 7
             CariTitle
             If lstAll.ListItems.Count > 0 Then
-              Path = App.Path + "\picture\anim\abr-title"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\abr-title"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\titlesingkatan"
+              End If
+              
               If flsTitle.Movie <> Path Then
                 flsTitle.Movie = Path
               End If
             Else
-              Path = App.Path + "\picture\anim\title"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\title"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\titlev2"
+              End If
+              
               If flsTitle.Movie <> Path Then
                 flsTitle.Movie = Path
               End If
@@ -8084,12 +10047,21 @@ Public Sub CariTitle()
             vpointer = 8
             CariTitle
             If lstAll.ListItems.Count <> 0 Then
-              Path = App.Path + "\picture\anim\abr-artist"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\abr-artist"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\artistsingkatan"
+              End If
               If flsTitle.Movie <> Path Then
                 flsTitle.Movie = Path
               End If
             Else
-              Path = App.Path + "\picture\anim\artist"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\artist"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\artistv2"
+              End If
+              
               If flsTitle.Movie <> Path Then
                 flsTitle.Movie = Path
               End If
@@ -8194,14 +10166,22 @@ Public Sub CariTitle()
     Select Case vpointer
       Case 1
         If lstAll.ListItems.Count > 0 Then
-          Path = App.Path + "\picture\anim\title"
+          If frmUser.settingScreenResolution = "S-SD" Then
+            Path = App.Path + "\picture\anim\title"
+          ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+            Path = App.Path + "\picture\anim\titlev2"
+          End If
           If flsTitle.Movie <> Path Then
             flsTitle.Movie = Path
           End If
         End If
       Case 2
         If lstAll.ListItems.Count > 0 Then
-          Path = App.Path + "\picture\anim\artist"
+          If frmUser.settingScreenResolution = "S-SD" Then
+            Path = App.Path + "\picture\anim\artist"
+          ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+            Path = App.Path + "\picture\anim\artistv2"
+          End If
           If flsTitle.Movie <> Path Then
             flsTitle.Movie = Path
           End If
@@ -8341,10 +10321,15 @@ Private Sub KurangLstAll()
                 flsTitle.Movie = Path
               End If
             Else
-              Path = App.Path + "\picture\anim\title"
-              If flsTitle.Movie <> Path Then
-                flsTitle.Movie = Path
-              End If
+'              Path = App.Path + "\picture\anim\title"
+                If frmUser.settingScreenResolution = "S-SD" Then
+                  Path = App.Path + "\picture\anim\title"
+                ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                  Path = App.Path + "\picture\anim\titlev2"
+                End If
+                If flsTitle.Movie <> Path Then
+                  flsTitle.Movie = Path
+                End If
             End If
             vpointer = 1
             Exit Sub
@@ -8352,15 +10337,25 @@ Private Sub KurangLstAll()
             vpointer = 8
             KurangLstAll
             If lstAll.ListItems.Count <> 0 Then
-              Path = App.Path + "\picture\anim\abr-artist"
-              If flsTitle.Movie <> Path Then
-                flsTitle.Movie = Path
+'              Path = App.Path + "\picture\anim\abr-artist"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\abr-artist"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\artistsingkatan"
               End If
+                If flsTitle.Movie <> Path Then
+                  flsTitle.Movie = Path
+                End If
             Else
-              Path = App.Path + "\picture\anim\artist"
-              If flsTitle.Movie <> Path Then
-                flsTitle.Movie = Path
+'              Path = App.Path + "\picture\anim\artist"
+              If frmUser.settingScreenResolution = "S-SD" Then
+                Path = App.Path + "\picture\anim\artist"
+              ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+                Path = App.Path + "\picture\anim\artistv2"
               End If
+                If flsTitle.Movie <> Path Then
+                  flsTitle.Movie = Path
+                End If
             End If
             vpointer = 2
             Exit Sub
@@ -8458,17 +10453,27 @@ Private Sub KurangLstAll()
     Select Case vpointer
       Case 1
         If lstAll.ListItems.Count > 0 Then
-          Path = App.Path + "\picture\anim\title"
-          If flsTitle.Movie <> Path Then
-            flsTitle.Movie = Path
+'          Path = App.Path + "\picture\anim\title"
+          If frmUser.settingScreenResolution = "S-SD" Then
+            Path = App.Path + "\picture\anim\title"
+          ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+            Path = App.Path + "\picture\anim\titlev2"
           End If
+            If flsTitle.Movie <> Path Then
+              flsTitle.Movie = Path
+            End If
         End If
       Case 2
         If lstAll.ListItems.Count > 0 Then
-          Path = App.Path + "\picture\anim\artist"
-          If flsTitle.Movie <> Path Then
-            flsTitle.Movie = Path
+'          Path = App.Path + "\picture\anim\artist"
+          If frmUser.settingScreenResolution = "S-SD" Then
+            Path = App.Path + "\picture\anim\artist"
+          ElseIf frmUser.settingScreenResolution = "S-HD" Or frmUser.settingScreenResolution = "S-FULLHD" Then
+            Path = App.Path + "\picture\anim\artistv2"
           End If
+            If flsTitle.Movie <> Path Then
+              flsTitle.Movie = Path
+            End If
         End If
     End Select
 
@@ -8621,7 +10626,7 @@ Sub UpdateChat()
         Dim lokasi As String
         lokasi = App.Path
         flsChatNewMessage.Movie = lokasi + "\picture\anim\newmessage"
-        flsChatNewMessage.Visible = True
+        flsChatNewMessage.Visible = False
         Exit Sub
     End If
 
@@ -8682,7 +10687,6 @@ Sub TerimaLagu()
     DoEvents
 
     If PlaySong = True Then
-
         promoSongPlayCurrent = promoSongPlayCurrent - 1
         cmdStop_Click
     Else
@@ -8745,32 +10749,103 @@ Public Sub Maksimal()
     btnRecStop.Height = lblRecording.Height
     btnRecStop.Width = lblRecording.Width
 
-    If vVideo = 0 Then
+    
+    If vVideo = 0 Then 'Computer
         picKeyTempo.Visible = False
         Picture3.Visible = False
+        Image1.Visible = False
+        txtSearch.Visible = True
 
         frmTransparent.Show
         txtCategory.Visible = True
-        lstAll.Top = 1920
-        lstPlaylist.Top = lstAll.Top
-        txtSearch.Top = 380
-        flsTitle.Top = 90
-        lstAll.Height = 4695
-        lstPlaylist.Height = lstAll.Height
-        txtVol.Top = 6120
-        txtVol.Left = 14160
-        txtVol.Height = 645
-        txtVol.Width = 900
-
-        txtUser.Top = 520
-        txtUser.Left = 6960
-        txtUser.Height = 0
-        txtUser.Width = 0
-        txtTime.Top = 520
-        txtTime.Left = 6960
-        txtTime.Height = 0
-        txtTime.Width = 0
-
+        
+        'edited by Andi 26-01-2021
+        If frmUser.settingScreenResolution = "S-SD" Then
+            lstAll.Top = 1920
+            lstPlaylist.Top = lstAll.Top
+            txtSearch.Top = 380
+'            flsTitle.Top = 90
+            lstAll.Height = 4695
+            lstPlaylist.Height = lstAll.Height
+            
+            txtVol.Top = 6120
+            txtVol.Left = 14160
+            txtVol.Height = 645
+            txtVol.Width = 900
+    
+            txtUser.Top = 500
+            txtUser.Left = 6960
+            txtUser.Height = 350
+            txtUser.Width = 0
+            
+            txtTime.Top = 1100
+            txtTime.Left = 6960
+            txtTime.Height = 350
+            txtTime.Width = 0
+            
+            txtPlaying.Top = 11300
+            txtPlaying.Left = 4500
+            txtPlaying.Visible = True
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            lstAll.Top = 1600
+            lstPlaylist.Top = lstAll.Top
+            txtSearch.Top = 440
+'            txtSearch.Left = 0
+            flsTitle.Top = 250
+            flsTitle.Visible = True
+            lstAll.Height = 4695
+            lstPlaylist.Height = lstAll.Height
+            
+            txtVol.Top = 5800
+            txtVol.Left = 17980
+            txtVol.Height = 645
+            txtVol.Width = 1100
+    
+            txtUser.Top = 500
+            txtUser.Left = 6960
+            txtUser.Height = 350
+            txtUser.Width = 0
+            txtUser.Visible = False
+            
+            txtTime.Top = 1100
+            txtTime.Left = 6960
+            txtTime.Height = 350
+            txtTime.Width = 0
+            txtTime.Visible = False
+            
+            txtPlaying.Top = 10400
+            txtPlaying.Left = 7000
+            txtPlaying.Visible = True
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            lstAll.Top = 2500
+            lstPlaylist.Top = lstAll.Top
+            txtSearch.Top = 650
+'            flsTitle.Top = 20
+            flsTitle.Visible = True
+            lstAll.Height = 6800
+            lstPlaylist.Height = lstAll.Height
+            
+            txtVol.Top = 8750
+            txtVol.Left = 27000
+            txtVol.Height = 800
+            txtVol.Width = 1400
+    
+            txtUser.Top = 500
+            txtUser.Left = 30000
+            txtUser.Height = 350
+            txtUser.Width = 1575
+            
+            txtTime.Top = 1100
+            txtTime.Left = 26000
+            txtTime.Height = 350
+            txtTime.Width = 1575
+            
+            txtPlaying.Top = 15700
+            txtPlaying.Left = 12000
+            txtPlaying.Visible = True
+        End If
+        'edited by Andi 26-01-2021
+        
         If vpointer = 3 Then
             frmTransparent.GantiSkin (5)
         Else
@@ -8798,89 +10873,250 @@ Public Sub Maksimal()
             KotakTambah(i).Left = KotakTambah(i - 1).Left + KotakTambah(i - 1).Width
             KotakKurang(i).Left = KotakKurang(i - 1).Left - KotakKurang(i - 1).Width
         Next i
-
-        lokasi = App.Path + "\picture\normalscreen\"
-        flsLogo.Movie = lokasi + "logo"
-        flsLogo.Top = 0
-        flsLogo.Width = 1875
-        flsLogo.Height = 1240
-        flsLogo.Left = 0
-        flsTitle.Visible = True
-        txtRemoteCode.Visible = modProject.frmRoomRemoteCode
-        frmRoom.Show
-        frmRoom.Height = 11520
+        
+        'added by Andi 26-01-2021
+        If frmUser.settingScreenResolution = "S-SD" Then
+            lokasi = App.Path + "\picture\anim\"
+            flsLogo.Movie = lokasi + "mainmin"
+            flsLogo.Top = 100
+            flsLogo.Width = 1400
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+            
+            flsTitle.Movie = App.Path + "\picture\anim\title"
+            flsTitle.Top = 90
+            flsTitle.Width = 3015
+            flsTitle.Height = 1050
+            flsTitle.Left = 1920
+            flsTitle.Visible = True
+            
+            txtRemoteCode.Visible = modProject.frmRoomRemoteCode
+            txtTime.Visible = False
+            frmRoom.Show
+            frmRoom.Height = 11520
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            lokasi = App.Path + "\picture\anim\"
+            flsLogo.Movie = lokasi + "mainmin"
+            flsLogo.Top = 100
+            flsLogo.Width = 1400
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+            txtRemoteCode.Visible = modProject.frmRoomRemoteCode
+            frmRoom.Show
+            frmRoom.Height = 10800
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            lokasi = App.Path + "\picture\anim\"
+            flsLogo.Movie = lokasi + "mainmin"
+            flsLogo.Top = 70
+            flsLogo.Width = 2400
+            flsLogo.Height = 1300
+            flsLogo.Left = 70
+            flsTitle.ScaleMode = 2
+            flsTitle.Left = 4500
+            flsTitle.Top = 390
+            flsTitle.Width = 4000
+            flsTitle.Height = 1200
+            flsTitle.Visible = True
+                        
+            txtRemoteCode.Visible = modProject.frmRoomRemoteCode
+            frmRoom.Show
+            frmRoom.Height = 16200
+        End If
+        'added by Andi 26-01-2021
     End If
 
-    If vVideo = 5 Then
-        txtVol.Top = 4860
-        txtVol.Left = 13580
-        txtVol.Height = 645
-        txtVol.Width = 900
-        txtSearch.Top = 4920
-        txtCategory.Visible = True
-
-        txtUser.Top = 3240
-        txtUser.Left = 7560
-        txtUser.Height = 0
-        txtUser.Width = 0
-        txtTime.Top = 3240
-        txtTime.Left = 7560
-        txtTime.Height = 0
-        txtTime.Width = 0
+    If vVideo = 5 Then              ' Movie
+        'edited by Andi 28-01-2021
+        If frmUser.settingScreenResolution = "S-SD" Then
+            txtVol.Top = 4860
+            txtVol.Left = 13580
+            txtVol.Height = 645
+            txtVol.Width = 900
+            txtSearch.Top = 4920
+            txtCategory.Visible = True
+            
+            lstMovie.Top = 1920
+            
+            flsLogo.Top = 100
+            flsLogo.Width = 1400
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+            flsTitle.Visible = True
+            txtUser.Top = 3240
+            txtUser.Left = 7560
+            txtUser.Height = 0
+            txtUser.Width = 0
+            txtTime.Top = 3240
+            txtTime.Left = 7560
+            txtTime.Height = 0
+            txtTime.Width = 0
+            frmRoom.Height = 11520
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            txtVol.Top = 5800
+            txtVol.Left = 18030
+            txtVol.Height = 645
+            txtVol.Width = 1100
+            txtSearch.Top = 4920
+            txtCategory.Visible = True
+            
+            lstMovie.Top = 1920
+            flsTitle.Top = 250
+            flsTitle.Visible = True
+            
+            flsMovieCategory.ScaleMode = 2
+            flsMovieCategory.Left = 16300
+            flsMovieCategory.Top = 210
+            flsMovieCategory.Height = 780
+            flsMovieCategory.Width = 2460
+    
+            txtUser.Top = 3240
+            txtUser.Left = 7560
+            txtUser.Height = 0
+            txtUser.Width = 0
+            txtTime.Top = 3240
+            txtTime.Left = 7560
+            txtTime.Height = 0
+            txtTime.Width = 0
+            frmRoom.Height = 10800
+            
+            flsLogo.Top = 100
+            flsLogo.Width = 1400
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            txtVol.Top = 8800
+            txtVol.Left = 27200
+            txtVol.Height = 645
+            txtVol.Width = 1380
+            txtSearch.Top = 650
+            txtCategory.Visible = True
+            
+            lstMovie.Top = 2800
+            flsTitle.ScaleMode = 2
+            flsTitle.Top = 390
+            flsTitle.Left = 3900
+            flsTitle.Width = 5500
+            flsTitle.Height = 1200
+            flsTitle.Visible = True
+            
+            flsMovieCategory.ScaleMode = 2
+            flsMovieCategory.Left = 24500
+            flsMovieCategory.Top = 50
+            flsMovieCategory.Height = 1600
+            flsMovieCategory.Width = 4000
+    
+            txtUser.Top = 3240
+            txtUser.Left = 7560
+            txtUser.Height = 0
+            txtUser.Width = 0
+            txtTime.Top = 3240
+            txtTime.Left = 7560
+            txtTime.Height = 0
+            txtTime.Width = 0
+            frmRoom.Height = 16200
+            
+            
+            flsLogo.ScaleMode = 1
+            flsLogo.Top = 70
+            flsLogo.Width = 2400
+            flsLogo.Height = 1300
+            flsLogo.Left = 70
+            
+            lstMovie.Visible = True
+        End If
+        'edited by Andi 28-01-2021
 
         frmTransparent.Show
         cbokategori.Visible = False
-        lstMovie.Top = 1920
-
+        
         frmTransparent.GantiSkinMovie (0)
-        flsLogo.Movie = App.Path + "\picture\movie\logo.swf"
+'        flsLogo.Movie = App.Path + "\picture\movie\logo.swf"
+'        flsLogo.Movie = App.Path + "\picture\anim\mainmin"
 
         flsMovieCategory.Visible = True
-
-        txtSearch.Top = 380
-        flsTitle.Top = 90
-        txtVol.Top = 6120
-        txtVol.Left = 14160
-        txtVol.Height = 645
-        txtVol.Width = 900
-
-        flsLogo.Top = 0
-        flsLogo.Width = 1875
-        flsLogo.Height = 1240
-        flsLogo.Left = 0
-        frmRoom.Height = 11520
-
+    
         frmTransparent.Show
         txtRemoteCode.Visible = False
         frmRoom.Show
     End If
 
-    If vVideo = 7 Then
+    If vVideo = 7 Then                          'TV
         frmTransparent.GantiSkinTV (0)
         flsLogo.Movie = App.Path + "\picture\tv\logo.swf"
-
-        txtUser.Top = 3240
-        txtUser.Left = 7560
-        txtUser.Height = 0
-        txtUser.Width = 0
-        txtTime.Top = 3240
-        txtTime.Left = 7560
-        txtTime.Height = 0
-        txtTime.Width = 0
-
-        txtVol.Top = 6120
-        txtVol.Left = 14160
-        txtVol.Height = 645
-        txtVol.Width = 900
-
-        lstTV.Top = 1920
-
-        flsLogo.Top = 0
-        flsLogo.Width = 1875
-        flsLogo.Height = 1240
-        flsLogo.Left = 0
-        frmRoom.Height = 11520
-
+        flsLogo.Movie = App.Path + "\picture\anim\mainmin"
+        
+        'edited by Andi 28-01-2021
+        If frmUser.settingScreenResolution = "S-SD" Then
+            txtUser.Top = 3240
+            txtUser.Left = 7560
+            txtUser.Height = 0
+            txtUser.Width = 0
+            txtTime.Top = 3240
+            txtTime.Left = 7560
+            txtTime.Height = 0
+            txtTime.Width = 0
+    
+            txtVol.Top = 6120
+            txtVol.Left = 14160
+            txtVol.Height = 645
+            txtVol.Width = 900
+    
+            lstTV.Top = 1920
+    
+            flsLogo.Top = 0
+            flsLogo.Width = 1875
+            flsLogo.Height = 1240
+            flsLogo.Left = 0
+            frmRoom.Height = 11520
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            txtUser.Top = 3240
+            txtUser.Left = 7560
+            txtUser.Height = 0
+            txtUser.Width = 0
+            
+            txtTime.Top = 3240
+            txtTime.Left = 7560
+            txtTime.Height = 0
+            txtTime.Width = 0
+    
+            txtVol.Top = 5800
+            txtVol.Left = 18030
+            txtVol.Height = 645
+            txtVol.Width = 1100
+    
+            lstTV.Top = 1500
+            
+            flsLogo.Top = 100
+            flsLogo.Width = 1400
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+            frmRoom.Height = 10800
+    ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            txtUser.Top = 3240
+            txtUser.Left = 7560
+            txtUser.Height = 0
+            txtUser.Width = 0
+            txtTime.Top = 3240
+            txtTime.Left = 7560
+            txtTime.Height = 0
+            txtTime.Width = 0
+    
+            txtVol.Top = 8900
+            txtVol.Left = 27200
+            txtVol.Height = 645
+            txtVol.Width = 1300
+    
+            lstTV.Top = 2300
+            
+            flsLogo.ScaleMode = 1
+            flsLogo.Top = 70
+            flsLogo.Width = 2400
+            flsLogo.Height = 1300
+            flsLogo.Left = 70
+            frmRoom.Height = 16200
+    End If
+        'edited by Andi 28-01-2021
+        
         frmTransparent.Show
         frmRoom.Show
 
@@ -8888,8 +11124,58 @@ Public Sub Maksimal()
     End If
 End Sub
 
+Sub kotaktambah_kotakkurangPosition()
+If frmUser.settingScreenResolution = "S-HD" Then
+    ' Kotak Tambah
+    KotakTambah1(0).Top = 485
+    KotakTambah1(0).Left = 10080
+    KotakTambah1(1).Top = 485
+    KotakTambah1(1).Left = 10500
+    KotakTambah1(2).Top = 485
+    KotakTambah1(2).Left = 10880
+    KotakTambah1(3).Top = 485
+    KotakTambah1(3).Left = 11300
+    KotakTambah1(4).Top = 485
+    KotakTambah1(4).Left = 11700
+    ' Kotak Kurang
+    KotakKurang1(0).Top = 485
+    KotakKurang1(0).Left = 8650
+    KotakKurang1(1).Top = 485
+    KotakKurang1(1).Left = 8200
+    KotakKurang1(2).Top = 485
+    KotakKurang1(2).Left = 7800
+    KotakKurang1(3).Top = 485
+    KotakKurang1(3).Left = 7350
+    KotakKurang1(4).Top = 485
+    KotakKurang1(4).Left = 6900
+ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+    ' Kotak Tambah
+    KotakTambah1(0).Top = 660
+    KotakTambah1(0).Left = 14900
+    KotakTambah1(1).Top = 660
+    KotakTambah1(1).Left = 15300
+    KotakTambah1(2).Top = 660
+    KotakTambah1(2).Left = 15700
+    KotakTambah1(3).Top = 660
+    KotakTambah1(3).Left = 16130
+    KotakTambah1(4).Top = 660
+    KotakTambah1(4).Left = 16500
+    ' Kotak Kurang
+    KotakKurang1(0).Top = 660
+    KotakKurang1(0).Left = 13500
+    KotakKurang1(1).Top = 660
+    KotakKurang1(1).Left = 13050
+    KotakKurang1(2).Top = 660
+    KotakKurang1(2).Left = 12600
+    KotakKurang1(3).Top = 660
+    KotakKurang1(3).Left = 12200
+    KotakKurang1(4).Top = 660
+    KotakKurang1(4).Left = 11760
+End If
+End Sub
+
 Public Sub Minimal()
-    On Error Resume Next
+     On Error Resume Next
 
     UkuranVideo = 2
 
@@ -8897,36 +11183,145 @@ Public Sub Minimal()
         frmCamera.Show
     End If
 
-    If vVideo = 0 Then
-        Form2.Height = 900
+    If vVideo = 0 Then                        'Computer
+        If frmUser.settingScreenResolution = "S-SD" Then
+            Form2.Height = 900
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            Form2.Height = 900
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            Form2.Height = 1600
+        End If
         Form2.Show
         picKeyTempo.Visible = False
-        frmRoom.Height = 1450
+        Image1.Visible = False
+'        frmRoom.Height = 1450
+        
+        
         frmTransparent.GantiSkin (1)
-
-        txtUser.Top = 220
-        txtUser.Left = 13800
-        txtUser.Height = 270
-        txtUser.Width = 1575
-        txtTime.Top = 600
-        txtTime.Left = 13800
-        txtTime.Height = 270
-        txtTime.Width = 1575
-
-        txtSearch.Top = Screen.Height + 8000
-        flsTitle.Top = Screen.Height + 8000
-        txtVol.Top = Screen.Height + 8000
-        lstAll.Top = Screen.Height + 8000 '2120
-        lstPlaylist.Top = lstAll.Top
-
+        
+        'edited by Andi 21-01-2021
+        If frmUser.settingScreenResolution = "S-SD" Then
+            frmRoom.Height = 1450
+            txtUser.Top = 220
+            txtUser.Left = 13800
+            txtUser.Height = 270
+            txtUser.Width = 1575
+            txtTime.Top = 600
+            txtTime.Left = 13800
+            txtTime.Height = 270
+            txtTime.Width = 1575
+            txtTime.Visible = True
+            
+            txtSearch.Top = Screen.Height + 8000
+'            flsTitle.Top = Screen.Height + 8000
+            flsTitle.Visible = False
+            txtVol.Top = Screen.Height + 8000
+            lstAll.Top = Screen.Height + 8000 '2120
+            lstPlaylist.Top = lstAll.Top
+            
+            lokasi = App.Path + "\picture\anim\"
+            flsLogo.Movie = lokasi + "mainmin"
+            flsLogo.Top = 120
+            flsLogo.Width = 1560
+            flsLogo.Height = 840
+            flsLogo.Left = 360
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            frmRoom.Height = 10800
+            txtUser.Visible = True
+            txtUser.Top = 220
+            txtUser.Left = 17200
+            txtUser.Height = 270
+            txtUser.Width = 1575
+            
+            txtTime.Visible = True
+            txtTime.Top = 700
+            txtTime.Left = 17200
+            txtTime.Height = 270
+            txtTime.Width = 1575
+            
+            txtSearch.Top = Screen.Height + 8000
+'            flsTitle.Top = Screen.Height + 8000
+            flsTitle.Visible = False
+            txtVol.Top = Screen.Height + 8000
+            txtVol.Left = 18000
+            lstAll.Top = Screen.Height + 8000 '2120
+            lstPlaylist.Top = lstAll.Top
+            
+            lokasi = App.Path + "\picture\anim\"
+            flsLogo.Movie = lokasi + "mainmin"
+            flsLogo.ScaleMode = 1
+            flsLogo.Top = 180
+            flsLogo.Width = 2000
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+            '--------------------------------------------
+            txtNextSong.Font.Size = 16
+            txtNextSong.Left = 1000
+            txtNextSong.Top = 160
+            txtNextSong.ZOrder 0
+            
+            KotakTambah1(0).Visible = False
+            KotakTambah1(1).Visible = False
+            KotakTambah1(2).Visible = False
+            KotakTambah1(3).Visible = False
+            KotakTambah1(4).Visible = False
+            KotakKurang1(0).Visible = False
+            KotakKurang1(1).Visible = False
+            KotakKurang1(2).Visible = False
+            KotakKurang1(3).Visible = False
+            KotakKurang1(4).Visible = False
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            frmRoom.Height = 16200
+            txtUser.Visible = True
+            txtUser.Top = 500
+            txtUser.Left = 26000
+            txtUser.Height = 350
+            txtUser.Width = 1575
+            txtUser.BackColor = vbWhite
+            txtUser.Font.Size = 18
+            '-----------------------------------------------
+            txtTime.Visible = True
+            txtTime.Top = 1200
+            txtTime.Left = 26000
+            txtTime.Height = 350
+            txtTime.Width = 1575
+            txtTime.BackColor = vbWhite
+            txtTime.Font.Size = txtUser.Font.Size
+            
+            txtSearch.Top = Screen.Height + 8000
+            flsTitle.Top = Screen.Height + 8000
+            txtVol.Top = Screen.Height + 8000
+            lstAll.Top = Screen.Height + 10000 '2120
+            lstPlaylist.Top = lstAll.Top
+            
+            flsLogo.ScaleMode = 1
+            lokasi = App.Path + "\picture\anim\"
+            flsLogo.Movie = lokasi + "mainmin"
+            flsLogo.Top = 180
+            flsLogo.Width = 3600
+            flsLogo.Height = 1650
+            flsLogo.Left = 200
+            
+            '--------------------------------------------
+            txtNextSong.Font.Size = 20
+            txtNextSong.Left = 7000
+            txtNextSong.Top = 900
+            txtNextSong.ZOrder 0
+            
+            KotakTambah1(0).Visible = False
+            KotakTambah1(1).Visible = False
+            KotakTambah1(2).Visible = False
+            KotakTambah1(3).Visible = False
+            KotakTambah1(4).Visible = False
+            KotakKurang1(0).Visible = False
+            KotakKurang1(1).Visible = False
+            KotakKurang1(2).Visible = False
+            KotakKurang1(3).Visible = False
+            KotakKurang1(4).Visible = False
+        End If
+        'edited by Andi 21-01-2021
+        
         txtRemoteCode.Visible = False
-
-        lokasi = App.Path + "\picture\anim\"
-        flsLogo.Movie = lokasi + "mainmin"
-        flsLogo.Top = 120
-        flsLogo.Width = 1560
-        flsLogo.Height = 840
-        flsLogo.Left = 360
         Picture3.Visible = True
 
         lblRecording.Top = 1440
@@ -8954,7 +11349,7 @@ Public Sub Minimal()
             KotakTambah(i).Left = KotakTambah(i - 1).Left + KotakTambah(i - 1).Width
             KotakKurang(i).Left = KotakKurang(i - 1).Left - KotakKurang(i - 1).Width
         Next i
-
+        
         txtSearch.SelStart = 0
         txtSearch.SelLength = Len(txtSearch.text)
         If vpbfrmCamera Then
@@ -8962,36 +11357,84 @@ Public Sub Minimal()
         End If
         frmTransparent.Show
         frmRoom.Show
+'        frmRoom.txtNextSong.Top = 250
+'        frmRoom.txtNextSong.Height = 300
+'        frmRoom.txtNextSong.BackColor = vbMagenta
+        txtPlaying.Visible = False
     End If
 
-    If vVideo = 5 Then
+    If vVideo = 5 Then           ' Movie
         Form2.Height = 1095
         Form2.Show
         frmRoom.Height = 1450
 
         lokasi = App.Path + "\picture\anim\"
         flsLogo.Movie = lokasi + "mainmin"
-
+        flsLogo.ScaleMode = 1
+'
         flsMovieCategory.Visible = False
+        
+        'edited by Andi 27-01-2021
+        If frmUser.settingScreenResolution = "S-SD" Then
+            flsLogo.Top = 120
+            flsLogo.Width = 1560
+            flsLogo.Height = 840
+            flsLogo.Left = 360
+            flsTitle.Visible = False
+            
+            txtUser.Top = 220
+            txtUser.Left = 13800
+            txtUser.Height = 270
+            txtUser.Width = 1575
+            txtTime.Top = 600
+            txtTime.Left = 13800
+            txtTime.Height = 270
+            txtTime.Width = 1575
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            flsLogo.ScaleMode = 1
+            flsLogo.Top = 180
+            flsLogo.Width = 2000
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+            flsTitle.Visible = False
+            txtUser.Visible = True
+            
+            txtUser.Top = 350
+            txtUser.Left = 17200
+            txtUser.Height = 270
+            txtUser.Width = 1575
+            txtTime.Top = 800
+            txtTime.Left = 17200
+            txtTime.Height = 270
+            txtTime.Width = 1575
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            flsLogo.Top = 180
+            flsLogo.Width = 3600
+            flsLogo.Height = 1650
+            flsLogo.Left = 200
 
-        flsLogo.Top = 120
-        flsLogo.Width = 1560
-        flsLogo.Height = 840
-        flsLogo.Left = 360
-
-        txtUser.Top = 220
-        txtUser.Left = 13800
-        txtUser.Height = 270
-        txtUser.Width = 1575
-        txtTime.Top = 600
-        txtTime.Left = 13800
-        txtTime.Height = 270
-        txtTime.Width = 1575
+            frmRoom.Height = 16200
+            txtUser.Visible = True
+            
+            txtUser.Top = 500
+            txtUser.Left = 25800
+            txtUser.Height = 350
+            txtUser.Width = 1575
+            '-------------------------------
+            txtTime.Top = 1150
+            txtTime.Left = 25800
+            txtTime.Height = 350
+            txtTime.Width = 1575
+            
+            lstMovie.Visible = False
+            flsTitle.Visible = False
+        End If
+        'edited by Andi 27-01-2021
 
         frmTransparent.GantiSkinMovie (1)
 
         txtSearch.Top = frmRoom.Height + 8000
-        flsTitle.Top = frmRoom.Height + 8000
+'        flsTitle.Top = frmRoom.Height + 8000
         txtVol.Top = frmRoom.Height + 8000
 
         txtRemoteCode.Visible = False
@@ -9005,30 +11448,74 @@ Public Sub Minimal()
         frmRoom.Show
     End If
 
-    If vVideo = 7 Then
+    If vVideo = 7 Then               'TV
         Form2.Height = 1095
         Form2.Show
-        frmRoom.Height = 1450
-
-        txtUser.Top = 220
-        txtUser.Left = 13800
-        txtUser.Height = 270
-        txtUser.Width = 1575
-        txtTime.Top = 600
-        txtTime.Left = 13800
-        txtTime.Height = 270
-        txtTime.Width = 1575
-
-        flsLogo.Movie = App.Path + "\picture\anim\mainmin"
-        frmTransparent.GantiSkinTV (1)
-
-        flsLogo.Top = 120
-        flsLogo.Width = 1560
-        flsLogo.Height = 840
-        flsLogo.Left = 360
+        frmRoom.Height = 16200
+        
+        If frmUser.settingScreenResolution = "S-SD" Then
+            txtUser.Top = 220
+            txtUser.Left = 13800
+            txtUser.Height = 270
+            txtUser.Width = 1575
+            txtTime.Top = 600
+            txtTime.Left = 13800
+            txtTime.Height = 270
+            txtTime.Width = 1575
+    
+            flsLogo.Movie = App.Path + "\picture\anim\mainmin"
+            frmTransparent.GantiSkinTV (1)
+    
+            flsLogo.Top = 120
+            flsLogo.Width = 1560
+            flsLogo.Height = 840
+            flsLogo.Left = 360
+        ElseIf frmUser.settingScreenResolution = "S-HD" Then
+            txtUser.Visible = True
+            txtUser.Top = 220
+            txtUser.Left = 17200
+            txtUser.Height = 270
+            txtUser.Width = 1575
+            
+            txtTime.Visible = True
+            txtTime.Top = 800
+            txtTime.Left = 17200
+            txtTime.Height = 270
+            txtTime.Width = 1575
+    
+            flsLogo.Movie = App.Path + "\picture\anim\mainmin"
+            frmTransparent.GantiSkinTV (1)
+    
+            flsLogo.Top = 180
+            flsLogo.Width = 2000
+            flsLogo.Height = 800
+            flsLogo.Left = 200
+        ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+            txtUser.Top = 500
+            txtUser.Left = 26000
+            txtUser.Height = 350
+            txtUser.Width = 1575
+            txtUser.Visible = False
+            '------------------------------
+            txtTime.Top = 1200
+            txtTime.Left = 26000
+            txtTime.Height = 350
+            txtTime.Width = 1575
+    
+            flsLogo.Movie = App.Path + "\picture\anim\mainmin"
+            frmTransparent.GantiSkinTV (1)
+            flsLogo.ScaleMode = 1
+            flsLogo.Top = 180
+            flsLogo.Width = 3600
+            flsLogo.Height = 1650
+            flsLogo.Left = 200
+            
+            txtTime.Visible = True
+            txtUser.Visible = True
+        End If
 
         txtVol.Top = frmRoom.Height + 8000
-        flsTitle.Top = frmRoom.Height + 8000
+'        flsTitle.Top = frmRoom.Height + 8000
 
         txtRemoteCode.Visible = False
 
@@ -9076,6 +11563,76 @@ Public Sub MinimalKey()
         txtCategory.Visible = False
     End If
 End Sub
+Public Sub MinimalKeyHD()
+    On Error Resume Next
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vVideo = 0 Then
+            picKeyTempo.Top = 350
+            picKeyTempo.Left = 6950
+            picKeyTempo.Height = 480
+            picKeyTempo.Width = 5280
+            lokasi = App.Path
+            picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomin.jpg")
+            frmTransparent.GantiSkin (9)
+            Picture3.Visible = False
+        End If
+    ElseIf UkuranVideo = 1 Then
+        flsTitle.Visible = False
+        txtRemoteCode.Visible = False
+        picKeyTempo.Top = 0
+        picKeyTempo.Left = 2180
+        picKeyTempo.Height = 1100
+        picKeyTempo.Width = 9555
+        lokasi = App.Path
+        picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain.jpg")
+        kotaktambah_kotakkurangPosition
+        Image1.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain1.jpg")
+        Image1.Top = 0
+        Image1.Left = 4760
+        Image1.Height = 1100
+        Image1.Width = 9555
+        txtSearch.Visible = False
+        frmTransparent.GantiSkin (7)
+        txtCategory.Visible = False
+        txtTime.Visible = False
+        txtUser.Visible = False
+    End If
+End Sub
+Public Sub MinimalKeyFULLHD()
+    On Error Resume Next
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vVideo = 0 Then
+            picKeyTempo.Top = 600
+            picKeyTempo.Left = 11700
+            picKeyTempo.Height = 480
+            picKeyTempo.Width = 5280
+            lokasi = App.Path
+            picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomin.jpg")
+            frmTransparent.GantiSkin (9)
+            Picture3.Visible = False
+        End If
+    ElseIf UkuranVideo = 1 Then
+        flsTitle.Visible = False
+        txtRemoteCode.Visible = False
+        picKeyTempo.Top = 0
+        picKeyTempo.Left = 2340
+        picKeyTempo.Height = 1100
+        picKeyTempo.Width = 9555
+        lokasi = App.Path
+        picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain.jpg")
+        kotaktambah_kotakkurangPosition
+        Image1.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain1.jpg")
+        Image1.Top = 0
+        Image1.Left = 9700
+        Image1.Height = 1420
+        Image1.Width = 8800
+        txtSearch.Visible = False
+        frmTransparent.GantiSkin (7)
+        txtCategory.Visible = False
+        txtUser.Visible = False
+        txtTime.Visible = False
+    End If
+End Sub
 
 Public Sub MinimalTempo()
     On Error Resume Next
@@ -9103,36 +11660,181 @@ Public Sub MinimalTempo()
         txtCategory.Visible = False
     End If
 End Sub
+Public Sub MinimalTempoHD()
+    On Error Resume Next
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vVideo = 0 Then
+            picKeyTempo.Top = 350
+            picKeyTempo.Left = 6950
+            picKeyTempo.Height = 480
+            picKeyTempo.Width = 5280
+            lokasi = App.Path
+            picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomin.jpg")
+            frmTransparent.GantiSkin (10)
+            Picture3.Visible = False
+        End If
+    ElseIf UkuranVideo = 1 Then
+        flsTitle.Visible = False
+        txtRemoteCode.Visible = False
+        picKeyTempo.Top = 0
+        picKeyTempo.Left = 2340
+        picKeyTempo.Height = 1100
+        picKeyTempo.Width = 9555
+        lokasi = App.Path
+        picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain.jpg")
+        kotaktambah_kotakkurangPosition
+        Image1.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain1.jpg")
+        Image1.Top = 0
+        Image1.Left = 4760
+        Image1.Height = 1100
+        Image1.Width = 9555
+        txtSearch.Visible = False
+        frmTransparent.GantiSkin (8)
+        txtCategory.Visible = False
+        txtUser.Visible = False
+        txtTime.Visible = False
+    End If
+End Sub
+Public Sub MinimalTempoFULLHD()
+    On Error Resume Next
+    If UkuranVideo = 2 Or UkuranVideo = 4 Then
+        If vVideo = 0 Then
+            picKeyTempo.Top = 600
+            picKeyTempo.Left = 11700
+            picKeyTempo.Height = 480
+            picKeyTempo.Width = 5280
+            lokasi = App.Path
+            picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomin.jpg")
+            frmTransparent.GantiSkin (10)
+            Picture3.Visible = False
+        End If
+    ElseIf UkuranVideo = 1 Then
+        flsTitle.Visible = False
+        txtRemoteCode.Visible = False
+        picKeyTempo.Top = 0
+        picKeyTempo.Left = 2340
+        picKeyTempo.Height = 1100
+        picKeyTempo.Width = 9555
+        lokasi = App.Path
+        picKeyTempo.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain.jpg")
+        kotaktambah_kotakkurangPosition
+        Image1.Picture = LoadPicture(lokasi + "\Picture\normalscreen\keytempomain1.jpg")
+        Image1.Top = 0
+        Image1.Left = 9700
+        Image1.Height = 1420
+        Image1.Width = 8800
+        txtSearch.Visible = False
+        frmTransparent.GantiSkin (8)
+        txtCategory.Visible = False
+        txtUser.Visible = False
+        txtTime.Visible = False
+    End If
+End Sub
 
 Public Sub MinimalVolume()
     On Error Resume Next
     If UkuranVideo = 2 Or UkuranVideo = 3 Then
         UkuranVideo = 4
         If vVideo = 0 Then
-            txtSearch.Top = Screen.Height + 8000
-            lstAll.Height = 1695
-            lstPlaylist.Height = lstAll.Height
-            picKeyTempo.Visible = False
-            frmTransparent.GantiSkin (6)
-            txtVol.Top = 200
-            txtVol.Left = 13800
-            txtVol.Height = 645
-            txtVol.Width = 1260
+            'added by Andi 26-01-2021
+            If frmUser.settingScreenResolution = "S-SD" Then
+                txtSearch.Top = Screen.Height + 8000
+                lstAll.Height = 1695
+                lstPlaylist.Height = lstAll.Height
+                picKeyTempo.Visible = False
+                frmTransparent.GantiSkin (6)
+                txtVol.Top = 200
+                txtVol.Left = 13800
+                txtVol.Height = 645
+                txtVol.Width = 1260
+            ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                txtSearch.Top = Screen.Height + 8000
+                lstAll.Height = 1695
+                lstPlaylist.Height = lstAll.Height
+                picKeyTempo.Visible = False
+                frmTransparent.GantiSkin (6)
+                txtVol.Top = 200
+                txtVol.Left = 17000
+                txtVol.Height = 645
+                txtVol.Width = 1260
+                txtUser.Visible = False
+                txtTime.Visible = False
+            ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                txtSearch.Top = Screen.Height + 8000
+                lstAll.Height = 1695
+                lstPlaylist.Height = lstAll.Height
+                picKeyTempo.Visible = False
+                frmTransparent.GantiSkin (6)
+                txtUser.Visible = False
+                txtVol.Top = 500
+                txtVol.Left = 26000
+                txtVol.Height = 700
+                txtVol.Width = 1300
+                txtTime.Visible = False
+                txtUser.Visible = False
+            End If
+            'added by Andi 26-01-2021
         End If
         If vVideo = 5 Then
-            txtSearch.Top = Screen.Height + 8000
-            frmTransparent.GantiSkin (6)
-            txtVol.Top = 200
-            txtVol.Left = 13800
-            txtVol.Height = 645
-            txtVol.Width = 1260
+            'edited by Andi 28-01-2021
+            If frmUser.settingScreenResolution = "S-SD" Then
+                txtSearch.Top = Screen.Height + 8000
+                frmTransparent.GantiSkin (6)
+                txtVol.Top = 200
+                txtVol.Left = 13800
+                txtVol.Height = 645
+                txtVol.Width = 1260
+            ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                txtSearch.Top = Screen.Height + 8000
+                frmTransparent.GantiSkin (6)
+                txtVol.Top = 200
+                txtVol.Left = 17000
+                txtVol.Height = 645
+                txtVol.Width = 1260
+                
+                txtUser.Visible = False
+                txtTime.Visible = False
+            ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                txtSearch.Top = Screen.Height + 8000
+                frmTransparent.GantiSkin (6)
+                txtUser.Visible = False
+                txtVol.Top = 400
+                txtVol.Left = 26200
+                txtVol.Height = 645
+                txtVol.Width = 1350
+                txtUser.Visible = False
+                txtTime.Visible = False
+            End If
+            'edited by Andi 28-01-2021
         End If
         If vVideo = 7 Then
-            frmTransparent.GantiSkin (6)
-            txtVol.Top = 200
-            txtVol.Left = 13800
-            txtVol.Height = 645
-            txtVol.Width = 1260
+            'edited by Andi 28-01-2021
+            If frmUser.settingScreenResolution = "S-SD" Then
+                frmTransparent.GantiSkin (6)
+                txtVol.Top = 200
+                txtVol.Left = 13800
+                txtVol.Height = 645
+                txtVol.Width = 1260
+            ElseIf frmUser.settingScreenResolution = "S-HD" Then
+                frmTransparent.GantiSkin (6)
+                txtVol.Top = 200
+                txtVol.Left = 17000
+                txtVol.Height = 645
+                txtVol.Width = 1260
+                
+                txtUser.Visible = False
+                txtTime.Visible = False
+            ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+                frmTransparent.GantiSkin (6)
+                txtVol.Top = 400
+                txtVol.Left = 26000
+                txtVol.Height = 645
+                txtVol.Width = 1260
+                txtUser.Visible = False
+                txtTime.Visible = False
+                txtVol.Visible = True
+            End If
+            'edited by Andi 28-01-2021
         End If
         If vVideo = 1 Then
             Skin1.ApplySkinByName hWnd, "volume"
@@ -9179,7 +11881,7 @@ End Sub
 Public Sub prcPageDownLstAll()
     On Error Resume Next
 
-    Dim idMusic As Long
+    Dim IDMusic As Long
     Dim idMusic2 As Long
     Dim i As Integer
     Dim awal As Boolean
@@ -9187,12 +11889,12 @@ Public Sub prcPageDownLstAll()
     If lstAll.ListItems.Count < 9 Then
         Exit Sub
     End If
-    idMusic = lstAll.ListItems(lstAll.ListItems.Count).SubItems(3)
+    IDMusic = lstAll.ListItems(lstAll.ListItems.Count).SubItems(3)
 
     lErr = LockWindowUpdate(lstAll.hWnd)
     awal = True
     i = 1
-    Do While Not ((i > 8) Or (idMusic = lstAll.ListItems(1).SubItems(3)) Or (idMusic2 = lstAll.ListItems(1).SubItems(3)))
+    Do While Not ((i > 8) Or (IDMusic = lstAll.ListItems(1).SubItems(3)) Or (idMusic2 = lstAll.ListItems(1).SubItems(3)))
         TambahLstAll
         If awal Then
             idMusic2 = lstAll.ListItems(lstAll.ListItems.Count).SubItems(3)
@@ -9206,17 +11908,17 @@ End Sub
 Public Sub prcPageUpLstAll()
     On Error Resume Next
 
-    Dim idMusic As Long
+    Dim IDMusic As Long
     Dim i As Integer
 
     If lstAll.ListItems.Count < 9 Then
         Exit Sub
     End If
 
-    idMusic = lstAll.ListItems(1).SubItems(3)
+    IDMusic = lstAll.ListItems(1).SubItems(3)
     lErr = LockWindowUpdate(lstAll.hWnd)
     i = 1
-    Do While Not ((i > 8) Or (idMusic = lstAll.ListItems(lstAll.ListItems.Count).SubItems(3)))
+    Do While Not ((i > 8) Or (IDMusic = lstAll.ListItems(lstAll.ListItems.Count).SubItems(3)))
         KurangLstAll
         i = i + 1
     Loop
@@ -9413,7 +12115,7 @@ Public Sub prcHilangkanScrollbarPlaylist()
 End Sub
 
 
-Private Sub ServerRemotePlay(idMusic As String)
+Private Sub ServerRemotePlay(IDMusic As String)
 
   On Error Resume Next
 
@@ -9427,7 +12129,7 @@ Private Sub ServerRemotePlay(idMusic As String)
     Unload frmCamera
     DoEvents
   End If
-
+  
   If vpbBlackBox = 2 Then
       frmUser.turnDiscoLampOn
   End If
@@ -9442,7 +12144,7 @@ Private Sub ServerRemotePlay(idMusic As String)
 
   Dim Sql As String
   Dim rs As MYSQL_RS
-  Sql = "SELECT PATH,ANALOG,VOL FROM masters WHERE IDMUSIC=" & idMusic
+  Sql = "SELECT PATH,ANALOG,VOL FROM masters WHERE IDMUSIC=" & IDMusic
   Set rs = MyConn.Execute(Sql)
 
   PathLagu = Replace$(rs.Fields(0).value, "/", "\")
@@ -9514,10 +12216,14 @@ End Sub
 Private Sub ServerRemoteRemove(playOrder As Long)
 
   On Error Resume Next
-
+  
+  IDMusic = lstPlaylist.ListItems(lstPlaylist.selectedItem.index).ListSubItems(2).text
+  
+  deleteReorderPlayListDatabase (IDMusic)
+  
   lstPlaylist.ListItems.Remove playOrder
 
-  savePlayList
+'  savePlayList
 
   If lstPlaylist.ListItems.Count >= playOrder Then
     Set lstPlaylist.selectedItem = lstPlaylist.ListItems(playOrder)
@@ -9709,7 +12415,7 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
   Dim idMember As String
   Dim pair() As String
   Dim idPlaylist As String
-  Dim idMusic As String
+  Dim IDMusic As String
   Dim Sql As String
   Dim a As Long
   Dim playOrder As Long
@@ -9808,8 +12514,23 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
         GoTo lblEnd
       End If
 
-      MinimalKey
-      prckeyDown
+'      MinimalKey
+'      prckeyDown
+      If frmUser.settingScreenResolution = "S-SD" Then
+        MinimalKey
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        MinimalKeyHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        MinimalKeyFULLHD
+      End If
+      
+      If frmUser.settingScreenResolution = "S-SD" Then
+        prckeyDown
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        prckeyDownHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        prckeyDownFULLHD
+      End If
 
     Case "keyUp"
 
@@ -9817,20 +12538,34 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
         GoTo lblEnd
       End If
 
-      MinimalKey
-      prcKeyUp
+'      MinimalKey
+'      prcKeyUp
+      If frmUser.settingScreenResolution = "S-SD" Then
+        MinimalKey
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        MinimalKeyHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        MinimalKeyFULLHD
+      End If
+      
+      If frmUser.settingScreenResolution = "S-SD" Then
+        prcKeyUp
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        prcKeyUpHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        prcKeyUpFULLHD
+      End If
 
 
     Case "lampOff"
-
+    
       vpbBlackBox = 0
       frmUser.turnDiscoLampOff
 
     Case "lampOn"
-
+    
       vpbBlackBox = 2
       frmUser.turnDiscoLampOn
-
 
     Case "micDown"
 
@@ -9942,6 +12677,17 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
             tmrVokal.Enabled = False
             tmrNonVocalML.Enabled = False
             tmrNonVocalMR.Enabled = False
+            
+            'added by Andi 10-01-2021
+            tmrVokal1.Enabled = False
+            tmrNonVocalML1.Enabled = False
+            tmrNonVocalMR1.Enabled = False
+            
+            tmrVokal2.Enabled = False
+            tmrNonVocalML2.Enabled = False
+            tmrNonVocalMR2.Enabled = False
+            'added by Andi 10-01-2021
+            
             frmVideo.WindowsMediaPlayer1.URL = ""
             frmVideo.WindowsMediaPlayer1.Controls.stop
             frmVideo.WindowsMediaPlayer1.Visible = True
@@ -9955,6 +12701,17 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
             tmrVokal.Enabled = False
             tmrNonVocalML.Enabled = False
             tmrNonVocalMR.Enabled = False
+            
+            'added by Andi 10-01-2021
+            tmrVokal1.Enabled = False
+            tmrNonVocalML1.Enabled = False
+            tmrNonVocalMR1.Enabled = False
+            
+            tmrVokal2.Enabled = False
+            tmrNonVocalML2.Enabled = False
+            tmrNonVocalMR2.Enabled = False
+            'added by Andi 10-01-2021
+            
             frmVideo.WindowsMediaPlayer1.URL = ""
             frmVideo.WindowsMediaPlayer1.Controls.stop
             frmVideo.WindowsMediaPlayer1.Visible = True
@@ -10018,7 +12775,7 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
 
       title = lstPlaylist.ListItems(playOrder).text
       singer = lstPlaylist.ListItems(playOrder).ListSubItems(1).text
-      idMusic = lstPlaylist.ListItems(playOrder).ListSubItems(2).text
+      IDMusic = lstPlaylist.ListItems(playOrder).ListSubItems(2).text
       Path = lstPlaylist.ListItems(playOrder).ListSubItems(3).text
       analog = lstPlaylist.ListItems(playOrder).ListSubItems(4).text
       vol = lstPlaylist.ListItems(playOrder).ListSubItems(5).text
@@ -10027,7 +12784,7 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
 
       Set li = lstPlaylist.ListItems.add(playOrder - 1, , title)
       li.SubItems(1) = singer
-      li.SubItems(2) = idMusic
+      li.SubItems(2) = IDMusic
       li.SubItems(3) = Path
       li.SubItems(4) = analog
       li.SubItems(5) = vol
@@ -10170,8 +12927,25 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
         GoTo lblEnd
       End If
 
-      MinimalTempo
-      prcTempoDown
+'      MinimalTempo
+'      prcTempoDown
+
+      If frmUser.settingScreenResolution = "S-SD" Then
+        MinimalTempo
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        MinimalTempoHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        MinimalTempoFULLHD
+      End If
+      
+      If frmUser.settingScreenResolution = "S-SD" Then
+        prcTempoDown
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        prcTempoDownHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        prcTempoDownFULLHD
+      End If
+      
 
     Case "tempoUp"
 
@@ -10179,8 +12953,24 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
         GoTo lblEnd
       End If
 
-      MinimalTempo
-      prcTempoUp
+'      MinimalTempo
+'      prcTempoUp
+      
+      If frmUser.settingScreenResolution = "S-SD" Then
+        MinimalTempo
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        MinimalTempoHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        MinimalTempoFULLHD
+      End If
+      
+      If frmUser.settingScreenResolution = "S-SD" Then
+        prcTempoUp
+      ElseIf frmUser.settingScreenResolution = "S-HD" Then
+        prcTempoUpHD
+      ElseIf frmUser.settingScreenResolution = "S-FULLHD" Then
+        prcTempoUpFULLHD
+      End If
 
 
     Case "vocal"
@@ -10192,14 +12982,14 @@ Private Sub wsServerRemote_DataArrival(ByVal bytesTotal As Long)
           setvocal
 
           If vVocalterus = False Then
-            frmVocal.VocalAktif = 0
+            frmVocal.VocalAktif = 0 ' vocal On
             frmVocal.Show
           Else
-            frmVocal.VocalAktif = 1
+            frmVocal.VocalAktif = 1 ' vocal off
             frmVocal.Show
           End If
 
-          vVocalterus = Not (vVocalterus) 'True
+          vVocalterus = Not (vVocalterus)
 
           tmrMainVocal.Enabled = True
         End If
@@ -10441,6 +13231,143 @@ Sub savePlayList()
   If Err.Number <> 0 Then
     LogError Name, "savePlayList"
   End If
+End Sub
+
+Sub savePlayListDatabase(IDMusic As Long)
+
+  On Error Resume Next
+
+  Dim roomName As String
+  Dim idMember As String
+  Dim Sql As String
+  Dim myrs As MYSQL_RS
+
+  roomName = txtCompName.text
+
+  If txtLogin = "" Then
+      idMember = "00000"
+  Else
+      idMember = txtLogin.text
+  End If
+
+'    Sql = "select MAX(IFNULL(playOrder,0))+1 as playOrder from playlist where ROOM='" & roomName & "' and USERID='" & idMember & "';  "
+'
+'    Set myrs = MyConn.Execute(Sql)
+'
+'    Do Until myrs.EOF
+'        playOrderNextNo = myrs.Fields(0).value
+'        myrs.MoveNext
+'    Loop
+'
+'    Sql = ""
+'    If (playOrderNextNo = 0) Then
+'        playOrderNextNo = 1
+'    End If
+
+
+    Sql = Sql & " INSERT INTO playlist (ROOM, IDMUSIC, USERID, playOrder) "
+    Sql = Sql & " SELECT '" & roomName & "', '" & IDMusic & "', '" & idMember & "', IFNULL(MAX(playOrder),0)+1 as playOrderTemp from playlist "
+    Sql = Sql & " WHERE ROOM='" & roomName & "' and USERID='" & idMember & "';  "
+
+'    dbg8 = Sql
+'    logDebug
+
+    MyConn.Execute Sql
+    DoEvents
+End Sub
+
+Sub deleteReorderPlayListDatabase(IDMusic As Long)
+
+  On Error Resume Next
+
+  Dim roomName As String
+  Dim idMember As String
+  Dim Sql, sqlDelete As String
+  Dim playOrderUrutIndex As Integer
+
+  roomName = txtCompName.text
+
+  If txtLogin = "" Then
+      idMember = "00000"
+  Else
+      idMember = txtLogin.text
+      End If
+
+  playOrderUrutIndex = lstPlaylist.ListItems.Count - lstPlaylist.selectedItem.index + 1
+
+  If buttonStopPressed = True Then
+    sqlDelete = " DELETE FROM playlist  "
+    sqlDelete = sqlDelete & " WHERE room='" & roomName & "' AND IDMUSIC='" & IDMusic & "' AND USERID='" & idMember & "' AND playOrder=" & 1 & ""
+'    dbg9 = sqlDelete
+'    logDebug
+
+    MyConn.Execute sqlDelete
+
+    'Reorder playlist
+    Sql = " UPDATE playlist "
+    Sql = Sql & " SET playOrder = playOrder - 1 "
+    Sql = Sql & " WHERE room='" & roomName & "' AND USERID='" & idMember & "' AND playOrder > " & 1 & " "
+
+'    dbg10 = Sql
+'    logDebug
+
+    MyConn.Execute Sql
+    buttonStopPressed = False
+  Else
+    sqlDelete = " DELETE FROM playlist  "
+    sqlDelete = sqlDelete & " WHERE room='" & roomName & "' AND IDMUSIC='" & IDMusic & "' AND USERID='" & idMember & "' AND playOrder=" & lstPlaylist.selectedItem.index & ""
+'    dbg9 = sqlDelete
+'    logDebug
+
+    MyConn.Execute sqlDelete
+
+    'Reorder playlist
+    Sql = " UPDATE playlist "
+    Sql = Sql & " SET playOrder = playOrder - 1 "
+    Sql = Sql & " WHERE room='" & roomName & "' AND USERID='" & idMember & "' AND playOrder > " & lstPlaylist.selectedItem.index & " "
+
+'        dbg10 = Sql
+'        logDebug
+
+    MyConn.Execute Sql
+ End If
+
+ DoEvents
+End Sub
+
+Sub priorityPlayListDatabase(IDMusic As Long)
+
+  On Error Resume Next
+
+  Dim roomName As String
+  Dim idMember As String
+  Dim Sql As String
+  Dim playOrderUrutIndex As Integer
+  
+  roomName = txtCompName.text
+
+  If txtLogin = "" Then
+      idMember = "00000"
+  Else
+      idMember = txtLogin.text
+  End If
+  
+    playOrderUrutIndex = lstPlaylist.selectedItem.index + 1
+    
+    If playOrderUrutIndex <> 1 Then
+        'Reorder playlist
+        Sql = " UPDATE playlist "
+        Sql = Sql & " SET playOrder = CASE playOrder WHEN " & playOrderUrutIndex & " THEN " & playOrderUrutIndex - 1
+        Sql = Sql & " WHEN " & playOrderUrutIndex - 1 & " THEN " & playOrderUrutIndex & " END"
+        Sql = Sql & " WHERE playOrder IN (" & playOrderUrutIndex & "," & playOrderUrutIndex - 1 & ")"
+        Sql = Sql & " AND room='" & roomName & "' AND USERID='" & idMember & "'"
+
+'        dbg7 = Sql
+'        logDebug
+
+        MyConn.Execute Sql
+    End If
+    DoEvents
 End Sub
 
 Sub updateStructure()

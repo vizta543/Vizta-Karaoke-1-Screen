@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{90F3D7B3-92E7-44BA-B444-6A8E2A3BC375}#1.0#0"; "actskin4.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.ocx"
 Begin VB.Form frmPopuler 
    Appearance      =   0  'Flat
    BackColor       =   &H80000005&
@@ -73,19 +73,15 @@ Private Declare Function SetWindowPos Lib "user32" _
     ByVal x As Long, ByVal Y As Long, ByVal cx As Long, _
     ByVal cy As Long, ByVal wFlags As Long) As Long
     
-
-
 Private Sub Form_Load()
     On Error Resume Next
     vpbfrmPopuler = True
     Dim lokasi As String
     lokasi = App.Path
     
-
-        Skin1.LoadSkin lokasi + "\skin\sknpopular.skn"
-        Skin1.ApplySkinByName hWnd, "sknpopular"
-
-    
+    Skin1.LoadSkin lokasi + "\skin\sknpopular.skn"
+    Skin1.ApplySkinByName hWnd, "sknpopular"
+        
     SetWindowPos Me.hWnd, HWND_TOPMOST, 0, 0, 0, 0, _
     SWP_NOMOVE + SWP_NOSIZE
     Me.Move (0 - Screen.Width)
