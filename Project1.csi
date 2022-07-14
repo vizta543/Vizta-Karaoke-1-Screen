@@ -1,0 +1,16 @@
+[History]
+B0=karaoke/frmRoom/hot
+B1=karaoke/mSubClass/WndProc
+B2=karaoke/frmRoom/MinimalVolume
+B3=karaoke/frmRoom/prcDVD
+B4=karaoke/frmUser/Form_Load
+B5=karaoke/frmRoom/konekServer1
+B6=karaoke/frmRoom/Form_Activate
+B7=karaoke/frmMovieArtis/Form_Load
+B8=karaoke/frmFotoConfirm/Form_Load
+B9=karaoke/frmRoom/lstMovie_Click
+B10=karaoke/frmCategory/Form_Load
+B11=karaoke/frmConfirmasi/Form_Load
+B12=karaoke/frmVocal/Form_Load
+B13=karaoke/frmRoom/VideocapCD
+B14=karaoke/frmRoom/CariKategori
